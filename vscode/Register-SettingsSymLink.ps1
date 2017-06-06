@@ -1,0 +1,1 @@
+New-Item -Path $env:AppData\Code\User\settings.json -ItemType SymbolicLink -Value .\settings\settings.json

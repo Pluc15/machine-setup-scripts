@@ -1,0 +1,14 @@
+alefragnani.project-manager
+dbaeumer.vscode-eslint
+DotJoshJohnson.xml
+eg2.tslint
+eg2.vscode-npm-script
+johnpapa.Angular2
+mitchdenny.ecdc
+ms-mssql.mssql
+ms-vscode.csharp
+ms-vscode.PowerShell
+octref.vscode-json-transform
+PeterJausovec.vscode-docker
+rbbit.typescript-hero
+robertohuertasm.vscode-icons

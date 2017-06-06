@@ -1,0 +1,18 @@
+{
+	"workbench.sideBar.location": "left",
+	"window.zoomLevel": 0,
+	"workbench.iconTheme": "vscode-icons",
+	"mssql.connections": [],
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.formatOnSave": true,
+	"editor.renderWhitespace": "boundary",
+	"editor.tabSize": 2,
+	"tslint.autoFixOnSave": true,
+	"eslint.autoFixOnSave": true,
+	"window.reopenFolders": "none",
+	"window.newWindowDimensions": "maximized",
+	"vsicons.projectDetection.autoReload": false,
+	"vsicons.projectDetection.disableDetect": true,
+	"explorer.autoReveal": false
+}
