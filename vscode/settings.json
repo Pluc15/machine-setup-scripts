@@ -2,11 +2,17 @@
 	"workbench.sideBar.location": "left",
 	"window.zoomLevel": 0,
 	"workbench.iconTheme": "vscode-icons",
-	"mssql.connections": [],
+	"[cpp]": {
+		"editor.quickSuggestions": false
+	},
+	"[c]": {
+		"editor.quickSuggestions": false
+	},
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"editor.formatOnSave": true,
-	"editor.renderWhitespace": "boundary",
+	"editor.renderWhitespace": "all",
+	"workbench.editor.showTabs": false,
 	"editor.tabSize": 2,
 	"tslint.autoFixOnSave": true,
 	"eslint.autoFixOnSave": true,
