@@ -60,6 +60,13 @@ pushd ~/.aur/slack-desktop
 makepkg -si
 popd
 
+git clone https://aur.archlinux.org/fisherman.git ~/.aur/fisherman
+pushd ~/.aur/fisherman
+makepkg -si
+popd
+
+fisher z fzf
+
 #ln -fs ~/.dotfiles/xorg/xorg.conf /etc/X11/xorg.conf
 
 mkdir -p ~/.config/i3

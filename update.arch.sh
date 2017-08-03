@@ -34,3 +34,10 @@ pushd ~/.aur/slack-desktop
 git pull
 makepkg -si
 popd
+
+pushd ~/.aur/fisherman
+git pull
+makepkg -si
+popd
+
+fisher up
