@@ -40,9 +40,23 @@ pushd ~/.aur/visual-studio-code
 makepkg -si
 popd
 
-
 git clone https://aur.archlinux.org/x2vnc-no-xinerama.git ~/.aur/x2vnc-no-xinerama
 pushd ~/.aur/x2vnc-no-xinerama
+makepkg -si
+popd
+
+git clone https://aur.archlinux.org/ttf-font-awesome.git ~/.aur/ttf-font-awesome
+pushd ~/.aur/ttf-font-awesome
+makepkg -si
+popd
+
+git clone https://aur.archlinux.org/discord.git ~/.aur/discord
+pushd ~/.aur/discord
+makepkg -si
+popd
+
+git clone https://aur.archlinux.org/slack-desktop.git ~/.aur/slack-desktop
+pushd ~/.aur/slack-desktop
 makepkg -si
 popd
 

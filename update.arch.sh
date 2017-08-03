@@ -19,3 +19,18 @@ pushd ~/.aur/x2vnc-no-xinerama
 git pull
 makepkg -si
 popd
+
+pushd ~/.aur/ttf-font-awesome
+git pull
+makepkg -si
+popd
+
+pushd ~/.aur/discord
+git pull
+makepkg -si
+popd
+
+pushd ~/.aur/slack-desktop
+git pull
+makepkg -si
+popd
