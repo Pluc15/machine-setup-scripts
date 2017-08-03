@@ -124,6 +124,9 @@ assign [class="Slack"] $ws_chat
 assign [class="discord"] $ws_chat
 assign [class="skypeforlinux"] $ws_chat
 assign [class="Spotify"] $ws_music
+assign [class=".*"] $ws_misc
+
+for_window [class=".*"] focus
 
 #############
 ## Daemons ##
