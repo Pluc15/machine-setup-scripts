@@ -40,4 +40,9 @@ git pull
 makepkg -si
 popd
 
+pushd ~/.aur/skypeforlinux-bin
+git pull
+makepkg -si
+popd
+
 fisher up

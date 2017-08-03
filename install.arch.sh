@@ -65,6 +65,11 @@ pushd ~/.aur/fisherman
 makepkg -si
 popd
 
+git clone https://aur.archlinux.org/pkgbase/skypeforlinux-bin/ ~/.aur/skypeforlinux-bin
+pushd ~/.aur/skypeforlinux-bin
+makepkg -si
+popd
+
 fisher z fzf
 
 #ln -fs ~/.dotfiles/xorg/xorg.conf /etc/X11/xorg.conf
