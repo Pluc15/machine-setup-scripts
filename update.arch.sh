@@ -1,5 +1,10 @@
 sudo pacman -Syu
 
+pushd ~/.aur/i3-gaps
+git pull
+makepkg -si
+popd
+
 pushd ~/.aur/google-chrome
 git pull
 makepkg -si
@@ -41,6 +46,11 @@ makepkg -si
 popd
 
 pushd ~/.aur/skypeforlinux-bin
+git pull
+makepkg -si
+popd
+
+pushd ~/.aur/polybar-git
 git pull
 makepkg -si
 popd

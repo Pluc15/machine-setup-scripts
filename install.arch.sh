@@ -20,10 +20,20 @@ ranger \
 base-devel \
 git \
 fzf \
+feh \
+redshift \
+scrot \
+imagemagick \
+xdialog \
 \
 #Dev
 nodejs \
 npm
+
+git clone https://aur.archlinux.org/i3-gaps.git ~/.aur/i3-gaps
+pushd ~/.aur/i3-gaps
+makepkg -si
+popd
 
 git clone https://aur.archlinux.org/google-chrome.git ~/.aur/google-chrome
 pushd ~/.aur/google-chrome
@@ -65,8 +75,13 @@ pushd ~/.aur/fisherman
 makepkg -si
 popd
 
-git clone https://aur.archlinux.org/pkgbase/skypeforlinux-bin/ ~/.aur/skypeforlinux-bin
+git clone https://aur.archlinux.org/pkgbase/skypeforlinux-bin ~/.aur/skypeforlinux-bin
 pushd ~/.aur/skypeforlinux-bin
+makepkg -si
+popd
+
+git clone https://aur.archlinux.org/polybar-git.git ~/.aur/polybar-git
+pushd ~/.aur/polybar-git
 makepkg -si
 popd
 
@@ -77,11 +92,14 @@ fisher z fzf
 mkdir -p ~/.config/i3
 ln -fs ~/.dotfiles/i3/config ~/.config/i3/config
 
+mkdir -p ~/.config/i3status
+ln -fs ~/.dotfiles/i3/i3status.config ~/.config/i3status/config
+
 mkdir -p ~/.config/dunst
 ln -fs ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 
-ln -fs ~/.dotfiles/xorg/Xresources ~/.Xresources
+ln -fs ~/.dotfiles/xorg/.Xresources ~/.Xresources
 
-ln -fs ~/.dotfiles/xorg/xinitrc ~/.xinitrc
+ln -fs ~/.dotfiles/xorg/.xinitrc ~/.xinitrc
 
 ln -fs ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish

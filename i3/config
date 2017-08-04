@@ -7,7 +7,7 @@ set $mod Mod4
 floating_modifier $mod
 focus_follows_mouse no
 
-bindsym $mod+Escape exec i3lock
+bindsym $mod+Escape exec sh ~/.dotfiles/i3/lock.sh
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -65,25 +65,15 @@ bar {
 #############
 font pango:monospace 12
 
-set $FOCUS #989898
-set $UNFOCUS #3c3b37
-
-# Layout colors 	    bord 	bg 		text    indicator (split)
-client.focused                  $FOCUS $FOCUS $FOCUS $FOCUS
-client.focused_inactive         $UNFOCUS $UNFOCUS $UNFOCUS $UNFOCUS
-client.unfocused 		$UNFOCUS $UNFOCUS $UNFOCUS $UNFOCUS
-client.urgent 			$FOCUS $FOCUS $FOCUS $FOCUS
-client.background 		$UNFOCUS
-
 # Borders
-new_window pixel 4
-new_float pixel 4
+new_window pixel 0
+new_float pixel 0
 
 # Gaps
-# set $default_gaps_inner 12
-# set $default_gaps_outer 0
-# gaps inner $default_gaps_inner
-# gaps outer $default_gaps_outer
+set $default_gaps_inner 40
+set $default_gaps_outer 0
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
 
 ################
 ## Workspaces ##
@@ -91,7 +81,7 @@ new_float pixel 4
 set $ws_misc 1:Misc
 set $ws_web 2:
 set $ws_term 3:
-set $ws_ide 4:
+set $ws_ide 4:
 set $ws_chat 5:
 set $ws_music 6:
 
@@ -128,7 +118,10 @@ assign [class=".*"] $ws_misc
 
 for_window [class=".*"] focus
 
+
 #############
 ## Daemons ##
 #############
 exec --no-startup-id dunst
+exec --no-startup-id redshift
+exec --no-startup-id ~/.fehbg &
