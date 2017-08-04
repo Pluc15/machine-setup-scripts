@@ -12,7 +12,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
@@ -28,15 +28,15 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-bindsym $mod+v split toggle
+bindsym $mod+Backspace split toggle
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec sh ~/.dotfiles/i3/volume-up.sh
-bindsym XF86AudioLowerVolume exec sh ~/.dotfiles/i3/volume-down.sh
-bindsym XF86AudioMute exec sh ~/.dotfiles/i3/volume-mute.sh
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -53,12 +53,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-bar {
-        strip_workspace_numbers yes
-        font pango:DejaVu Sans Mono, Icons 16
-        status_command i3status
-}
 
 #############
 ## Styling ##
@@ -125,3 +119,4 @@ for_window [class=".*"] focus
 exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec --no-startup-id ~/.fehbg &
+exec --no-startup-id sh ~/.dotfiles/polybar/launch.sh

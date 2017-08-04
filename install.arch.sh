@@ -92,9 +92,6 @@ fisher z fzf
 mkdir -p ~/.config/i3
 ln -fs ~/.dotfiles/i3/config ~/.config/i3/config
 
-mkdir -p ~/.config/i3status
-ln -fs ~/.dotfiles/i3/i3status.config ~/.config/i3status/config
-
 mkdir -p ~/.config/dunst
 ln -fs ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 
