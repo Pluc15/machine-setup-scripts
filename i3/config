@@ -141,7 +141,7 @@ exec_always --no-startup-id sh ~/.dotfiles/polybar/launch.sh
 #############
 ## Autorun ##
 #############
-exec --no-startup-id google-chrome
+exec --no-startup-id google-chrome-stable
 exec --no-startup-id code
 exec --no-startup-id urxvt
 exec --no-startup-id spotify
