@@ -8,9 +8,10 @@ floating_modifier $mod
 focus_follows_mouse no
 
 bindsym $mod+Escape exec sh ~/.dotfiles/i3/lock.sh
+bindsym $mod+Shift+Escape exec sh ~/.dotfiles/i3/power.sh
+
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Return exec urxvt
 bindsym $mod+q kill
 #bindsym $mod+d exec dmenu_run
@@ -122,6 +123,10 @@ assign [class=".*"] $ws_misc
 
 for_window [class=".*"] focus
 
+#####################
+## Special windows ##
+#####################
+for_window [class="Xdialog"] floating enable
 
 #############
 ## Daemons ##
