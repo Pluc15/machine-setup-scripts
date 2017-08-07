@@ -8,6 +8,8 @@ height = 25
 offset-x = 0
 offset-y = 0
 padding-right = 0
+wm-restack = i3
+override-redirect = true
 
 background = #00000000
 foreground = #888888
@@ -22,13 +24,13 @@ modules-center = date
 modules-right = volume
 #modules-right = backlight volume
 
-override-redirect = true
-
 [bar/bottom]
 width = 100%
 height = 25
 offset-x = 0
 offset-y = 0
+wm-restack = i3
+override-redirect = true
 
 bottom = true
 
@@ -47,8 +49,6 @@ modules-right =
 tray-position = right
 tray-padding = 0
 tray-transparent = true
-
-override-redirect = true
 
 [module/i3]
 type = internal/i3
