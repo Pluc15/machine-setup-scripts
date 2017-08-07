@@ -93,7 +93,8 @@ popd
 
 fisher z fzf
 
-#ln -fs ~/.dotfiles/xorg/xorg.conf /etc/X11/xorg.conf
+mv /usr/share/X11/xorg.conf.d.bck
+sudo ln -fs ~/.dotfiles/xorg/xorg.conf.d /usr/share/X11/xorg.conf.d
 
 mkdir -p ~/.config/i3
 ln -fs ~/.dotfiles/i3/config ~/.config/i3/config
