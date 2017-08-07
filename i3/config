@@ -131,3 +131,15 @@ exec --no-startup-id redshift
 #exec --no-startup-id ~/.fehbg &
 exec --no-startup-id wal -i ~/.dotfiles/assets/wallpaper-02.jpg
 exec_always --no-startup-id sh ~/.dotfiles/polybar/launch.sh
+
+
+#############
+## Autorun ##
+#############
+exec --no-startup-id google-chrome
+exec --no-startup-id code
+exec --no-startup-id urxvt
+exec --no-startup-id spotify
+exec --no-startup-id skypeforlinux
+exec --no-startup-id discord
+exec --no-startup-id slack
