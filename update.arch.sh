@@ -55,4 +55,9 @@ git pull
 makepkg -si
 popd
 
+pushd ~/.aur/python-pywal
+git pull
+makepkg -si
+popd
+
 fisher up

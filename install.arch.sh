@@ -25,6 +25,7 @@ redshift \
 scrot \
 imagemagick \
 xdialog \
+python-setuptools \
 \
 #Dev
 nodejs \
@@ -82,6 +83,11 @@ popd
 
 git clone https://aur.archlinux.org/polybar-git.git ~/.aur/polybar-git
 pushd ~/.aur/polybar-git
+makepkg -si
+popd
+
+git clone https://aur.archlinux.org/python-pywal.git ~/.aur/python-pywal
+pushd ~/.aur/python-pywal
 makepkg -si
 popd
 

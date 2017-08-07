@@ -118,5 +118,6 @@ for_window [class=".*"] focus
 #############
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id ~/.fehbg &
-exec --no-startup-id sh ~/.dotfiles/polybar/launch.sh
+#exec --no-startup-id ~/.fehbg &
+exec --no-startup-id wal -i ~/.dotfiles/assets/wallpaper-02.jpg
+exec_always --no-startup-id sh ~/.dotfiles/polybar/launch.sh
