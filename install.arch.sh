@@ -26,6 +26,7 @@ scrot \
 imagemagick \
 xdialog \
 python-setuptools \
+rofi \
 \
 #Dev
 nodejs \
