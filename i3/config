@@ -7,15 +7,15 @@ set $mod Mod4
 floating_modifier $mod
 focus_follows_mouse no
 
-bindsym $mod+Escape exec sh ~/.dotfiles/i3/lock.sh
-bindsym $mod+Shift+Escape exec sh ~/.dotfiles/i3/power.sh
+bindsym $mod+Escape exec sh ~/.dotfiles/scripts/lock.sh
+bindsym $mod+Shift+Escape exec sh ~/.dotfiles/scripts/power-menu.sh
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bindsym $mod+q kill
 
-bindsym $mod+d exec sh ~/.dotfiles/i3/rofi.sh
+bindsym $mod+d exec sh ~/.dotfiles/rofi/launch.sh
 bindsym $mod+Return exec urxvt
 
 bindsym $mod+space exec sh ~/.dotfiles/scripts/kb-layout-toggle.sh
