@@ -134,8 +134,7 @@ for_window [class="Xdialog"] floating enable
 #############
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-#exec --no-startup-id ~/.fehbg &
-exec --no-startup-id wal -i ~/.dotfiles/assets/wallpaper-02.jpg
+exec --no-startup-id exec sh ~/.dotfiles/scripts/wallpaper.sh
 exec_always --no-startup-id sh ~/.dotfiles/polybar/launch.sh
 
 
