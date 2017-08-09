@@ -18,11 +18,13 @@ bindsym $mod+q kill
 bindsym $mod+d exec sh ~/.dotfiles/i3/rofi.sh
 bindsym $mod+Return exec urxvt
 
+bindsym $mod+space exec sh ~/.dotfiles/scripts/kb-layout-toggle.sh
+
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 bindsym $mod+Shift+h move left

@@ -44,11 +44,10 @@ font-3 = FontAwesome:pixelsize=14;0
 
 modules-left = battery
 modules-center = i3
-modules-right =
+modules-right = keyboard
 
 tray-position = right
-tray-padding = 0
-tray-transparent = true
+tray-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -167,3 +166,11 @@ animation-charging-framerate = 750
 # ramp-2 = 🌓
 # ramp-3 = 🌒
 # ramp-4 = 🌑
+
+[module/keyboard]
+type = internal/xkeyboard
+blacklist-0 = scroll lock
+format = <label-layout> <label-indicator>
+format-spacing = 1
+label-layout = %name%
+label-indicator = %name%
