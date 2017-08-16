@@ -43,3 +43,5 @@ sh ~/.dotfiles/install.arch.sh
 | Install | Rework install script to be re-runnable to upgrade |
 | VS Code | Redo entirely and symlink |
 | Ranger | Configure and symlink |
+| ? | Default app |
+| Scripts | Xdialog for .scripts |
