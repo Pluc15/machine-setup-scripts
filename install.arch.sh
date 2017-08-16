@@ -1,6 +1,4 @@
 sudo pacman -S \
-\
-#System
 fish \
 curl \
 wget \
@@ -27,10 +25,10 @@ imagemagick \
 xdialog \
 python-setuptools \
 rofi \
-\
-#Dev
+gimp \
 nodejs \
-npm
+npm \
+docker
 
 git clone https://aur.archlinux.org/i3-gaps.git ~/.aur/i3-gaps
 pushd ~/.aur/i3-gaps
