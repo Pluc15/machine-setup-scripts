@@ -108,3 +108,5 @@ ln -fs ~/.dotfiles/xorg/.Xresources ~/.Xresources
 ln -fs ~/.dotfiles/xorg/.xinitrc ~/.xinitrc
 
 ln -fs ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
+
+ln -fs ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
