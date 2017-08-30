@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/bin/X -config ~/.dotfiles/xorg/xorg.conf -nolisten tcp "$@"
