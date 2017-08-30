@@ -54,15 +54,15 @@ label-focused-font = 2
 label-urgent-font = 2
 
 label-mode-padding = 5
-label-mode-foreground = #ffffff
+label-mode-foreground = #ffffffff
 
-label-unfocused-foreground = #888888
+label-unfocused-foreground = #88ffffff
 label-unfocused-padding = 1
 
-label-visible-foregroud = #888888
+label-visible-foregroud = #88ffffff
 label-visible-padding = 1
 
-label-focused-foreground = #ffffff
+label-focused-foreground = #ffffffff
 label-focused-padding = 1
 
 label-urgent-padding = 1
