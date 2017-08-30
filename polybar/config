@@ -25,7 +25,7 @@ inherit = bar/base
 
 modules-left = battery
 modules-center = date
-modules-right = wireless-network
+modules-right = spotify
 
 [bar/bottom]
 inherit = bar/base
@@ -153,3 +153,7 @@ format = <label-layout> <label-indicator>
 format-spacing = 1
 label-layout = %name%
 label-indicator = %name%
+
+[module/spotify]
+type = custom/script
+exec = sh ~/.dotfiles/scripts/spotify-current-song.sh
