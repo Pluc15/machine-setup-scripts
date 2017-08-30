@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo pacman -Syuq --noconfirm --needed
 
-fisher up
+fish -c fisher up
 
 pushd $HOME/.aur/i3-gaps
 git pull

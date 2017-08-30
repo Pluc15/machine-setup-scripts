@@ -51,7 +51,7 @@ cifs-utils \
 openssl \
 openssh
 
-fisher z fzf
+fish -c fisher z fzf
 
 git clone https://aur.archlinux.org/i3-gaps.git $HOME/.aur/i3-gaps
 pushd $HOME/.aur/i3-gaps
