@@ -45,3 +45,4 @@ sh ~/.dotfiles/install.arch.sh
 | Ranger | Configure and symlink |
 | ? | Default app |
 | Scripts | Xdialog for .scripts |
+| Install | Find better solution for linking xorg config so it doesnt break every update |

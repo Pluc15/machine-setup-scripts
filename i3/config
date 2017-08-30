@@ -77,8 +77,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # Gaps
-gaps inner 30
-gaps outer 10
+gaps inner 10
+gaps outer 20
 
 ################
 ## Workspaces ##
@@ -89,6 +89,19 @@ set $ws_term 3:
 set $ws_ide 4:
 set $ws_chat 5:
 set $ws_music 6:
+set $ws_monitor2 "HDMI2"
+
+workspace $ws_misc output eDP-1
+workspace $ws_web output eDP-1
+workspace $ws_term output eDP-1
+workspace $ws_ide output eDP-1
+workspace $ws_chat output eDP-1
+workspace $ws_music output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output eDP-1
+workspace $ws_monitor2 output HDMI-2
 
 bindsym $mod+1 workspace $ws_misc
 bindsym $mod+2 workspace $ws_web
@@ -100,6 +113,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+Tab workspace $ws_monitor2
 
 bindsym $mod+Shift+1 move container to workspace $ws_misc
 bindsym $mod+Shift+2 move container to workspace $ws_web
@@ -111,6 +125,7 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+Tab move container to workspace $ws_monitor2
 
 assign [class="Google-chrome" instance="google-chrome"] $ws_web
 
@@ -128,6 +143,7 @@ assign [class="Spotify"] $ws_music
 assign [class=".*"] $ws_misc
 
 for_window [class=".*"] focus
+focus_on_window_activation focus
 
 #####################
 ## Special windows ##
@@ -137,15 +153,9 @@ for_window [class="Xdialog"] floating enable
 #############
 ## Daemons ##
 #############
+exec --no-startup-id compton
 exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec --no-startup-id exec sh ~/.dotfiles/scripts/wallpaper.sh
+exec --no-startup-id nm-applet
 exec_always --no-startup-id sh ~/.dotfiles/polybar/launch.sh
-
-
-#############
-## Autorun ##
-#############
-exec --no-startup-id skypeforlinux
-exec --no-startup-id discord
-exec --no-startup-id slack

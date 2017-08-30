@@ -7,10 +7,7 @@ xorg \
 pulseaudio \
 pavucontrol \
 playerctl \
-i3 \
-i3status \
 i3lock \
-dmenu \
 dunst \
 freerdp \
 pptpclient \
@@ -26,9 +23,12 @@ xdialog \
 python-setuptools \
 rofi \
 gimp \
-nodejs \
-npm \
-docker
+transmission-qt \
+qt4 \
+thunar \
+xorg-xrandr \
+arandr \
+compton
 
 git clone https://aur.archlinux.org/i3-gaps.git ~/.aur/i3-gaps
 pushd ~/.aur/i3-gaps
@@ -92,9 +92,6 @@ popd
 
 fisher z fzf
 
-mv /usr/share/X11/xorg.conf.d.bck
-sudo ln -fs ~/.dotfiles/xorg/xorg.conf.d /usr/share/X11/xorg.conf.d
-
 mkdir -p ~/.config/i3
 ln -fs ~/.dotfiles/i3/config ~/.config/i3/config
 
@@ -107,4 +104,9 @@ ln -fs ~/.dotfiles/xorg/.xinitrc ~/.xinitrc
 
 ln -fs ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 
+ln -fs ~/.dotfiles/compton/compton.conf ~/.config/compton.conf
+
 ln -fs ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+
+sudo rm /etc/pacman.d/mirrorlist
+sudo ln -fs ~/.dotfiles/pacman/mirrorlist /etc/pacman.d/mirrorlist
