@@ -16,13 +16,15 @@ This is my complete Arch Linux setup. My goal is to have a simple and efficient 
 
 ```bash
 git clone https://github.com/Pluc15/dotfiles.git ~/.dotfiles
-sh ~/.dotfiles/install.arch.sh
+sh ~/.dotfiles/arch/install.sh
 ```
 
 # Updating on Arch Linux
 
 ```bash
-sh ~/.dotfiles/install.arch.sh
+cd ~/.dotfiles
+git pull
+sh ~/.dotfiles/arch/install.sh
 ```
 
 # Screenshot

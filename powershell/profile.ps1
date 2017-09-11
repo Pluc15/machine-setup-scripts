@@ -1,5 +1,5 @@
 # Register custom scripts
-Get-ChildItem "$env:Dotfiles\windows\scripts" -Filter *.ps1 | 
+Get-ChildItem "$env:Dotfiles\powershell\scripts" -Filter *.ps1 | 
 Foreach-Object {
 	Set-Alias -Name $_.BaseName -Value $_.FullName
 }

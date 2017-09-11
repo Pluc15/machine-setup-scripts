@@ -1,0 +1,12 @@
+{
+	"editor.minimap.enabled": false,
+	"window.zoomLevel": 0,
+	"workbench.colorTheme": "Visual Studio Dark",
+	"editor.tabSize": 2,
+	"window.newWindowDimensions": "maximized",
+	"explorer.autoReveal": false,
+	"editor.renderWhitespace": "all",
+	"editor.formatOnSave": true,
+	"tslint.autoFixOnSave": true,
+	"eslint.autoFixOnSave": true
+}

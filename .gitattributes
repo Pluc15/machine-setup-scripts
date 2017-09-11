@@ -1,0 +1,5 @@
+linux text eol=lf
+arch text eol=lf
+wsl text eol=lf
+cross text eol=lf
+powershell text eol=crlf
