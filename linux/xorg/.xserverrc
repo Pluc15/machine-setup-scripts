@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /usr/bin/X -config ~/.dotfiles/linux/xorg/xorg.conf -nolisten tcp "$@"
+exec /usr/bin/X -config ~/.config/xorg.conf -nolisten tcp "$@"

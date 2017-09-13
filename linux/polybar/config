@@ -12,7 +12,7 @@ padding = 3
 override-redirect = true
 wm-restack = i3
 
-background = #00000000
+background = #88000000
 foreground = #88ffffff
 
 font-0 = hack:pixelsize=12:weight=bold;4
@@ -156,4 +156,4 @@ label-indicator = %name%
 
 [module/spotify]
 type = custom/script
-exec = sh ~/.dotfiles/scripts/spotify-current-song.sh
+exec = sh ~/.scripts/spotify-current-song.sh

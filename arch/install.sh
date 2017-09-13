@@ -100,6 +100,20 @@ safeln $DOTFILES/linux/dunst/dunstrc $HOME/.config/dunst/dunstrc
 safeln $DOTFILES/linux/xorg/.Xresources $HOME/.Xresources
 safeln $DOTFILES/linux/xorg/.xinitrc $HOME/.xinitrc
 safeln $DOTFILES/linux/xorg/.xserverrc $HOME/.xserverrc
-safeln $DOTFILES/linux/fish/config.fish $HOME/.config/fish/config.fish
+safeln $DOTFILES/linux/xorg/xorg.conf $HOME/.config/xorg.conf
 safeln $DOTFILES/linux/compton/compton.conf $HOME/.config/compton.conf
+safeln $DOTFILES/linux/polybar/config $HOME/.config/polybar/config
 safeln $DOTFILES/cross/vscode/settings.json $HOME/.config/Code/User/settings.json
+
+safeln $DOTFILES/linux/scripts/git-tree.sh $HOME/.scripts/git-tree.sh
+safeln $DOTFILES/linux/scripts/kb-layout-toggle.sh $HOME/.scripts/kb-layout-toggle.sh
+safeln $DOTFILES/linux/scripts/lock.sh $HOME/.scripts/lock.sh
+safeln $DOTFILES/linux/scripts/polybar-launch.sh $HOME/.scripts/polybar-launch.sh
+safeln $DOTFILES/linux/scripts/power-menu.sh $HOME/.scripts/power-menu.sh
+safeln $DOTFILES/linux/scripts/rofi-launch-lpass.fish $HOME/.scripts/rofi-launch-lpass.fish
+safeln $DOTFILES/linux/scripts/rofi-launch.sh $HOME/.scripts/rofi-launch.sh
+safeln $DOTFILES/linux/scripts/rofi-modi-lpass.sh $HOME/.scripts/rofi-modi-lpass.sh
+safeln $DOTFILES/linux/scripts/spotify-current-song.sh $HOME/.scripts/spotify-current-song.sh
+safeln $DOTFILES/linux/scripts/wallpaper.sh $HOME/.scripts/wallpaper.sh
+
+echo "source $DOTFILES/linux/fish/profile.fish" > $HOME/.config/fish/config.fish

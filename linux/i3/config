@@ -7,18 +7,21 @@ set $mod Mod4
 floating_modifier $mod
 focus_follows_mouse no
 
-bindsym $mod+Escape exec sh ~/.dotfiles/scripts/lock.sh
-bindsym $mod+Shift+Escape exec sh ~/.dotfiles/scripts/power-menu.sh
+bindsym $mod+Escape exec sh ~/.scripts/lock.sh
+bindsym $mod+Shift+Escape exec sh ~/.scripts/power-menu.sh
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
+bindsym $mod+Shift+i exec --no-startup-id sh ~/.scripts/xprop.sh
 
 bindsym $mod+q kill
 
-bindsym $mod+d exec sh ~/.dotfiles/rofi/launch.sh
+bindsym $mod+d exec sh ~/.scripts/rofi-launch.sh
+bindsym $mod+p exec sh ~/.scripts/rofi-launch-lpass.sh
+
 bindsym $mod+Return exec urxvt
 
-bindsym $mod+space exec sh ~/.dotfiles/scripts/kb-layout-toggle.sh
+bindsym $mod+space exec sh ~/.scripts/kb-layout-toggle.sh
 
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym $mod+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
@@ -140,7 +143,7 @@ assign [class="Google-chrome" instance="crx_llfmpmbamlkpgegjjgbmijodcfpcjflc"] $
 
 assign [class="Spotify"] $ws_music
 
-assign [class=".*"] $ws_misc
+assign [class=".*" window_type="normal"] $ws_misc
 
 for_window [class=".*"] focus
 focus_on_window_activation focus
@@ -156,6 +159,6 @@ for_window [class="Xdialog"] floating enable
 exec --no-startup-id compton
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id exec sh ~/.dotfiles/scripts/wallpaper.sh
+exec --no-startup-id exec sh ~/.scripts/wallpaper.sh
 exec --no-startup-id nm-applet
-exec_always --no-startup-id sh ~/.dotfiles/polybar/launch.sh
+exec_always --no-startup-id sh ~/.scripts/polybar-launch.sh
