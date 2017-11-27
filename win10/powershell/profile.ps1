@@ -2,7 +2,7 @@
 Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
 
 # Register custom scripts
-Get-ChildItem "$env:Dotfiles\powershell\scripts" -Filter *.ps1 | 
+Get-ChildItem "$env:Dotfiles\win10\powershell\scripts" -Filter *.ps1 | 
 Foreach-Object {
 	Set-Alias -Name $_.BaseName -Value $_.FullName
 }
