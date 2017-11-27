@@ -1,3 +1,6 @@
+# Posh-git - TODO Make path relative so it works on all machines
+Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
+
 # Register custom scripts
 Get-ChildItem "$env:Dotfiles\powershell\scripts" -Filter *.ps1 | 
 Foreach-Object {
