@@ -15,3 +15,9 @@ greenshot `
 nodejs-lts `
 dotnetcore-sdk `
 poshgit
+
+# Link ConEmu config
+$DotfilesConEmuSettingsPath = Join-Path $env:Dotfiles "win10\conemu\ConEmu.xml"
+$LinkConEmuSettingsPath = "$env:AppData\ConEmu.xml"
+Remove-Item -Path $LinkConEmuSettingsPath
+New-Item -Path $LinkConEmuSettingsPath -ItemType SymbolicLink -Value $DotfilesConEmuSettingsPath
