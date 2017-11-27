@@ -11,16 +11,9 @@ Foreach-Object {
 Import-Module z
 Set-Alias z Search-NavigationHistory
 
-
+# Prompt
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator);
 $admin = If ($isAdmin) { "[Admin]" } Else { "" };
 $GitPromptSettings.DefaultPromptPrefix = '$admin '
 $GitPromptSettings.DefaultPromptSuffix = '`n$(''>'' * ($nestedPromptLevel + 1)) '
 $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-
-# function Prompt {
-# 	Update-NavigationHistory $pwd.Path
-# 	$p = "";
-
-# 	"$p $pwd>"
-# }
