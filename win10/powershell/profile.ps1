@@ -6,6 +6,10 @@ Get-ChildItem "$env:Dotfiles\win10\powershell\scripts" -Filter *.ps1 |
 Foreach-Object {
 	Set-Alias -Name $_.BaseName -Value $_.FullName
 }
+Get-ChildItem "$env:Home\scripts" -Filter *.ps1 | 
+Foreach-Object {
+	Set-Alias -Name $_.BaseName -Value $_.FullName
+}
 
 # Z
 Import-Module z
