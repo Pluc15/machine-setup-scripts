@@ -2,24 +2,9 @@
 DOTFILES=`pwd`/`dirname $0`/..
 DOTFILES=`realpath $DOTFILES`
 
-function install_aur {
-	if [ ! -d "$HOME/.aur/$1" ]
-	then
-  	git clone https://aur.archlinux.org/$1.git $HOME/.aur/$1
-	fi
-	pushd $HOME/.aur/$1
-	git pull
-	makepkg -si --noconfirm --needed
-	popd
-}
+source $DOTFILES/arch/install.fn.sh
 
-function safeln {
-	sudo mkdir -p `dirname $2`
-	sudo rm $2
-	sudo ln -fs $1 $2
-}
-
-safeln $DOTFILES/arch/pacman/mirrorlist /etc/pacman.d/mirrorlist
+sudosafeln $DOTFILES/arch/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
 sudo pacman -Syuq --noconfirm --needed
 sudo pacman -Sq --needed --noconfirm \
@@ -69,7 +54,15 @@ fzf \
 cifs-utils \
 openssl \
 openssh \
-lastpass-cli
+lastpass-cli \
+p7zip \
+libreoffice-fresh \
+x11vnc \
+cmake \
+make \
+gcc \
+libmariadbclient \
+mariadb
 
 install_aur i3-gaps
 install_aur google-chrome
@@ -82,6 +75,7 @@ install_aur fisherman
 install_aur skypeforlinux-bin
 install_aur polybar-git
 install_aur python-pywal
+install_aur openoffice
 
 install_aur libc++
 install_aur discord

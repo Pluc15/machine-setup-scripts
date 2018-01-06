@@ -8,5 +8,6 @@
 	"editor.renderWhitespace": "all",
 	"editor.formatOnSave": true,
 	"tslint.autoFixOnSave": true,
-	"eslint.autoFixOnSave": true
+	"eslint.autoFixOnSave": true,
+	"editor.insertSpaces": false
 }

@@ -2,6 +2,9 @@
 ## Key bindings ##
 ##################
 set $mod Mod4
+set $mon1 HDMI-2
+set $mon2 DP-1
+set $mon3 eDP-1
 
 # Mouse
 floating_modifier $mod
@@ -42,8 +45,8 @@ bindsym $mod+BackSpace split toggle
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 bindsym XF86AudioPlay exec playerctl play
@@ -92,19 +95,19 @@ set $ws_term 3:
 set $ws_ide 4:
 set $ws_chat 5:
 set $ws_music 6:
-set $ws_monitor2 "HDMI2"
+set $ws_mon2 "Monitor 2"
+set $ws_mon3 "Monitor 3"
 
-workspace $ws_misc output eDP-1
-workspace $ws_web output eDP-1
-workspace $ws_term output eDP-1
-workspace $ws_ide output eDP-1
-workspace $ws_chat output eDP-1
-workspace $ws_music output eDP-1
-workspace 7 output eDP-1
-workspace 8 output eDP-1
-workspace 9 output eDP-1
-workspace 10 output eDP-1
-workspace $ws_monitor2 output HDMI-2
+workspace $ws_misc output $mon1
+workspace $ws_web output $mon1
+workspace $ws_term output $mon1
+workspace $ws_ide output $mon1
+workspace $ws_chat output $mon1
+workspace $ws_music output $mon1
+workspace 7 output $mon1
+workspace 8 output $mon1
+workspace $ws_mon2 output $mon2
+workspace $ws_mon3 output $mon3
 
 bindsym $mod+1 workspace $ws_misc
 bindsym $mod+2 workspace $ws_web
@@ -114,9 +117,8 @@ bindsym $mod+5 workspace $ws_chat
 bindsym $mod+6 workspace $ws_music
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
-bindsym $mod+Tab workspace $ws_monitor2
+bindsym $mod+9 workspace $ws_mon2
+bindsym $mod+0 workspace $ws_mon3
 
 bindsym $mod+Shift+1 move container to workspace $ws_misc
 bindsym $mod+Shift+2 move container to workspace $ws_web
@@ -126,9 +128,8 @@ bindsym $mod+Shift+5 move container to workspace $ws_chat
 bindsym $mod+Shift+6 move container to workspace $ws_music
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
-bindsym $mod+Shift+Tab move container to workspace $ws_monitor2
+bindsym $mod+Shift+9 move container to workspace $ws_mon2
+bindsym $mod+Shift+0 move container to workspace $ws_mon3
 
 assign [class="Google-chrome" instance="google-chrome"] $ws_web
 
@@ -159,6 +160,6 @@ for_window [class="Xdialog"] floating enable
 exec --no-startup-id compton
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id exec sh ~/.scripts/wallpaper.sh
+exec_always --no-startup-id exec sh ~/.scripts/wallpaper.sh
 exec --no-startup-id nm-applet
 exec_always --no-startup-id sh ~/.scripts/polybar-launch.sh

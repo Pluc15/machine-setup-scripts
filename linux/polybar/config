@@ -3,7 +3,7 @@ margin-top = 10
 margin-bottom = 10
 
 [bar/base]
-monitor = eDP-1
+monitor = ${env:MONITOR}
 
 width = 100%
 height = 30
@@ -79,10 +79,12 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <ramp-volume> <bar-volume>
 format-muted = <label-muted> <bar-volume>
-label-volume = ""
-label-muted = ""
+
+label-muted = 
+ramp-volume-0 = 
+ramp-headphones-0 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

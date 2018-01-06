@@ -1,5 +1,8 @@
 ! URXVT
 !------------------------------------------------
+! Keys
+URxvt.keysym.C-BackSpace: \033[33~
+
 ! Fonts
 URxvt.font:xft:DejaVuSansMono:pixelsize=14
 URxvt.boldFont:xft:DejaVuSansMono-Bold:pixelsize=10
