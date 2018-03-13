@@ -21,3 +21,10 @@ $admin = If ($isAdmin) { "[Admin]" } Else { "" };
 $GitPromptSettings.DefaultPromptPrefix = '$admin '
 $GitPromptSettings.DefaultPromptSuffix = '`n$(''>'' * ($nestedPromptLevel + 1)) '
 $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+
+# Default folder
+$CurrentLocation = Get-Location
+if($CurrentLocation.Path -eq $env:Home)
+{
+	Set-Location $env:PSHOME
+}
