@@ -27,5 +27,5 @@ case $choice in
     "Reboot")
         reboot;;
     "Shutdown")
-        shutdown -t 0;;
+        shutdown 0;;
 esac
