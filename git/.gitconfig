@@ -1,0 +1,24 @@
+[user]
+	name = Pier-Luc Michaud
+	email = pier-luc.michaud@mediaclip.ca
+[core]
+	autocrlf = true
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	pager = "less -S"
+[push]
+	default = simple
+[fetch]
+	prune = true
+[diff]
+	tool = vscode
+	guitool = vscode
+[merge]
+	tool = vscode
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
