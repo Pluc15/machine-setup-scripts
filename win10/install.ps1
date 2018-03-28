@@ -18,6 +18,6 @@ New-Item -Path $LinkConEmuSettingsPath -ItemType SymbolicLink -Value $DotfilesCo
 
 # Link git config
 $DotfilesGitconfigPath = Join-Path $env:Dotfiles "git\.gitconfig"
-$LinkGitconfigPath = "$env:Home\.gitconfig"
+$LinkGitconfigPath = "$env:HOMEDRIVE$env:HOMEPATH\.gitconfig"
 Remove-Item -Path $LinkGitconfigPath
 New-Item -Path $LinkGitconfigPath -ItemType SymbolicLink -Value $DotfilesGitconfigPath

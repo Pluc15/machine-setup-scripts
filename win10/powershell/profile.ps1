@@ -15,7 +15,7 @@ Function Prompt () {
 
 # Default folder
 $CurrentLocation = Get-Location
-if($CurrentLocation.Path -eq $env:Home)
+if($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH")
 {
 	Set-Location $env:PSHOME
 }
