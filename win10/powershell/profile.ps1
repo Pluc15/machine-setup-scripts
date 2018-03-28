@@ -1,12 +1,6 @@
 # Register custom scripts
-Get-ChildItem "$env:Dotfiles\win10\powershell\scripts" -Filter *.ps1 | 
-Foreach-Object {
-	Set-Alias -Name $_.BaseName -Value $_.FullName
-}
-Get-ChildItem "$env:Home\scripts" -Filter *.ps1 | 
-Foreach-Object {
-	Set-Alias -Name $_.BaseName -Value $_.FullName
-}
+Set-Alias -Name "gt" -Value "$env:Dotfiles\win10\powershell\scripts\git-tree.ps1"
+Set-Alias -Name "lpass" -Value "$env:Dotfiles\win10\powershell\scripts\lpass.ps1"
 
 # Z
 Import-Module z
