@@ -1,8 +1,14 @@
 #Requires -RunAsAdministrator
+[CmdletBinding()]
+Param(
+	[string][Parameter(Mandatory=$True)]$DefaultPowershellLocation
+)
 
 $env:Dotfiles = (Get-Item -Path ".\" -Verbose).FullName
 [Environment]::SetEnvironmentVariable("Dotfiles", $env:Dotfiles, "User")
 
+$env:PSHOME = $DefaultPowershellLocation
+[Environment]::SetEnvironmentVariable("PSHOME", $env:PSHOME, "User")
 
 # Link ConEmu config
 $DotfilesConEmuSettingsPath = Join-Path $env:Dotfiles "win10\conemu\ConEmu.xml"
