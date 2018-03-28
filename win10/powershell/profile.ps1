@@ -8,9 +8,14 @@ Set-Alias z Search-NavigationHistory
 
 # Prompt
 Function Prompt () {
-	$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator);
-	$admin = If ($isAdmin) { "[Admin]" } Else { "" };
-	return "$admin> "
+	If (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+		Write-Host "[Admin] " -NoNewLine -ForegroundColor "Red"
+	}
+	Write-Host $env:COMPUTERNAME -NoNewLine -ForegroundColor "White"
+	Write-Host ":" -NoNewLine
+	Write-Host $pwd.ProviderPath -ForegroundColor "Green"
+	Write-Host ">" -NoNewLine -ForegroundColor "DarkGray"
+	return " "
 }
 
 # Default folder
