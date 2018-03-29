@@ -96,7 +96,7 @@ x2vnc-no-xinerama \
 ttf-font-awesome \
 slack-desktop \
 fisherman \
-polybar-git \
+polybar \
 python-pywal \
 openoffice \
 discord \
