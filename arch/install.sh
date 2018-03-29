@@ -83,7 +83,9 @@ cmake \
 make \
 gcc \
 libmariadbclient \
-mariadb
+mariadb \
+ttf-font-awesome \
+ttf-font-hack
 
 install_aur packer
 
@@ -93,7 +95,6 @@ google-chrome \
 spotify \
 visual-studio-code-bin \
 x2vnc-no-xinerama \
-ttf-font-awesome \
 slack-desktop \
 fisherman \
 polybar \
