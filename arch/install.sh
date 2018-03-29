@@ -87,11 +87,11 @@ mariadb
 
 install_aur packer
 
-packer -Syuq --noconfirm --needed
-sudo packer -Sq --needed --noconfirm \
+packer -Syuq --noconfirm
+packer -S --noconfirm \
 google-chrome \
 spotify \
-visual-studio-code \
+visual-studio-code-bin \
 x2vnc-no-xinerama \
 ttf-font-awesome \
 slack-desktop \
