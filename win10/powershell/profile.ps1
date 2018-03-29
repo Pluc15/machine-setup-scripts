@@ -1,6 +1,18 @@
-# Register custom scripts
-Set-Alias -Name "gt" -Value "$env:Dotfiles\win10\powershell\scripts\git-tree.ps1"
+# Register custom scripts and modules
+Import-Module "$env:Dotfiles\win10\powershell\scripts\git-functions.psm1"
+Import-Module "$env:Dotfiles\win10\powershell\scripts\fuzzy-history.psm1"
 Set-Alias -Name "lpass" -Value "$env:Dotfiles\win10\powershell\scripts\lpass.ps1"
+
+# Hotkeys
+#Set-PSReadlineKeyHandler -Chord Ctrl+R -Function Get-FuzzyHistory
+Set-PSReadlineKeyHandler -Key Ctrl+R `
+	-BriefDescription "FuzzyHistory" `
+	-LongDescription "FuzzyHistory" `
+	-ScriptBlock {
+	param($key, $arg)
+
+	Get-FuzzyHistory
+}
 
 # Z
 Import-Module z
@@ -20,7 +32,6 @@ Function Prompt () {
 
 # Default folder
 $CurrentLocation = Get-Location
-if($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH")
-{
+if ($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH") {
 	Set-Location $env:PSHOME
 }
