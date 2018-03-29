@@ -15,8 +15,8 @@ wm-restack = i3
 background = #88000000
 foreground = #88ffffff
 
-font-0 = hack:pixelsize=12:weight=bold;4
-font-1 = FontAwesome:pixelsize=16;4
+font-0 = Hack:bold:pixelsize=12;4
+#font-1 = Font Awesome 5 Free:pixelsize=16;4
 
 module-margin = 3
 
@@ -47,11 +47,11 @@ wrapping-scroll = true
 strip-wsnumbers = true
 pin-workspaces = true
 
-label-mode-font = 2
-label-unfocused-font = 2
-label-visible-font = 2
-label-focused-font = 2
-label-urgent-font = 2
+label-mode-font = 1
+label-unfocused-font = 1
+label-visible-font = 1
+label-focused-font = 1
+label-urgent-font = 1
 
 label-mode-padding = 5
 label-mode-foreground = #ffffffff
@@ -82,9 +82,12 @@ type = internal/volume
 format-volume = <ramp-volume> <bar-volume>
 format-muted = <label-muted> <bar-volume>
 
-label-muted = 
-ramp-volume-0 = 
-ramp-headphones-0 = 
+# label-muted = 
+# ramp-volume-0 = 
+# ramp-headphones-0 = 
+label-muted = M
+ramp-volume-0 = S
+ramp-headphones-0 = H
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -95,7 +98,8 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = 
+#bar-volume-indicator = 
+bar-volume-indicator = X
 bar-volume-fill = ─
 bar-volume-empty = ─
 
@@ -107,7 +111,8 @@ format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
 
-label-connected =  %essid%
+# label-connected =  %essid%
+label-connected = WIFI %essid%
 label-disconnected = not connected
 
 [module/battery]
@@ -123,19 +128,30 @@ format-full = <label-full>
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
-label-full =  %percentage%%
+# label-full =  %percentage%%
+label-full = F %percentage%%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+# ramp-capacity-0 = 
+# ramp-capacity-1 = 
+# ramp-capacity-2 = 
+# ramp-capacity-3 = 
+# ramp-capacity-4 = 
+ramp-capacity-0 = 0
+ramp-capacity-1 = 1
+ramp-capacity-2 = 2
+ramp-capacity-3 = 3
+ramp-capacity-4 = 4
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+# animation-charging-0 = 
+# animation-charging-1 = 
+# animation-charging-2 = 
+# animation-charging-3 = 
+# animation-charging-4 = 
+animation-charging-0 = 0
+animation-charging-1 = 1
+animation-charging-2 = 2
+animation-charging-3 = 3
+animation-charging-4 = 4
 animation-charging-framerate = 500
 
 # [module/backlight]
