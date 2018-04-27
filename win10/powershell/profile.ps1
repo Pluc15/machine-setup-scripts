@@ -1,5 +1,6 @@
 # Register custom scripts and modules
 Import-Module "$env:Dotfiles\win10\powershell\scripts\git-functions.psm1"
+Import-Module "$env:Dotfiles\win10\powershell\scripts\utils.psm1"
 Import-Module "$env:Dotfiles\win10\powershell\scripts\fuzzy-history.psm1"
 Set-Alias -Name "lpass" -Value "$env:Dotfiles\win10\powershell\scripts\lpass.ps1"
 
