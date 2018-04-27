@@ -1,6 +1,6 @@
-Function gt {
+Function ggt {
 	$fmtCommitHash = '%C(bold blue)%h%C(reset)'
-	$fmtBranch = '%C(bold yellow)%>|(40,trunc)%D%C(reset)'
+	$fmtBranch = '%C(auto)%>|(40,trunc)%D%C(reset)'
 	$fmtMessage = '%C(white)%s%C(reset)'
 	$fmtAuthor = '%C(dim white)%an%C(reset)'
 	$fmtDatetime = '%C(bold green)%ar%C(reset)'
@@ -12,24 +12,61 @@ Function gt {
 		--all
 }
 
-Function gf {
+Function ggf {
 	git fetch --all
 }
 
-Function gs {
-	git status
-}
-
-Function gpull {
+Function ggpl {
 	git pull
 }
 
-Function gpush {
+Function ggph {
 	git push
 }
 
-Export-ModuleMember -Function gt
-Export-ModuleMember -Function gf
-Export-ModuleMember -Function gs
-Export-ModuleMember -Function gpull
-Export-ModuleMember -Function gpush
+Function ggs {
+	git status 
+}
+
+Function gga($file) {
+	git add $file 
+}
+
+Function ggai {
+	git add --interactive 
+}
+
+Function ggaa {
+	git add --all 
+}
+
+Function ggc($msg) {
+	if ($msg) {
+		git commit -m $msg 
+ }
+ else {
+		git commit 
+ } 
+}
+
+Function ggca {
+	git commit --amend 
+}
+
+Function ggd {
+	git diff 
+}
+
+Function ggds {
+	git diff --staged 
+}
+
+Function ggroot {
+	Push-Location (git rev-parse --show-toplevel) 
+}
+
+Function gge {
+	gitex.cmd browse (pwd).Path
+}
+
+Export-ModuleMember -Function *
