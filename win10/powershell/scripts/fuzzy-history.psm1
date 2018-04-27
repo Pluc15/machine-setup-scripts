@@ -1,7 +1,7 @@
 Function Get-FuzzyHistory
 {
 	$PSReadlineOption = Get-PSReadlineOption
-	Get-Content -Path $PSReadlineOption.HistorySavePath | Select-Object -Unique | fzf
+	Invoke-Expression (Get-Content -Path $PSReadlineOption.HistorySavePath | fzf)
 }
 
 Export-ModuleMember -Function Get-FuzzyHistory
