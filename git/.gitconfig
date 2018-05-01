@@ -4,7 +4,7 @@
 [core]
 	autocrlf = true
 	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
-	pager = "less -S -# 5"
+	pager = "less -SN -# 5"
 [push]
 	default = simple
 [fetch]

@@ -1,5 +1,5 @@
 Function ggt {
-	$fmtCommitHash = '%C(bold blue)%h%C(reset)'
+	$fmtCommitHash = '%C(bold cyan)%h%C(reset)'
 	$fmtBranch = '%C(auto)%>|(40,trunc)%D%C(reset)'
 	$fmtMessage = '%C(white)%s%C(reset)'
 	$fmtAuthor = '%C(dim white)%an%C(reset)'
@@ -65,8 +65,8 @@ Function ggroot {
 	Push-Location (git rev-parse --show-toplevel) 
 }
 
-Function gge {
-	gitex.cmd browse (pwd).Path
+Function gge($Path) {
+	gitex.cmd browse (Resolve-Path $Path)
 }
 
 Export-ModuleMember -Function *
