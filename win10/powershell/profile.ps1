@@ -4,20 +4,29 @@ Import-Module "$env:Dotfiles\win10\powershell\scripts\utils.psm1"
 Import-Module "$env:Dotfiles\win10\powershell\scripts\fuzzy-history.psm1"
 Set-Alias -Name "lpass" -Value "$env:Dotfiles\win10\powershell\scripts\lpass.ps1"
 
+# Add machine scripts to path
+If ($env:Dotfiles_MachineScripts) {
+	$env:Path = "$env:Path$env:Dotfiles_MachineScripts;"
+}
+
+# Go to home folder if Powershell wasnt started with a specific location
+$CurrentLocation = Get-Location
+If ($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH") {
+	Set-Location $env:Dotfiles_PowershellHome
+}
+
 # Hotkeys
-#Set-PSReadlineKeyHandler -Chord Ctrl+R -Function Get-FuzzyHistory
 Set-PSReadlineKeyHandler -Key Ctrl+R `
 	-BriefDescription "FuzzyHistory" `
 	-LongDescription "FuzzyHistory" `
 	-ScriptBlock {
 	param($key, $arg)
-
 	Get-FuzzyHistory
 }
 
 # Z
 Import-Module z
-Set-Alias z Search-NavigationHistory
+Set-Alias z Search-NavigatinHistory
 
 # Prompt
 Function Prompt () {
@@ -29,10 +38,4 @@ Function Prompt () {
 	Write-Host $pwd.ProviderPath -ForegroundColor "Green"
 	Write-Host ">" -NoNewLine -ForegroundColor "DarkGray"
 	return " "
-}
-
-# Default folder
-$CurrentLocation = Get-Location
-if ($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH") {
-	Set-Location $env:PSHOME
 }

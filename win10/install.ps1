@@ -1,14 +1,18 @@
 #Requires -RunAsAdministrator
 [CmdletBinding()]
 Param(
-	[string][Parameter(Mandatory=$True)]$DefaultPowershellLocation
+	[string][Parameter(Mandatory=$True)]$PowershellHomeLocation,
+	[string]$MachineScriptsLocation
 )
 
-$env:Dotfiles = (Get-Item -Path ".\" -Verbose).FullName
+$env:Dotfiles = (Get-Item -Path "..\" -Verbose).FullName
 [Environment]::SetEnvironmentVariable("Dotfiles", $env:Dotfiles, "User")
 
-$env:PSHOME = $DefaultPowershellLocation
-[Environment]::SetEnvironmentVariable("PSHOME", $env:PSHOME, "User")
+$env:Dotfiles_PowershellHome = $PowershellHomeLocation
+[Environment]::SetEnvironmentVariable("Dotfiles_PowershellHome", $env:Dotfiles_PowershellHome, "User")
+
+$env:Dotfiles_MachineScripts = $MachineScriptsLocation
+[Environment]::SetEnvironmentVariable("Dotfiles_MachineScripts", $env:Dotfiles_MachineScripts, "User")
 
 # Link ConEmu config
 $DotfilesConEmuSettingsPath = Join-Path $env:Dotfiles "win10\conemu\ConEmu.xml"
