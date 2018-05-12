@@ -10,9 +10,11 @@ If ($env:Dotfiles_MachineScripts) {
 }
 
 # Go to home folder if Powershell wasnt started with a specific location
-$CurrentLocation = Get-Location
-If ($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH") {
-	Set-Location $env:Dotfiles_PowershellHome
+If ($env:Dotfiles_PowershellHome) {
+	$CurrentLocation = Get-Location
+	If ($CurrentLocation.Path -eq "$env:HOMEDRIVE$env:HOMEPATH") {
+		Set-Location $env:Dotfiles_PowershellHome
+	}
 }
 
 # Hotkeys
