@@ -10,7 +10,7 @@ Param(
 $ErrorActionPreference = "Stop"
 
 # Set environement variables
-$env:Dotfiles = (Get-Item -Path "$PSScriptRoot\.." -Verbose).FullName
+$env:Dotfiles = Resolve-Path "$PSScriptRoot\.."
 [Environment]::SetEnvironmentVariable("Dotfiles", $env:Dotfiles, "User")
 
 $env:Dotfiles_PowershellHome = $PowershellHomeLocation
@@ -21,7 +21,8 @@ $env:Dotfiles_MachineScripts = $MachineScriptsLocation
 
 
 # Install and update dependencies
-choco upgrade chocolatey
+cup chocolatey
+cup all
 choco install `
 	dotnet4.7.1 `
 	dotnetcore-sdk `
@@ -30,11 +31,11 @@ choco install `
 	greenshot `
 	hackfont `
 	nodejs-lts `
-	gimp `
 	powershell `
 	putty.install `
 	visualstudiocode `
-	conemu
+	conemu `
+    -y
 
 # Link configs
 Function SymlinkConfig($DotfilesRelativePath, $DestinationPath) {
