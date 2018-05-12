@@ -27,11 +27,12 @@ Set-PSReadlineKeyHandler -Key Ctrl+R `
 }
 
 # Z
-Import-Module z
+Import-Module "$env:Dotfiles\submodules\z.ps\z.psm1"
 Set-Alias z Search-NavigationHistory
 
 # Prompt
 Function Prompt () {
+	Update-NavigationHistory $pwd.Path
 	If (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 		Write-Host "[Admin]" -NoNewLine -ForegroundColor "Red"
 	}
