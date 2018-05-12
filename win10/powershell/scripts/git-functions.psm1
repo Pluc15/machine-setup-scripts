@@ -1,4 +1,4 @@
-Function ggt {
+Function ggt($Lines = 30) {
 	$fmtCommitHash = '%C(bold cyan)%h%C(reset)'
 	$fmtBranch = '%C(auto)%>|(40,trunc)%D%C(reset)'
 	$fmtMessage = '%C(white)%s%C(reset)'
@@ -9,7 +9,8 @@ Function ggt {
 		--abbrev-commit `
 		--decorate `
 		--format=format:"$fmtCommitHash $fmtBranch $fmtMessage - by $fmtAuthor $fmtDatetime" `
-		--all
+		--all `
+		-$Lines
 }
 
 Function ggf {
@@ -41,10 +42,10 @@ Function ggaa {
 }
 
 Function ggc($msg) {
-	if ($msg) {
+	If ($msg) {
 		git commit -m $msg 
  }
- else {
+ Else {
 		git commit 
  } 
 }
@@ -65,8 +66,16 @@ Function ggroot {
 	Push-Location (git rev-parse --show-toplevel) 
 }
 
-Function gge($Path) {
-	gitex.cmd browse (Resolve-Path $Path)
+Function gge(
+	[ValidateSet('browse', 'commit')]
+	$Action = "browse", 
+	$Path) {
+	if ($Path) {
+		gitex.cmd browse (Resolve-Path $Path)
+	}
+	Else {
+		gitex.cmd browse (Get-Location).Path
+	}
 }
 
 Export-ModuleMember -Function *

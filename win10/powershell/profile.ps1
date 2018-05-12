@@ -26,12 +26,12 @@ Set-PSReadlineKeyHandler -Key Ctrl+R `
 
 # Z
 Import-Module z
-Set-Alias z Search-NavigatinHistory
+Set-Alias z Search-NavigationHistory
 
 # Prompt
 Function Prompt () {
 	If (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-		Write-Host "[Admin] " -NoNewLine -ForegroundColor "Red"
+		Write-Host "[Admin]" -NoNewLine -ForegroundColor "Red"
 	}
 	Write-Host $env:COMPUTERNAME -NoNewLine -ForegroundColor "White"
 	Write-Host ":" -NoNewLine
