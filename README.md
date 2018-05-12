@@ -27,11 +27,6 @@ git pull
 sh ~/.dotfiles/arch/install.sh
 ```
 
-# Screenshot
-
-![Screenshot](https://github.com/Pluc15/dotfiles/blob/master/assets/screenshot.png?raw=true)
-
-
 # TODO
 
 | App | To do |
