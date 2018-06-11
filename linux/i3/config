@@ -45,9 +45,10 @@ bindsym $mod+BackSpace split toggle
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+bindsym $mod+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 100
+bindsym $mod+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 1
 
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
