@@ -109,6 +109,7 @@ fish -c fisher up
 # Configs
 safeln $DOTFILES/linux/fish/config.fish $HOME/.config/fish/config.fish
 safeln $DOTFILES/linux/i3/config $HOME/.config/i3/config
+safeln $DOTFILES/linux/i3/i3status.config $HOME/.config/i3status/config
 safeln $DOTFILES/linux/dunst/dunstrc $HOME/.config/dunst/dunstrc
 safeln $DOTFILES/linux/xorg/.Xresources $HOME/.Xresources
 safeln $DOTFILES/linux/xorg/.xinitrc $HOME/.xinitrc
