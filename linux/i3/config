@@ -77,10 +77,19 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+################
+## Status bar ##
+################
+bar {
+    font pango:Hack, Awesome 10
+    status_command i3status
+    strip_workspace_numbers yes
+}
+
 #############
 ## Styling ##
 #############
-font pango:monospace 12
+font pango:Hack 10
 
 # Borders
 new_window pixel 1
@@ -97,22 +106,22 @@ client.background       #ffffff
 
 # Gaps
 gaps inner 10
-gaps outer 20
+gaps outer 10
 
 ################
 ## Workspaces ##
 ################
 set $ws_misc 1:Misc
-# set $ws_web 2:
-# set $ws_term 3:
-# set $ws_ide 4:
-# set $ws_chat 5:
-# set $ws_music 6:
-set $ws_web 2:Chrome
-set $ws_term 3:Terminal
-set $ws_ide 4:Code
-set $ws_chat 5:Chat
-set $ws_music 6:Music
+set $ws_web 2:
+set $ws_term 3:
+set $ws_ide 4:
+set $ws_chat 5:
+set $ws_music 6:
+#set $ws_web 2:Chrome
+#set $ws_term 3:Terminal
+#set $ws_ide 4:Code
+#set $ws_chat 5:Chat
+#set $ws_music 6:Music
 set $ws_mon2 "Monitor 2"
 set $ws_mon3 "Monitor 3"
 
@@ -180,4 +189,4 @@ exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec_always --no-startup-id exec sh ~/.scripts/wallpaper.sh
 exec --no-startup-id nm-applet
-exec_always --no-startup-id sh ~/.scripts/polybar-launch.sh
+#exec_always --no-startup-id sh ~/.scripts/polybar-launch.sh
