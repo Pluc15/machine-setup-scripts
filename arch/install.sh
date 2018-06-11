@@ -117,7 +117,6 @@ safeln $DOTFILES/linux/xorg/.xserverrc $HOME/.xserverrc
 safeln $DOTFILES/linux/xorg/xorg.conf $HOME/.config/xorg.conf
 safeln $DOTFILES/linux/compton/compton.conf $HOME/.config/compton.conf
 safeln $DOTFILES/linux/polybar/config $HOME/.config/polybar/config
-# safeln $DOTFILES/cross/vscode/settings.json $HOME/.config/Code/User/settings.json
 safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
 
 # Global scripts
