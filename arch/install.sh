@@ -84,8 +84,7 @@ make \
 gcc \
 libmariadbclient \
 mariadb \
-ttf-font-awesome \
-ttf-font-hack
+ttf-font-awesome
 
 install_aur packer
 
@@ -95,10 +94,8 @@ google-chrome \
 spotify \
 visual-studio-code-bin \
 x2vnc-no-xinerama \
-slack-desktop \
 fisherman \
 python-pywal \
-openoffice \
 discord \
 dotnet-sdk
 

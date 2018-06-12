@@ -167,7 +167,6 @@ assign [class="URxvt"] $ws_term
 
 assign [class="Code"] $ws_ide
 
-assign [class="Slack"] $ws_chat
 assign [class="discord"] $ws_chat
 assign [class="skypeforlinux"] $ws_chat
 assign [class="Google-chrome" instance="crx_llfmpmbamlkpgegjjgbmijodcfpcjflc"] $ws_chat
