@@ -97,7 +97,6 @@ visual-studio-code-bin \
 x2vnc-no-xinerama \
 slack-desktop \
 fisherman \
-polybar \
 python-pywal \
 openoffice \
 discord \
@@ -116,14 +115,12 @@ safeln $DOTFILES/linux/xorg/.xinitrc $HOME/.xinitrc
 safeln $DOTFILES/linux/xorg/.xserverrc $HOME/.xserverrc
 safeln $DOTFILES/linux/xorg/xorg.conf $HOME/.config/xorg.conf
 safeln $DOTFILES/linux/compton/compton.conf $HOME/.config/compton.conf
-safeln $DOTFILES/linux/polybar/config $HOME/.config/polybar/config
 safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
 
 # Global scripts
 safeln $DOTFILES/linux/scripts/git-tree.sh $HOME/.scripts/git-tree.sh
 safeln $DOTFILES/linux/scripts/kb-layout-toggle.sh $HOME/.scripts/kb-layout-toggle.sh
 safeln $DOTFILES/linux/scripts/lock.sh $HOME/.scripts/lock.sh
-safeln $DOTFILES/linux/scripts/polybar-launch.sh $HOME/.scripts/polybar-launch.sh
 safeln $DOTFILES/linux/scripts/power-menu.sh $HOME/.scripts/power-menu.sh
 safeln $DOTFILES/linux/scripts/rofi-launch-lpass.fish $HOME/.scripts/rofi-launch-lpass.fish
 safeln $DOTFILES/linux/scripts/rofi-launch.sh $HOME/.scripts/rofi-launch.sh

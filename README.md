@@ -5,7 +5,7 @@ This is my complete Arch Linux setup. My goal is to have a simple and efficient 
 | Role | App |
 |-|-|
 | Window Manager | i3 |
-| Status Bar | polybar |
+| Status Bar | i3status |
 | App Launcher | rofi |
 | File manager | ranger |
 | Notifications | dunst |
