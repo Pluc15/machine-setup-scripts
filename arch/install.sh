@@ -1,16 +1,10 @@
 #!/bin/sh
-DOTFILES=`pwd`/`dirname $0`/..
+
+DOTFILES=`dirname $0`/..
 DOTFILES=`realpath $DOTFILES`
 
-function install_aur {
-	if [ ! -d "$HOME/.aur/$1" ]
-	then
-  	git clone https://aur.archlinux.org/$1.git $HOME/.aur/$1
-	fi
-	pushd $HOME/.aur/$1
-	git pull
-	makepkg -si --noconfirm --needed
-	popd
+function echoStep {
+	echo -e "\e[33m== $1 ==\e[0m"
 }
 
 function safeln {
@@ -25,9 +19,33 @@ function sudosafeln {
 	sudo ln -fs $1 $2
 }
 
+echoStep "Linking pacman mirror files"
 sudosafeln $DOTFILES/arch/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
+echoStep "Linking configuraion files"
+safeln $DOTFILES/linux/fish/config.fish $HOME/.config/fish/config.fish
+safeln $DOTFILES/linux/i3/config $HOME/.config/i3/config
+safeln $DOTFILES/linux/i3/i3status.config $HOME/.config/i3status/config
+safeln $DOTFILES/linux/dunst/dunstrc $HOME/.config/dunst/dunstrc
+safeln $DOTFILES/linux/xorg/.Xresources $HOME/.Xresources
+safeln $DOTFILES/linux/xorg/.xinitrc $HOME/.xinitrc
+safeln $DOTFILES/linux/xorg/.xserverrc $HOME/.xserverrc
+safeln $DOTFILES/linux/xorg/xorg.conf $HOME/.config/xorg.conf
+safeln $DOTFILES/linux/compton/compton.conf $HOME/.config/compton.conf
+safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
+
+echoStep "Linking scripts"
+safeln $DOTFILES/linux/scripts/git-tree $HOME/.scripts/git-tree
+safeln $DOTFILES/linux/scripts/kb-layout-toggle $HOME/.scripts/kb-layout-toggle
+safeln $DOTFILES/linux/scripts/lock $HOME/.scripts/lock
+safeln $DOTFILES/linux/scripts/power-menu $HOME/.scripts/power-menu
+safeln $DOTFILES/linux/scripts/rofi-launch $HOME/.scripts/rofi-launch
+safeln $DOTFILES/linux/scripts/spotify-current-song $HOME/.scripts/spotify-current-song
+safeln $DOTFILES/linux/scripts/wallpaper $HOME/.scripts/wallpaper
+
+echoStep "Updating official repository packages"
 sudo pacman -Syuq --noconfirm --needed
+echoStep "Installing new official repository packages"
 sudo pacman -Sq --needed --noconfirm \
 fish \
 curl \
@@ -84,43 +102,35 @@ make \
 gcc \
 libmariadbclient \
 mariadb \
-ttf-font-awesome
+ttf-font-awesome \
+python-pywal \
+dotnet-sdk
 
-install_aur packer
+if [ ! -d "$HOME/.aur/packer" ]
+then
+	echoStep "Installing packer"
+	git clone https://aur.archlinux.org/packer.git $HOME/.aur/$1
+	pushd $HOME/.aur/packer
+else
+	echoStep "Updating packer"
+	pushd $HOME/.aur/packer
+	git pull
+fi
+makepkg -si --noconfirm --needed
+popd
 
+echoStep "Updating AUR packages"
 packer -Syuq --noconfirm
+echoStep "Installing new AUR packages"
 packer -S --noconfirm \
 google-chrome \
 spotify \
 visual-studio-code-bin \
 x2vnc-no-xinerama \
 fisherman \
-python-pywal \
-discord \
-dotnet-sdk
+discord
 
-fish -c fisher z fzf
+echoStep "Updating fish packages"
 fish -c fisher up
-
-# Configs
-safeln $DOTFILES/linux/fish/config.fish $HOME/.config/fish/config.fish
-safeln $DOTFILES/linux/i3/config $HOME/.config/i3/config
-safeln $DOTFILES/linux/i3/i3status.config $HOME/.config/i3status/config
-safeln $DOTFILES/linux/dunst/dunstrc $HOME/.config/dunst/dunstrc
-safeln $DOTFILES/linux/xorg/.Xresources $HOME/.Xresources
-safeln $DOTFILES/linux/xorg/.xinitrc $HOME/.xinitrc
-safeln $DOTFILES/linux/xorg/.xserverrc $HOME/.xserverrc
-safeln $DOTFILES/linux/xorg/xorg.conf $HOME/.config/xorg.conf
-safeln $DOTFILES/linux/compton/compton.conf $HOME/.config/compton.conf
-safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
-
-# Global scripts
-safeln $DOTFILES/linux/scripts/git-tree.sh $HOME/.scripts/git-tree.sh
-safeln $DOTFILES/linux/scripts/kb-layout-toggle.sh $HOME/.scripts/kb-layout-toggle.sh
-safeln $DOTFILES/linux/scripts/lock.sh $HOME/.scripts/lock.sh
-safeln $DOTFILES/linux/scripts/power-menu.sh $HOME/.scripts/power-menu.sh
-safeln $DOTFILES/linux/scripts/rofi-launch-lpass.fish $HOME/.scripts/rofi-launch-lpass.fish
-safeln $DOTFILES/linux/scripts/rofi-launch.sh $HOME/.scripts/rofi-launch.sh
-safeln $DOTFILES/linux/scripts/rofi-modi-lpass.sh $HOME/.scripts/rofi-modi-lpass.sh
-safeln $DOTFILES/linux/scripts/spotify-current-song.sh $HOME/.scripts/spotify-current-song.sh
-safeln $DOTFILES/linux/scripts/wallpaper.sh $HOME/.scripts/wallpaper.sh
+echoStep "Installing new fish packages"
+fish -c fisher z fzf

@@ -10,21 +10,19 @@ set $mon3 eDP-1
 floating_modifier $mod
 focus_follows_mouse no
 
-bindsym $mod+Escape exec --no-startup-id sh ~/.scripts/lock.sh
-bindsym $mod+Shift+Escape exec --no-startup-id sh ~/.scripts/power-menu.sh
+bindsym $mod+Escape exec --no-startup-id ~/.scripts/lock
+bindsym $mod+Shift+Escape exec --no-startup-id ~/.scripts/power-menu
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+i exec --no-startup-id sh ~/.scripts/xprop.sh
 
 bindsym $mod+q kill
 
-bindsym $mod+d exec --no-startup-id sh ~/.scripts/rofi-launch.sh
-bindsym $mod+p exec --no-startup-id sh ~/.scripts/rofi-launch-lpass.sh
+bindsym $mod+d exec --no-startup-id ~/.scripts/rofi-launch
 
 bindsym $mod+Return exec --no-startup-id urxvt
 
-bindsym $mod+space exec --no-startup-id sh ~/.scripts/kb-layout-toggle.sh
+bindsym $mod+space exec --no-startup-id ~/.scripts/kb-layout-toggle
 
 bindsym Print exec --no-startup-id scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym $mod+Print exec --no-startup-id scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
@@ -67,6 +65,14 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 mode "resize" {
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
     bindsym h resize shrink width 10 px or 10 ppt
     bindsym j resize grow height 10 px or 10 ppt
     bindsym k resize shrink height 10 px or 10 ppt
@@ -95,8 +101,8 @@ bar {
 font pango:Hack 10
 
 # Borders
-new_window pixel 1
-new_float pixel 1
+new_window pixel 2
+new_float pixel 2
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -104,12 +110,11 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
 client.background       #ffffff
 
 # Gaps
-gaps inner 10
-gaps outer 10
+# gaps inner 10
+# gaps outer 10
 
 ################
 ## Workspaces ##
@@ -189,5 +194,5 @@ for_window [class="Xdialog"] floating enable
 exec --no-startup-id compton
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec_always --no-startup-id exec sh ~/.scripts/wallpaper.sh
+exec_always --no-startup-id exec ~/.scripts/wallpaper
 exec --no-startup-id nm-applet
