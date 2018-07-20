@@ -20,28 +20,28 @@ function sudosafeln {
 }
 
 echoStep "Linking pacman mirror files"
-sudosafeln $DOTFILES/arch/pacman/mirrorlist /etc/pacman.d/mirrorlist
+sudosafeln $DOTFILES/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
 echoStep "Linking configuraion files"
-safeln $DOTFILES/linux/fish/config.fish $HOME/.config/fish/config.fish
-safeln $DOTFILES/linux/i3/config $HOME/.config/i3/config
-safeln $DOTFILES/linux/i3/i3status.config $HOME/.config/i3status/config
-safeln $DOTFILES/linux/dunst/dunstrc $HOME/.config/dunst/dunstrc
-safeln $DOTFILES/linux/xorg/.Xresources $HOME/.Xresources
-safeln $DOTFILES/linux/xorg/.xinitrc $HOME/.xinitrc
-safeln $DOTFILES/linux/xorg/.xserverrc $HOME/.xserverrc
-safeln $DOTFILES/linux/xorg/xorg.conf $HOME/.config/xorg.conf
-safeln $DOTFILES/linux/compton/compton.conf $HOME/.config/compton.conf
+safeln $DOTFILES/fish/config.fish $HOME/.config/fish/config.fish
+safeln $DOTFILES/i3/config $HOME/.config/i3/config
+safeln $DOTFILES/i3/i3status.config $HOME/.config/i3status/config
+safeln $DOTFILES/dunst/dunstrc $HOME/.config/dunst/dunstrc
+safeln $DOTFILES/xorg/.Xresources $HOME/.Xresources
+safeln $DOTFILES/xorg/.xinitrc $HOME/.xinitrc
+safeln $DOTFILES/xorg/.xserverrc $HOME/.xserverrc
+safeln $DOTFILES/xorg/xorg.conf $HOME/.config/xorg.conf
+safeln $DOTFILES/compton/compton.conf $HOME/.config/compton.conf
 safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
 
 echoStep "Linking scripts"
-safeln $DOTFILES/linux/scripts/git-tree $HOME/.scripts/git-tree
-safeln $DOTFILES/linux/scripts/kb-layout-toggle $HOME/.scripts/kb-layout-toggle
-safeln $DOTFILES/linux/scripts/lock $HOME/.scripts/lock
-safeln $DOTFILES/linux/scripts/power-menu $HOME/.scripts/power-menu
-safeln $DOTFILES/linux/scripts/rofi-launch $HOME/.scripts/rofi-launch
-safeln $DOTFILES/linux/scripts/spotify-current-song $HOME/.scripts/spotify-current-song
-safeln $DOTFILES/linux/scripts/wallpaper $HOME/.scripts/wallpaper
+safeln $DOTFILES/scripts/git-tree $HOME/.scripts/git-tree
+safeln $DOTFILES/scripts/kb-layout-toggle $HOME/.scripts/kb-layout-toggle
+safeln $DOTFILES/scripts/lock $HOME/.scripts/lock
+safeln $DOTFILES/scripts/power-menu $HOME/.scripts/power-menu
+safeln $DOTFILES/scripts/rofi-launch $HOME/.scripts/rofi-launch
+safeln $DOTFILES/scripts/spotify-current-song $HOME/.scripts/spotify-current-song
+safeln $DOTFILES/scripts/wallpaper $HOME/.scripts/wallpaper
 
 echoStep "Updating official repository packages"
 sudo pacman -Syuq --noconfirm --needed

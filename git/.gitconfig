@@ -2,8 +2,6 @@
 	name = Pier-Luc Michaud
 	email = pier-luc.michaud@mediaclip.ca
 [core]
-	autocrlf = true
-	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
 	pager = "less -SN -# 5"
 [push]
 	default = simple

@@ -3,7 +3,7 @@ if [ -z "$DISPLAY" ]; and [ -n "$XDG_VTNR" ]; and [ "$XDG_VTNR" -eq 1 ]
 end
 
 set PATH $HOME/.scripts $PATH
-alias ggt "sh git-tree.sh"
+alias ggt "git-tree"
 alias ggs "git status"
 alias ggph "git push"
 alias ggpl "git pull"

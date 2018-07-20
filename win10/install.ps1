@@ -47,8 +47,8 @@ Function SymlinkConfig($DotfilesRelativePath, $DestinationPath) {
 	}
 	New-Item -Path $DestinationPath -ItemType SymbolicLink -Value $DotfilesAbsolutePath
 }
-SymlinkConfig "win10\conemu\ConEmu.xml" "$env:AppData\ConEmu.xml"
+SymlinkConfig "conemu\ConEmu.xml" "$env:AppData\ConEmu.xml"
 SymlinkConfig "git\.gitconfig" "$env:HOMEDRIVE$env:HOMEPATH\.gitconfig"
 
 # Install Powershell profile
-Write-Output "Invoke-Expression `". `$env:Dotfiles\win10\powershell\profile.ps1`"" > $PROFILE
+Write-Output "Invoke-Expression `". `$env:Dotfiles\powershell\profile.ps1`"" > $PROFILE
