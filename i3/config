@@ -178,10 +178,10 @@ assign [class="Google-chrome" instance="crx_llfmpmbamlkpgegjjgbmijodcfpcjflc"] $
 
 assign [class="Spotify"] $ws_music
 
-assign [class=".*" window_type="normal"] $ws_misc
+# assign [class=".*" window_type="normal"] $ws_misc
 
-for_window [class=".*"] focus
-focus_on_window_activation focus
+# for_window [class=".*"] focus
+# focus_on_window_activation focus
 
 #####################
 ## Special windows ##
