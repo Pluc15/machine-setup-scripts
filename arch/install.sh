@@ -75,6 +75,7 @@ gimp \
 transmission-qt \
 qt4 \
 thunar \
+tumbler \
 xorg-xrandr \
 arandr \
 compton \
