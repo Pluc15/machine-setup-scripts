@@ -107,23 +107,23 @@ ttf-font-awesome \
 python-pywal \
 dotnet-sdk
 
-if [ ! -d "$HOME/.aur/packer" ]
+if [ ! -d "$HOME/.aur/packer-aur" ]
 then
-	echoStep "Installing packer"
-	git clone https://aur.archlinux.org/packer.git $HOME/.aur/$1
-	pushd $HOME/.aur/packer
+	echoStep "Installing packer-aur"
+	git clone https://aur.archlinux.org/packer-aur.git $HOME/.aur/$1
+	pushd $HOME/.aur/packer-aur
 else
-	echoStep "Updating packer"
-	pushd $HOME/.aur/packer
+	echoStep "Updating packer-aur"
+	pushd $HOME/.aur/packer-aur
 	git pull
 fi
 makepkg -si --noconfirm --needed
 popd
 
 echoStep "Updating AUR packages"
-packer -Syuq --noconfirm
+packer-aur -Syuq --noconfirm
 echoStep "Installing new AUR packages"
-packer -S --noconfirm \
+packer-aur -S --noconfirm \
 google-chrome \
 spotify \
 visual-studio-code-bin \
