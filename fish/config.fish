@@ -3,6 +3,8 @@ if [ -z "$DISPLAY" ]; and [ -n "$XDG_VTNR" ]; and [ "$XDG_VTNR" -eq 1 ]
 end
 
 set PATH $HOME/.scripts $PATH
+set PATH $HOME/.dotnet/tools $PATH
+
 alias ggt "git-tree"
 alias ggs "git status"
 alias ggph "git push"
