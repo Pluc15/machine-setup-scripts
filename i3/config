@@ -186,6 +186,7 @@ assign [class="Spotify"] $ws_music
 #####################
 ## Special windows ##
 #####################
+for_window [class="[.]*"] floating disable
 for_window [class="Xdialog"] floating enable
 
 #############
