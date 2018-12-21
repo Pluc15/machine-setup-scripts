@@ -1,22 +1,25 @@
 [user]
 	name = Pier-Luc Michaud
-	email = pier-luc.michaud@mediaclip.ca
+	email = pluc.m@outlook.com
 [core]
+	autocrlf = true
+	editor = code --wait
 	pager = "less -SN -# 5"
-[push]
-	default = simple
 [fetch]
 	prune = true
 [diff]
 	tool = vscode
-	guitool = vscode
-[merge]
-	tool = vscode
 [difftool]
-	prompt = false
-[mergetool]
 	prompt = false
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool]
+	prompt = false
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+[gc]
+	auto = 0
+[push]
+	default = simple
