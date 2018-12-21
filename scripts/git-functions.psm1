@@ -1,6 +1,6 @@
-Function ggt($Lines = 30) {
+Function ggt($Lines = 200) {
 	$fmtCommitHash = '%C(bold cyan)%h%C(reset)'
-	$fmtBranch = '%C(auto)%>|(40,trunc)%D%C(reset)'
+	$fmtBranch = '%C(auto)%D%C(reset)'
 	$fmtMessage = '%C(white)%s%C(reset)'
 	$fmtAuthor = '%C(dim white)%an%C(reset)'
 	$fmtDatetime = '%C(bold green)%ar%C(reset)'

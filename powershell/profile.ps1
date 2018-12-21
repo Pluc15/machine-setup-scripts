@@ -3,10 +3,11 @@ Import-Module "$env:Dotfiles\win10\powershell\scripts\git-functions.psm1"
 Import-Module "$env:Dotfiles\win10\powershell\scripts\utils.psm1"
 Import-Module "$env:Dotfiles\win10\powershell\scripts\fuzzy-history.psm1"
 Set-Alias -Name "lpass" -Value "$env:Dotfiles\win10\powershell\scripts\lpass.ps1"
+Set-Alias -Name "grep" -Value "findstr"
 
 # Add machine scripts to path
 If ($env:Dotfiles_MachineScripts) {
-	$env:Path = "$env:Path$env:Dotfiles_MachineScripts;"
+	$env:Path = "$env:Path;$env:Dotfiles_MachineScripts"
 }
 
 # Go to home folder if Powershell wasnt started with a specific location
@@ -37,7 +38,7 @@ Function Prompt () {
 		Write-Host "[Admin]" -NoNewLine -ForegroundColor "Red"
 	}
 	Write-Host $env:COMPUTERNAME -NoNewLine -ForegroundColor "White"
-	Write-Host ":" -NoNewLine
+	Write-Host ": " -NoNewLine
 	Write-Host $pwd.ProviderPath -ForegroundColor "Green"
 	Write-Host ">" -NoNewLine -ForegroundColor "DarkGray"
 	return " "
