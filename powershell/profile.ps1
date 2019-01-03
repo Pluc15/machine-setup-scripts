@@ -1,9 +1,12 @@
 # Register custom scripts and modules
-Import-Module "$env:Dotfiles\win10\powershell\scripts\git-functions.psm1"
-Import-Module "$env:Dotfiles\win10\powershell\scripts\utils.psm1"
-Import-Module "$env:Dotfiles\win10\powershell\scripts\fuzzy-history.psm1"
-Set-Alias -Name "lpass" -Value "$env:Dotfiles\win10\powershell\scripts\lpass.ps1"
+Import-Module "$env:Dotfiles\powershell\scripts\git-functions.psm1"
+Import-Module "$env:Dotfiles\powershell\scripts\utils.psm1"
+Import-Module "$env:Dotfiles\powershell\scripts\fuzzy-history.psm1"
+Import-Module "$env:Dotfiles\powershell\scripts\lpass.psm1"
+Import-Module "$env:Dotfiles\submodules\z.ps\z.psm1"
+Set-Alias -Name "lpass" -Value "Get-LastPass"
 Set-Alias -Name "grep" -Value "findstr"
+Set-Alias z Search-NavigationHistory
 
 # Add machine scripts to path
 If ($env:Dotfiles_MachineScripts) {
@@ -26,10 +29,6 @@ Set-PSReadlineKeyHandler -Key Ctrl+R `
 	param($key, $arg)
 	Get-FuzzyHistory
 }
-
-# Z
-Import-Module "$env:Dotfiles\submodules\z.ps\z.psm1"
-Set-Alias z Search-NavigationHistory
 
 # Prompt
 Function Prompt () {

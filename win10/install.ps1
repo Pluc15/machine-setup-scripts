@@ -19,23 +19,6 @@ $env:Dotfiles_PowershellHome = $PowershellHomeLocation
 $env:Dotfiles_MachineScripts = $MachineScriptsLocation
 [Environment]::SetEnvironmentVariable("Dotfiles_MachineScripts", $env:Dotfiles_MachineScripts, "User")
 
-# Install and update dependencies
-cup all
-choco install `
-	dotnet4.7.1 `
-	dotnetcore-sdk `
-	fzf `
-	git.install `
-	greenshot `
-	hackfont `
-	nodejs-lts `
-	powershell `
-	putty.install `
-	visualstudiocode `
-	conemu `
-	7zip.install `
-	-y
-
 $env:Dotfiles_MachineScripts = $MachineScriptsLocation
 [Environment]::SetEnvironmentVariable("Dotfiles_MachineScripts", $env:Dotfiles_MachineScripts, "User")
 
@@ -47,6 +30,7 @@ Function SymlinkConfig($DotfilesRelativePath, $DestinationPath) {
 	}
 	New-Item -Path $DestinationPath -ItemType SymbolicLink -Value $DotfilesAbsolutePath
 }
+
 SymlinkConfig "conemu\ConEmu.xml" "$env:AppData\ConEmu.xml"
 SymlinkConfig "git\.gitconfig" "$env:HOMEDRIVE$env:HOMEPATH\.gitconfig"
 
