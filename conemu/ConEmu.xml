@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2018-04-20 16:42:03" build="161206">
+		<key name=".Vanilla" modified="2018-12-07 09:17:33" build="161206">
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
 			<value name="StartTasksFile" type="string" data=""/>
-			<value name="StartTasksName" type="string" data="{MyNewSetup}"/>
+			<value name="StartTasksName" type="string" data="{MySetup}"/>
 			<value name="StartFarFolders" type="hex" data="00"/>
 			<value name="StartFarEditors" type="hex" data="00"/>
 			<value name="StartCreateDelay" type="ulong" data="100"/>
@@ -97,6 +97,8 @@
 			<value name="JumpListAutoUpdate" type="hex" data="01"/>
 			<value name="SaveCmdHistory" type="hex" data="01"/>
 			<value name="CmdLineHistory" type="multi">
+				<line data="{MySetup}"/>
+				<line data="powershell.exe"/>
 				<line data="{Shells::PowerShell}"/>
 				<line data="{Shells::Bash}"/>
 				<line data="{Shells::cmd}"/>
@@ -305,7 +307,7 @@
 			<value name="StatusBar.Hide.Title" type="hex" data="01"/>
 			<value name="StatusBar.Hide.Time" type="hex" data="01"/>
 			<value name="StatusBar.Hide.Resize" type="hex" data="00"/>
-			<value name="Tabs" type="hex" data="01"/>
+			<value name="Tabs" type="hex" data="00"/>
 			<value name="TabsLocation" type="hex" data="00"/>
 			<value name="TabIcons" type="hex" data="01"/>
 			<value name="OneTabPerGroup" type="hex" data="00"/>
@@ -404,7 +406,7 @@
 			<value name="Update.DownloadPath" type="string" data="%TEMP%\ConEmu"/>
 			<value name="Update.LeavePackages" type="hex" data="00"/>
 			<value name="Update.PostUpdateCmd" type="string" data="echo Last successful update&gt;ConEmuUpdate.info &amp;&amp; date /t&gt;&gt;ConEmuUpdate.info &amp;&amp; time /t&gt;&gt;ConEmuUpdate.info"/>
-			<key name="HotKeys" modified="2018-03-12 15:07:30" build="161206">
+			<key name="HotKeys" modified="2018-12-07 09:17:33" build="161206">
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="0000005b"/>
 				<value name="Multi.ArrowsModifier" type="dword" data="0000005b"/>
@@ -589,9 +591,9 @@
 				<value name="DndRKey" type="hex" data="a2"/>
 				<value name="WndDragKey" type="dword" data="00121101"/>
 			</key>
-			<key name="Tasks" modified="2018-03-12 15:07:30" build="161206">
-				<value name="Count" type="long" data="13"/>
-				<key name="Task1" modified="2018-03-12 15:07:30" build="161206">
+			<key name="Tasks" modified="2018-12-21 10:00:50" build="161206">
+				<value name="Count" type="long" data="6"/>
+				<key name="Task1" modified="2018-12-21 10:00:50" build="161206">
 					<value name="Name" type="string" data="{Shells::PowerShell}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00101131"/>
@@ -600,7 +602,7 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task2" modified="2018-03-12 15:07:30" build="161206">
+				<key name="Task2" modified="2018-12-21 10:00:50" build="161206">
 					<value name="Name" type="string" data="{Shells::PowerShell (Admin)}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00101132"/>
@@ -609,8 +611,8 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task3" modified="2018-03-12 15:07:30" build="161206">
-					<value name="Name" type="string" data="{Shells::Fish}"/>
+				<key name="Task3" modified="2018-12-21 10:00:50" build="161206">
+					<value name="Name" type="string" data="{Shells::Ubuntu Subsystem &gt; Fish}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00101133"/>
 					<value name="GuiArgs" type="string" data="-icon &quot;%USERPROFILE%\AppData\Local\lxss\bash.ico&quot;"/>
@@ -618,25 +620,7 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task4" modified="2018-03-12 15:07:30" build="161206">
-					<value name="Name" type="string" data="{Shells::cmd}"/>
-					<value name="Flags" type="dword" data="00000004"/>
-					<value name="Hotkey" type="dword" data="00000000"/>
-					<value name="GuiArgs" type="string" data=""/>
-					<value name="Cmd1" type="string" data="cmd.exe /k &quot;%ConEmuBaseDir%\CmdInit.cmd&quot;"/>
-					<value name="Active" type="long" data="0"/>
-					<value name="Count" type="long" data="1"/>
-				</key>
-				<key name="Task5" modified="2018-03-12 15:07:30" build="161206">
-					<value name="Name" type="string" data="{Shells::cmd (Admin)}"/>
-					<value name="Flags" type="dword" data="00000004"/>
-					<value name="Hotkey" type="dword" data="00000000"/>
-					<value name="GuiArgs" type="string" data=""/>
-					<value name="Cmd1" type="string" data="cmd.exe /k &quot;%ConEmuBaseDir%\CmdInit.cmd&quot; -new_console:a"/>
-					<value name="Active" type="long" data="0"/>
-					<value name="Count" type="long" data="1"/>
-				</key>
-				<key name="Task6" modified="2018-03-12 15:07:30" build="161206">
+				<key name="Task4" modified="2018-12-21 10:00:50" build="161206">
 					<value name="Name" type="string" data="{Shells::Git bash}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
@@ -645,7 +629,7 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task7" modified="2018-03-12 15:07:30" build="161206">
+				<key name="Task5" modified="2018-12-21 10:00:50" build="161206">
 					<value name="Name" type="string" data="{Putty}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
@@ -654,7 +638,28 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task8" modified="2018-03-12 15:07:30" build="161206">
+				<key name="Task6" modified="2018-12-21 10:00:50" build="161206">
+					<value name="Name" type="string" data="{MySetup}"/>
+					<value name="Flags" type="dword" data="00000007"/>
+					<value name="Hotkey" type="dword" data="00000000"/>
+					<value name="GuiArgs" type="string" data=""/>
+					<value name="Cmd1" type="string" data="&gt; powershell.exe"/>
+					<value name="Active" type="long" data="1"/>
+					<value name="Count" type="long" data="4"/>
+					<value name="Cmd2" type="string" data="%windir%\system32\bash.exe -c &quot;/usr/bin/fish&quot; -cur_console:pm:/mnt  -new_console:s1T50H"/>
+					<value name="Cmd3" type="string" data="*powershell.exe -new_console:s1T20V"/>
+					<value name="Cmd4" type="string" data="%windir%\system32\bash.exe -c &quot;/usr/bin/fish&quot; -cur_console:pm:/mnt -new_console:s2T50V"/>
+				</key>
+				<key name="Task7" modified="2018-12-07 09:17:33" build="161206">
+					<value name="Name" type="string" data="{Putty}"/>
+					<value name="Flags" type="dword" data="00000004"/>
+					<value name="Hotkey" type="dword" data="00000000"/>
+					<value name="GuiArgs" type="string" data=""/>
+					<value name="Cmd1" type="string" data="Putty.exe"/>
+					<value name="Active" type="long" data="0"/>
+					<value name="Count" type="long" data="1"/>
+				</key>
+				<key name="Task8" modified="2018-12-07 09:17:33" build="161206">
 					<value name="Name" type="string" data="{Shells::cmd-32}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
@@ -663,7 +668,7 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task9" modified="2018-03-12 15:07:30" build="161206">
+				<key name="Task9" modified="2018-12-07 09:17:33" build="161206">
 					<value name="Name" type="string" data="{Shells::cmd 64/32}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
@@ -673,7 +678,7 @@
 					<value name="Active" type="long" data="1"/>
 					<value name="Count" type="long" data="2"/>
 				</key>
-				<key name="Task10" modified="2018-03-12 15:07:30" build="161206">
+				<key name="Task10" modified="2018-12-07 09:17:33" build="161206">
 					<value name="Name" type="string" data="{Helper::Show ANSI colors}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
@@ -682,14 +687,18 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 				</key>
-				<key name="Task11" modified="2018-03-12 15:07:30" build="161206">
-					<value name="Name" type="string" data="{Tools::Chocolatey (Admin)}"/>
+				<key name="Task11" modified="2018-12-07 09:17:33" build="161206">
+					<value name="Name" type="string" data="{MySetup}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
-					<value name="Cmd1" type="string" data="*cmd.exe /k Title Chocolatey &amp; &quot;%ConEmuBaseDir%\Addons\ChocolateyAbout.cmd&quot;"/>
-					<value name="Active" type="long" data="0"/>
-					<value name="Count" type="long" data="1"/>
+					<value name="Cmd1" type="string" data="&gt; powershell.exe"/>
+					<value name="Active" type="long" data="1"/>
+					<value name="Count" type="long" data="4"/>
+					<value name="Cmd2" type="string" data="&quot;%ConEmuDir%\..\Git\git-cmd.exe&quot; --no-cd --command=usr/bin/bash.exe -l -i -new_console:s1T50H"/>
+					<value name="Cmd3" type="string" data="*powershell.exe -new_console:s1T20V"/>
+					<value name="Cmd4" type="string" data="%windir%\system32\bash.exe -c &quot;/usr/bin/fish&quot; -cur_console:pm:/mnt -new_console:s2T20V"/>
+					<value name="Cmd5" type="string" data="&quot;%ConEmuDir%\..\Git\git-cmd.exe&quot; --no-cd --command=usr/bin/bash.exe -l -i -new_console:s4T50V"/>
 				</key>
 				<key name="Task12" modified="2018-03-12 15:07:30" build="161206">
 					<value name="Name" type="string" data="{MySetup}"/>
@@ -718,10 +727,10 @@
 					<value name="Cmd5" type="string" data="%windir%\system32\bash.exe -c &quot;/usr/bin/fish&quot; -cur_console:pm:/mnt -new_console:s4T50V"/>
 				</key>
 			</key>
-			<key name="Apps" modified="2018-03-29 08:58:35" build="161206">
+			<key name="Apps" modified="2018-12-21 10:00:50" build="161206">
 				<value name="Count" type="long" data="0"/>
 			</key>
-			<key name="Colors" modified="2018-03-29 08:58:35" build="161206">
+			<key name="Colors" modified="2018-12-21 10:00:50" build="161206">
 				<value name="Count" type="long" data="0"/>
 			</key>
 		</key>
