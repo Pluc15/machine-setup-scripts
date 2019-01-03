@@ -23,7 +23,6 @@ echoStep "Linking pacman mirror files"
 sudosafeln $DOTFILES/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
 echoStep "Linking configuraion files"
-safeln $DOTFILES/fish/config.fish $HOME/.config/fish/config.fish
 safeln $DOTFILES/i3/config $HOME/.config/i3/config
 safeln $DOTFILES/i3/i3status.config $HOME/.config/i3status/config
 safeln $DOTFILES/dunst/dunstrc $HOME/.config/dunst/dunstrc
@@ -42,6 +41,17 @@ safeln $DOTFILES/scripts/power-menu $HOME/.scripts/power-menu
 safeln $DOTFILES/scripts/rofi-launch $HOME/.scripts/rofi-launch
 safeln $DOTFILES/scripts/spotify-current-song $HOME/.scripts/spotify-current-song
 safeln $DOTFILES/scripts/wallpaper $HOME/.scripts/wallpaper
+
+echoStep "Setup Fish"
+copy $DOTFILES/fish/config.fish $HOME/.config/fish/config.fish
+echo 'if [ -z "$DISPLAY" ]; and [ -n "$XDG_VTNR" ]; and [ "$XDG_VTNR" -eq 1 ]'
+echo '  exec startx'
+echo 'end'
+echo 'alias paci "pacman -S $argv"'
+echo 'alias pacr "pacman -Rsn $argv"'
+echo 'alias pacl "pacman -Qqe"'
+echo 'alias pacuall "pacman -Syu"'
+echo 'alias paclaur "pacman -Qm"'
 
 echoStep "Updating official repository packages"
 sudo pacman -Syuq --noconfirm --needed
