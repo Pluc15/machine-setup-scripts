@@ -44,14 +44,14 @@ safeln $DOTFILES/scripts/wallpaper $HOME/.scripts/wallpaper
 
 echoStep "Setup Fish"
 copy $DOTFILES/fish/config.fish $HOME/.config/fish/config.fish
-echo 'if [ -z "$DISPLAY" ]; and [ -n "$XDG_VTNR" ]; and [ "$XDG_VTNR" -eq 1 ]'
-echo '  exec startx'
-echo 'end'
-echo 'alias paci "pacman -S $argv"'
-echo 'alias pacr "pacman -Rsn $argv"'
-echo 'alias pacl "pacman -Qqe"'
-echo 'alias pacuall "pacman -Syu"'
-echo 'alias paclaur "pacman -Qm"'
+echo 'if [ -z "$DISPLAY" ]; and [ -n "$XDG_VTNR" ]; and [ "$XDG_VTNR" -eq 1 ]' >> $HOME/.config/fish/config.fish
+echo '  exec startx' >> $HOME/.config/fish/config.fish
+echo 'end' >> $HOME/.config/fish/config.fish
+echo 'alias paci "pacman -S $argv"' >> $HOME/.config/fish/config.fish
+echo 'alias pacr "pacman -Rsn $argv"' >> $HOME/.config/fish/config.fish
+echo 'alias pacl "pacman -Qqe"' >> $HOME/.config/fish/config.fish
+echo 'alias pacuall "pacman -Syu"' >> $HOME/.config/fish/config.fish
+echo 'alias paclaur "pacman -Qm"' >> $HOME/.config/fish/config.fish
 
 echoStep "Updating official repository packages"
 sudo pacman -Syuq --noconfirm --needed
