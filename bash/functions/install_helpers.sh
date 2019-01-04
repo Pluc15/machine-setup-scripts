@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echoStep() {
-	echo -e "\e[33m== $1 ==\e[0m"
+	echo -e "== $1 =="
 }
 
 safeln() {

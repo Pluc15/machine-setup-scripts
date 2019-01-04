@@ -3,7 +3,7 @@
 DOTFILES=`dirname $0`/..
 DOTFILES=`realpath $DOTFILES`
 
-source $DOTFILES/bash/install_helpers.sh
+source $DOTFILES/bash/functions/install_helpers.sh
 
 echoStep "Linking pacman mirror files"
 sudosafeln $DOTFILES/arch/pacman_mirrorlist /etc/pacman.d/mirrorlist

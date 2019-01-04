@@ -1,7 +1,8 @@
 #!/bin/sh
+
 DOTFILES=`dirname $0`
 DOTFILES=`realpath $DOTFILES/..`
-. "$DOTFILES/bash/install_helpers.sh"
+. "$DOTFILES/bash/functions/install_helpers.sh"
 
 echoStep "Updating package repositories"
 sudo apt-get update
