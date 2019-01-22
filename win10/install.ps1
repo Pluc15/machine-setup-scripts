@@ -19,9 +19,6 @@ $env:Dotfiles_PowershellHome = $PowershellHomeLocation
 $env:Dotfiles_MachineScripts = $MachineScriptsLocation
 [Environment]::SetEnvironmentVariable("Dotfiles_MachineScripts", $env:Dotfiles_MachineScripts, "User")
 
-$env:Dotfiles_MachineScripts = $MachineScriptsLocation
-[Environment]::SetEnvironmentVariable("Dotfiles_MachineScripts", $env:Dotfiles_MachineScripts, "User")
-
 # Link configs
 Function SymlinkConfig($DotfilesRelativePath, $DestinationPath) {
 	$DotfilesAbsolutePath = Join-Path $env:Dotfiles $DotfilesRelativePath

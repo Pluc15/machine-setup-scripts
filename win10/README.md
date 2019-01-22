@@ -1,22 +1,17 @@
 # Prerequisite
 
-git
-greenshot
-hackfont
-visualstudiocode
-conemu
+Git - https://git-scm.com/downloads
+Hack Font - https://sourcefoundry.org/hack/
+Visual Studio Code - https://code.visualstudio.com/
+ConEmu - https://conemu.github.io/
 
-# Installing for Powershell
+# Installing
 
+* Install prerequisites
+* Open powershell and run the following
 ```powershell
+cd <path to your dotfile parent folder>
 git clone --recurse-submodules https://github.com/Pluc15/dotfiles.git
-.\dotfiles\win10\install.ps1 -PowershellHomeLocation "c:\workspace" -MachineScriptsLocation "c:\workspace\scripts"
+.\dotfiles\win10\install.ps1 -PowershellHomeLocation "<path to your powershell home folder>" -MachineScriptsLocation "<path to your machine scripts added to path>"
 ```
-
 Note: Both installer arguments are optional
-
-# Installing for Windows Subsystem for Linux
-
-* Install / Open Bash on Ubuntu For Windows
-* `cd your-dotfiles-clone`
-* `sh wsl/install.sh`
