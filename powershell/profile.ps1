@@ -39,6 +39,6 @@ Function Prompt () {
 	Write-Host $env:COMPUTERNAME -NoNewLine -ForegroundColor "White"
 	Write-Host ": " -NoNewLine
 	Write-Host $pwd.ProviderPath -ForegroundColor "Green"
-	Write-Host ">" -NoNewLine -ForegroundColor "DarkGray"
+	Write-Host "PS>" -NoNewLine -ForegroundColor "DarkGray"
 	return " "
 }
