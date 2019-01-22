@@ -1,4 +1,9 @@
 #!/bin/sh
+if [ -z $1 ]
+then
+	echo "Usage: sh install.sh \"/shell/default/folder/path\""
+	exit 1
+fi
 
 DOTFILES=`dirname $0`
 DOTFILES=`realpath $DOTFILES/..`
@@ -30,6 +35,7 @@ safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
 
 echoStep "Linking Fish profiles"
 echo "set DOTFILES $DOTFILES" > $HOME/.config/fish/config.fish
+echo "set SHELLROOT $1" >> $HOME/.config/fish/config.fish
 echo "source $DOTFILES/fish/base.fish" >> $HOME/.config/fish/config.fish
 echo "source $DOTFILES/fish/wsl.fish" >> $HOME/.config/fish/config.fish
 
