@@ -148,7 +148,6 @@ assign [class="URxvt"] $ws_3_term
 assign [class="Code"] $ws_4_ide
 assign [class="discord"] $ws_5_chat
 assign [class="skypeforlinux"] $ws_5_chat
-assign [class="Google-chrome" instance="crx_llfmpmbamlkpgegjjgbmijodcfpcjflc"] $ws_5_chat
 assign [class="Spotify"] $ws_6_music
 # assign [class=".*" window_type="normal"] $ws_1_misc
 
@@ -160,4 +159,6 @@ assign [class="Spotify"] $ws_6_music
 #############
 exec --no-startup-id redshift
 exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec --no-startup-id compton
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper.*
