@@ -1,98 +1,118 @@
 ##################
 ## Key bindings ##
 ##################
-set $mod Mod4
-set $mon1 eDP1
-set $mon2 HDMI2
-set $mon3 DP1
+set $mAlt Mod1
+set $mSuper Mod4
+set $mShift Shift
+set $mCtrl Ctrl
 
-# Mouse
-floating_modifier $mod
-focus_follows_mouse no
+set $ws_1_misc 1:Misc
+set $ws_2_web 2:
+set $ws_3_term 3:
+set $ws_4_ide 4:
+set $ws_5_chat 5:
+set $ws_6_music 6:
+set $ws_7 7:7
+set $ws_8 8:8
+set $ws_9 9:9
+set $ws_0 0:10
 
-bindsym $mod+Escape exec --no-startup-id ~/.scripts/lock
-bindsym $mod+Shift+Escape exec --no-startup-id ~/.scripts/power-menu
+# i3 commands
+bindsym $mSuper+$mShift+c reload
+bindsym $mSuper+$mShift+r restart
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-
-bindsym $mod+q kill
-
-bindsym $mod+d exec --no-startup-id ~/.scripts/rofi-launch
-
-bindsym $mod+Return exec --no-startup-id urxvt
-
-bindsym $mod+space exec --no-startup-id ~/.scripts/kb-layout-toggle
-
+# Misc
+bindsym $mSuper+space exec --no-startup-id sh ~/.scripts/kb-layout-toggle
 bindsym Print exec --no-startup-id scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
-bindsym $mod+Print exec --no-startup-id scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym $mSuper+Print exec --no-startup-id scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym $mSuper+f fullscreen toggle
+bindsym $mSuper+BackSpace split toggle
+#bindsym $mSuper+$mShift+space floating toggle
+#bindsym $mSuper+space focus mode_toggle
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-#bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
+# System commands
+bindsym $mSuper+Escape exec --no-startup-id i3lock -i ~/.wallpaper.*
+bindsym $mSuper+$mShift+Escape exec --no-startup-id sh ~/.scripts/power-menu
 
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# Start and stop apps
+bindsym $mSuper+d exec --no-startup-id sh ~/.scripts/rofi-launch
+bindsym $mSuper+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mSuper+q kill
 
-bindsym $mod+BackSpace split toggle
-bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+space floating toggle
+# Window selection
+bindsym $mSuper+Left focus left
+bindsym $mSuper+Down focus down
+bindsym $mSuper+Up focus up
+bindsym $mSuper+Right focus right
 
+# Workspace selection
+bindsym $mSuper+Tab workspace next
+bindsym $mSuper+$mShift+Tab workspace prev
+bindsym $mSuper+1 workspace $ws_1_misc
+bindsym $mSuper+2 workspace $ws_2_web
+bindsym $mSuper+3 workspace $ws_3_term
+bindsym $mSuper+4 workspace $ws_4_ide
+bindsym $mSuper+5 workspace $ws_5_chat
+bindsym $mSuper+6 workspace $ws_6_music
+bindsym $mSuper+7 workspace $ws_7
+bindsym $mSuper+8 workspace $ws_8
+bindsym $mSuper+9 workspace $ws_9
+bindsym $mSuper+0 workspace $ws_0
+
+# Move window
+bindsym $mSuper+$mShift+Left move left
+bindsym $mSuper+$mShift+Down move down
+bindsym $mSuper+$mShift+Up move up
+bindsym $mSuper+$mShift+Right move right
+
+# Move windows to workspace
+bindsym $mSuper+$mShift+1 move container to workspace $ws_1_misc
+bindsym $mSuper+$mShift+2 move container to workspace $ws_2_web
+bindsym $mSuper+$mShift+3 move container to workspace $ws_3_term
+bindsym $mSuper+$mShift+4 move container to workspace $ws_4_ide
+bindsym $mSuper+$mShift+5 move container to workspace $ws_5_chat
+bindsym $mSuper+$mShift+6 move container to workspace $ws_6_music
+bindsym $mSuper+$mShift+7 move container to workspace $ws_7
+bindsym $mSuper+$mShift+8 move container to workspace $ws_8
+bindsym $mSuper+$mShift+9 move container to workspace $ws_9
+bindsym $mSuper+$mShift+0 move container to workspace $ws_0
+
+# Resize window
+bindsym $mSuper+$mCtrl+Left resize shrink width 10 px or 10 ppt
+bindsym $mSuper+$mCtrl+Right resize grow width 10 px or 10 ppt
+bindsym $mSuper+$mCtrl+Up resize shrink height 10 px or 10 ppt
+bindsym $mSuper+$mCtrl+Down resize grow height 10 px or 10 ppt
+
+# Function keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
-bindsym $mod+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 100
-bindsym $mod+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 1
 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play
 bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-mode "resize" {
-    bindsym $mod+h focus left
-    bindsym $mod+j focus down
-    bindsym $mod+k focus up
-    bindsym $mod+l focus right
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
 ################
-## Status bar ##
+## Status Bar ##
 ################
+set $color #1d1f21
 bar {
-    font pango:Hack, Awesome 10
-    status_command i3status
-    strip_workspace_numbers yes
+  font pango:PragmataPro 10
+  status_command i3blocks
+  position top
+  colors {
+    separator #969896
+    background $color
+    statusline #c5c8c6
+    focused_workspace #81a2be #81a2be #1d1f21
+    active_workspace #373b41 #373b41 #ffffff
+    inactive_workspace #282a2e #282a2e #969896
+    urgent_workspace #cc6666 #cc6666 #ffffff
+  }
 }
 
 #############
@@ -116,84 +136,28 @@ client.background       #ffffff
 # gaps inner 10
 # gaps outer 10
 
-################
-## Workspaces ##
-################
-set $ws_misc 1:Misc
-set $ws_web 2:
-set $ws_term 3:
-set $ws_ide 4:
-set $ws_chat 5:
-set $ws_music 6:
-#set $ws_web 2:Chrome
-#set $ws_term 3:Terminal
-#set $ws_ide 4:Code
-#set $ws_chat 5:Chat
-#set $ws_music 6:Music
-set $ws_mon2 "Monitor 2"
-set $ws_mon3 "Monitor 3"
-
-workspace $ws_misc output $mon1
-workspace $ws_web output $mon1
-workspace $ws_term output $mon1
-workspace $ws_ide output $mon1
-workspace $ws_chat output $mon1
-workspace $ws_music output $mon1
-workspace 7 output $mon1
-workspace 8 output $mon1
-workspace $ws_mon2 output $mon2
-workspace $ws_mon3 output $mon3
-
-bindsym $mod+1 workspace $ws_misc
-bindsym $mod+2 workspace $ws_web
-bindsym $mod+3 workspace $ws_term
-bindsym $mod+4 workspace $ws_ide
-bindsym $mod+5 workspace $ws_chat
-bindsym $mod+6 workspace $ws_music
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace $ws_mon2
-bindsym $mod+0 workspace $ws_mon3
-
-bindsym $mod+Shift+1 move container to workspace $ws_misc
-bindsym $mod+Shift+2 move container to workspace $ws_web
-bindsym $mod+Shift+3 move container to workspace $ws_term
-bindsym $mod+Shift+4 move container to workspace $ws_ide
-bindsym $mod+Shift+5 move container to workspace $ws_chat
-bindsym $mod+Shift+6 move container to workspace $ws_music
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace $ws_mon2
-bindsym $mod+Shift+0 move container to workspace $ws_mon3
-
-assign [class="Google-chrome" instance="google-chrome"] $ws_web
-
-assign [class="URxvt"] $ws_term
-
-assign [class="Code"] $ws_ide
-
-assign [class="discord"] $ws_chat
-assign [class="skypeforlinux"] $ws_chat
-assign [class="Google-chrome" instance="crx_llfmpmbamlkpgegjjgbmijodcfpcjflc"] $ws_chat
-
-assign [class="Spotify"] $ws_music
-
-# assign [class=".*" window_type="normal"] $ws_misc
-
+##############
+## Behavior ##
+##############
+focus_follows_mouse no
 # for_window [class=".*"] focus
 # focus_on_window_activation focus
 
-#####################
-## Special windows ##
-#####################
-for_window [class="[.]*"] floating disable
-for_window [class="Xdialog"] floating enable
+assign [class="Google-chrome" instance="google-chrome"] $ws_2_web
+assign [class="URxvt"] $ws_3_term
+assign [class="Code"] $ws_4_ide
+assign [class="discord"] $ws_5_chat
+assign [class="skypeforlinux"] $ws_5_chat
+assign [class="Google-chrome" instance="crx_llfmpmbamlkpgegjjgbmijodcfpcjflc"] $ws_5_chat
+assign [class="Spotify"] $ws_6_music
+# assign [class=".*" window_type="normal"] $ws_1_misc
+
+#for_window [class="[.]*"] floating disable
+#for_window [class="Xdialog"] floating enable
 
 #############
 ## Daemons ##
 #############
-exec --no-startup-id compton
-exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec_always --no-startup-id exec ~/.scripts/wallpaper
 exec --no-startup-id nm-applet
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper.*

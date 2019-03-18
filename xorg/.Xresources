@@ -4,10 +4,8 @@
 URxvt.keysym.C-BackSpace: \033[33~
 
 ! Fonts
-URxvt.font:xft:DejaVuSansMono:pixelsize=14
-URxvt.boldFont:xft:DejaVuSansMono-Bold:pixelsize=10
-URxvt.italicfont:xft:DejaVuSansMono-Oblique:pixelsize=10
-URxvt.bolditalicFont:xft:DejaVuSansMono-BoldOblique:pixelsize=10
+URxvt.font:xft:FiraCode-Regular:pixelsize=14
+URxvt.boldFont:xft:FiraMono-Bold:pixelsize=14
 URxvt*letterSpace:  1
 URxvt*allow_bold:   true
 URxvt.scrollBar:    false
