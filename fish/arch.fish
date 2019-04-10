@@ -6,9 +6,9 @@ function fish_prompt
 	set_color normal
 	echo -n (hostname)
 	echo -n ": "
-	set_color 0F0
+	set_color green
 	echo (pwd)
-	set_color 999
+	set_color white
 	echo -n '> '
 	set_color normal
 end

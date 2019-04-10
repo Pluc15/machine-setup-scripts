@@ -1,41 +1,65 @@
 ##################
 ## Key bindings ##
 ##################
+# Keys
 set $mAlt Mod1
 set $mSuper Mod4
 set $mShift Shift
 set $mCtrl Ctrl
+set $kSuper 133
 
+# Workspaces
 set $ws_1_misc 1:Misc
 set $ws_2_web 2:
 set $ws_3_term 3:
 set $ws_4_ide 4:
 set $ws_5_chat 5:
 set $ws_6_music 6:
-set $ws_7 7:7
-set $ws_8 8:8
-set $ws_9 9:9
-set $ws_0 0:10
+set $ws_7 07:7
+set $ws_8 08:8
+set $ws_9 09:9
+set $ws_0 10:10
 
-# i3 commands
+# Colors
+set_from_resource $color_foreground i3wm.foreground #ffffff
+set_from_resource $color_background i3wm.background #000000
+set_from_resource $color_cursor i3wm.cursorColor #ffffff
+set_from_resource $color_normal_black i3wm.color0 #000000
+set_from_resource $color_bright_black i3wm.color8 #ffffff
+set_from_resource $color_normal_red i3wm.color1 #000000
+set_from_resource $color_bright_red i3wm.color9 #ffffff
+set_from_resource $color_normal_green i3wm.color2 #000000
+set_from_resource $color_bright_green i3wm.color10 #ffffff
+set_from_resource $color_normal_yellow i3wm.color3 #000000
+set_from_resource $color_bright_yellow i3wm.color11 #ffffff
+set_from_resource $color_normal_blue i3wm.color4 #000000
+set_from_resource $color_bright_blue i3wm.color12 #ffffff
+set_from_resource $color_normal_magenta i3wm.color5 #000000
+set_from_resource $color_bright_magenta i3wm.color13 #ffffff
+set_from_resource $color_normal_cyan i3wm.color6 #000000
+set_from_resource $color_bright_cyan i3wm.color14 #ffffff
+set_from_resource $color_normal_white i3wm.color7 #000000
+set_from_resource $color_bright_white i3wm.color15 #ffffff
+set $color_transparent #00000000
+
+# Reload
 bindsym $mSuper+$mShift+c reload
 bindsym $mSuper+$mShift+r restart
+bindsym $mSuper+$mShift+x exec xrdb ~/.Xresources
 
 # Misc
-bindsym $mSuper+space exec --no-startup-id sh ~/.scripts/kb-layout-toggle
+bindsym $mSuper+space exec --no-startup-id sh ~/.scripts/kb-layout-toggle.sh
 bindsym Print exec --no-startup-id scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym $mSuper+Print exec --no-startup-id scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym $mSuper+f fullscreen toggle
 bindsym $mSuper+BackSpace split toggle
 #bindsym $mSuper+$mShift+space floating toggle
 #bindsym $mSuper+space focus mode_toggle
-
-# System commands
-bindsym $mSuper+Escape exec --no-startup-id i3lock -i ~/.wallpaper.*
-bindsym $mSuper+$mShift+Escape exec --no-startup-id sh ~/.scripts/power-menu
+bindsym $mSuper+Escape exec --no-startup-id sh ~/.scripts/power-menu.sh
+bindsym $mSuper+L exec --no-startup-id sh ~/.scripts/lock.sh
 
 # Start and stop apps
-bindsym $mSuper+d exec --no-startup-id sh ~/.scripts/rofi-launch
+bindcode $kSuper --release exec --no-startup-id "rofi -combi-modi window,drun,ssh -modi combi -show combi"
 bindsym $mSuper+Return exec --no-startup-id i3-sensible-terminal
 bindsym $mSuper+q kill
 
@@ -46,8 +70,7 @@ bindsym $mSuper+Up focus up
 bindsym $mSuper+Right focus right
 
 # Workspace selection
-bindsym $mSuper+Tab workspace next
-bindsym $mSuper+$mShift+Tab workspace prev
+bindsym $mSuper+Tab workspace back_and_forth
 bindsym $mSuper+1 workspace $ws_1_misc
 bindsym $mSuper+2 workspace $ws_2_web
 bindsym $mSuper+3 workspace $ws_3_term
@@ -99,42 +122,40 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 ################
 ## Status Bar ##
 ################
-set $color #1d1f21
 bar {
-  font pango:PragmataPro 10
+  font pango:FiraCode 10
   status_command i3blocks
   position top
+  strip_workspace_numbers yes
   colors {
-    separator #969896
-    background $color
-    statusline #c5c8c6
-    focused_workspace #81a2be #81a2be #1d1f21
-    active_workspace #373b41 #373b41 #ffffff
-    inactive_workspace #282a2e #282a2e #969896
-    urgent_workspace #cc6666 #cc6666 #ffffff
+    separator $color_foreground
+    background $color_background
+    statusline $color_foreground
+    focused_workspace   $color_background $color_foreground $color_background
+    active_workspace    $color_background $color_foreground $color_background
+    inactive_workspace  $color_background $color_background $color_foreground
+    urgent_workspace    $color_background $color_normal_red $color_foreground
   }
 }
 
 #############
 ## Styling ##
 #############
-font pango:Hack 10
-
 # Borders
-new_window pixel 2
-new_float pixel 2
+default_border pixel 2
+default_floating_border pixel 2
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
+# class                 border              backgr.             text                indicator           child_border
+client.focused          $color_bright_green $color_normal_black $color_bright_green $color_bright_green $color_normal_green
+client.focused_inactive $color_bright_blue  $color_normal_black $color_bright_blue  $color_bright_blue  $color_normal_blue
+client.unfocused        $color_bright_black $color_normal_black $color_bright_black $color_bright_black $color_normal_black
+client.urgent           $color_bright_red   $color_normal_black $color_bright_red   $color_bright_red   $color_normal_red
+client.placeholder      $color_bright_black $color_normal_black $color_bright_black $color_bright_black $color_normal_black
+client.background       $color_background
 
 # Gaps
-# gaps inner 10
-# gaps outer 10
+gaps inner 10
+gaps outer 10
 
 ##############
 ## Behavior ##
@@ -146,6 +167,7 @@ focus_follows_mouse no
 assign [class="Google-chrome" instance="google-chrome"] $ws_2_web
 assign [class="URxvt"] $ws_3_term
 assign [class="Code"] $ws_4_ide
+assign [class="jetbrains-rider"] $ws_4_ide
 assign [class="discord"] $ws_5_chat
 assign [class="skypeforlinux"] $ws_5_chat
 assign [class="Spotify"] $ws_6_music
@@ -158,7 +180,6 @@ assign [class="Spotify"] $ws_6_music
 ## Daemons ##
 #############
 exec --no-startup-id redshift
-exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id compton
-exec_always --no-startup-id feh --bg-fill ~/.wallpaper.*
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper.png

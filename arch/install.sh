@@ -11,12 +11,16 @@ echoStep "Updating pacman packages"
 sudo pacman -Syu
 
 echoStep "Installing pacman packages"
-sudo pacman -S \
+sudo pacman -S --needed \
+    acpi \
     arandr \
     base-devel \
     cifs-utils \
     compton \
     curl \
+    code \
+    docker \
+    dos2unix \
     dotnet-sdk \
     dunst \
     elinks \
@@ -30,14 +34,16 @@ sudo pacman -S \
     gtk3 \
     i3-gaps \
     i3blocks \
-    i3lock \
     imagemagick \
     lastpass-cli \
     libreoffice-fresh \
     mesa \
+    mono \
     networkmanager \
     networkmanager-openvpn \
     networkmanager-pptp \
+    nodejs \
+    npm \
     openssh \
     openssl \
     otf-font-awesome \
@@ -54,6 +60,7 @@ sudo pacman -S \
     scrot \
     smbclient \
     sudo \
+    sysstat \
     thunar \
     tk \
     transmission-qt \
@@ -67,8 +74,8 @@ sudo pacman -S \
     wget \
     x11vnc \
     xclip \
+    xdg-user-dirs-update \
     xdg-utils \
-    xdialog \
     xorg-font-util \
     xorg-fonts-100dpi \
     xorg-fonts-75dpi \
@@ -76,10 +83,13 @@ sudo pacman -S \
     xorg-server \
     xorg-setxkbmap \
     xorg-xbacklight \
+    xorg-xgamma \
     xorg-xinput \
     xorg-xprop \
     xorg-xrandr \
-    xorg-xrefresh
+    xorg-xrdb \
+    xorg-xrefresh \
+    yarn
 
 echoStep "Install / Update yay"
 mkdir -p $HOME/.aur
@@ -94,6 +104,9 @@ popd
 
 echoStep "Install / Update yay packages"
 yay -Syu
+yay -S --needed \
+    i3lock-color \
+    s-tui
 
 echoStep "Linking configuraion files"
 safeln $DOTFILES/i3/config $HOME/.config/i3/config
@@ -107,13 +120,13 @@ safeln $DOTFILES/gtk/gtk3.ini $HOME/gtk-3.0/settings.ini
 safeln $DOTFILES/gtk/.gtkrc-2.0 $HOME/.gtkrc-2.0
 safeln $DOTFILES/dunst/dunstrc $HOME/.config/dunst/dunstrc
 safeln $DOTFILES/compton/compton.conf $HOME/.config/compton.conf
+safeln $DOTFILES/vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
+safeln $DOTFILES/rofi/config $HOME/.config/rofi/config
 
 echoStep "Linking scripts"
-safeln $DOTFILES/bash/scripts/kb-layout-toggle $HOME/.scripts/kb-layout-toggle
-safeln $DOTFILES/bash/scripts/power-menu $HOME/.scripts/power-menu
-safeln $DOTFILES/bash/scripts/rofi-launch $HOME/.scripts/rofi-launch
-safeln $DOTFILES/bash/scripts/spotify-current-song $HOME/.scripts/spotify-current-song
-safeln $DOTFILES/bash/scripts/wallpaper $HOME/.scripts/wallpaper
+safeln $DOTFILES/bash/scripts/kb-layout-toggle.sh $HOME/.scripts/kb-layout-toggle.sh
+safeln $DOTFILES/bash/scripts/power-menu.sh $HOME/.scripts/power-menu.sh
+safeln $DOTFILES/bash/scripts/lock.sh $HOME/.scripts/lock.sh
 
 echoStep "Building fish profile"
 echo "set DOTFILES $DOTFILES" > $HOME/.config/fish/config.fish

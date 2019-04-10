@@ -1,0 +1,7 @@
+{
+  "explorer.confirmDelete": false,
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "editor.multiCursorModifier": "alt",
+  "editor.fontFamily": "'Fira Code', monospace"
+}

@@ -1,50 +1,62 @@
+! Fonts
+#define _FONT_MONO FiraCode
+#define _FONT_SYMBOL FontAwesome 
+#define _FONT_TEXT FiraCode
+
+! Colors
+#define _COLOR_FOREGROUND #c5c8c6
+#define _COLOR_BACKGROUND #1d1f21
+#define _COLOR_CURSOR #c5c8c6
+#define _COLOR_NORMAL_BLACK #282a2e
+#define _COLOR_BRIGHT_BLACK #373b41
+#define _COLOR_NORMAL_RED #a54242
+#define _COLOR_BRIGHT_RED #cc6666
+#define _COLOR_NORMAL_GREEN #8c9440
+#define _COLOR_BRIGHT_GREEN #b5bd68
+#define _COLOR_NORMAL_YELLOW #de935f
+#define _COLOR_BRIGHT_YELLOW #f0c674
+#define _COLOR_NORMAL_BLUE #5f819d
+#define _COLOR_BRIGHT_BLUE #81a2be
+#define _COLOR_NORMAL_MAGENTA #85678f
+#define _COLOR_BRIGHT_MAGENTA #b294bb
+#define _COLOR_NORMAL_CYAN #5e8d87
+#define _COLOR_BRIGHT_CYAN #8abeb7
+#define _COLOR_NORMAL_WHITE #707880
+#define _COLOR_BRIGHT_WHITE #c5c8c6
+
+*.foreground: _COLOR_FOREGROUND
+*.background: _COLOR_BACKGROUND
+*.cursorColor: _COLOR_CURSOR
+*.color0: _COLOR_NORMAL_BLACK
+*.color8: _COLOR_BRIGHT_BLACK
+*.color1: _COLOR_NORMAL_RED
+*.color9: _COLOR_BRIGHT_RED
+*.color2: _COLOR_NORMAL_GREEN
+*.color10: _COLOR_BRIGHT_GREEN
+*.color3: _COLOR_NORMAL_YELLOW
+*.color11: _COLOR_BRIGHT_YELLOW
+*.color4: _COLOR_NORMAL_BLUE
+*.color12: _COLOR_BRIGHT_BLUE
+*.color5: _COLOR_NORMAL_MAGENTA
+*.color13: _COLOR_BRIGHT_MAGENTA
+*.color6: _COLOR_NORMAL_CYAN
+*.color14: _COLOR_BRIGHT_CYAN
+*.color7: _COLOR_NORMAL_WHITE
+*.color15: _COLOR_BRIGHT_WHITE
+
 ! URXVT
 !------------------------------------------------
-! Keys
 URxvt.keysym.C-BackSpace: \033[33~
-
-! Fonts
-URxvt.font:xft:FiraCode-Regular:pixelsize=14
-URxvt.boldFont:xft:FiraMono-Bold:pixelsize=14
-URxvt*letterSpace:  1
-URxvt*allow_bold:   true
+URxvt.font:         xft:_FONT_MONO:pixelsize=14
 URxvt.scrollBar:    false
-URxvt.transparent:  true
-URxvt.shading:      20
+!URxvt.transparent:  true
 
-! special
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  #c5c8c6
-
-! black
-*.color0:       #1d1f21
-*.color8:       #969896
-
-! red
-*.color1:       #cc342b
-*.color9:       #cc342b
-
-! green
-*.color2:       #198844
-*.color10:      #198844
-
-! yellow
-*.color3:       #fba922
-*.color11:      #fba922
-
-! blue
-*.color4:       #3971ed
-*.color12:      #3971ed
-
-! magenta
-*.color5:       #a36ac7
-*.color13:      #a36ac7
-
-! cyan
-*.color6:       #3971ed
-*.color14:      #3971ed
-
-! white
-*.color7:       #c5c8c6
-*.color15:      #ffffff
+! Rofi
+!------------------------------------------------
+! State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
+rofi.color-normal: _COLOR_NORMAL_BLACK, _COLOR_NORMAL_WHITE, _COLOR_BRIGHT_BLACK, _COLOR_NORMAL_WHITE, _COLOR_NORMAL_BLACK
+rofi.color-urgent: _COLOR_NORMAL_BLACK, _COLOR_NORMAL_RED, _COLOR_BRIGHT_BLACK, _COLOR_NORMAL_RED, _COLOR_NORMAL_BLACK
+rofi.color-active: _COLOR_NORMAL_BLACK, _COLOR_NORMAL_GREEN, _COLOR_BRIGHT_BLACK, _COLOR_NORMAL_GREEN, _COLOR_NORMAL_BLACK
+!                  ´background´, ´border´, ´separator´
+rofi.color-window: _COLOR_BACKGROUND,  _COLOR_FOREGROUND,  _COLOR_FOREGROUND
+rofi.font: _FONT_CLEAN 12
