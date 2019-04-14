@@ -1,0 +1,2 @@
+#!/bin/sh
+i3exit switch_user
