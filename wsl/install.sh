@@ -34,4 +34,4 @@ sudo apt-get install \
 	openssh
 
 echoStep "Linking configuraion files"
-safeln $DOTFILES/git/.gitconfig $HOME/.gitconfig
+safeln $DOTFILES/.gitconfig $HOME/.gitconfig
