@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo -e "\033[0mNC (No color)"
+echo -e "\033[0;30m0 BLACK"
+echo -e "\033[0;31m1 RED"
+echo -e "\033[0;32m2 GREEN"
+echo -e "\033[0;33m3 YELLOW"
+echo -e "\033[0;34m4 BLUE"
+echo -e "\033[0;35m5 PURPLE"
+echo -e "\033[0;36m6 CYAN"
+echo -e "\033[0;37m7LIGHT_GRAY"

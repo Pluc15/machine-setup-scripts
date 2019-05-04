@@ -1,3 +1,5 @@
+#include ".config/colors.Xresources"
+
 Xft.dpi:        96
 Xft.antialias:  true
 Xft.hinting:    true
