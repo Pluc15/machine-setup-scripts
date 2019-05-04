@@ -24,3 +24,6 @@
 - Fix monitor selection not working at boot due to HDMI-0 not being renamed to HDMI-0_p1 yet (`sh $DOTFILES/sh_scripts/toggle-split-monitor.sh`)
 - Take Polybar's pulseaudio sink from .profile (and initially install.sh)
 - Take monitors from .profile (and initially install.sh)
+- Add GTK theme reload to bin/reload
+- Make everything reusable so I can use it on my laptop
+- Maybe make it worth on either Arch or Manjaro?
