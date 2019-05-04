@@ -1,0 +1,3 @@
+#!/bin/sh
+
+lpass ls | fzf | xargs lpass show

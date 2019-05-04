@@ -3,5 +3,5 @@
   "editor.renderWhitespace": "all",
   "editor.formatOnSave": true,
   "editor.multiCursorModifier": "alt",
-  "editor.fontFamily": "'Fira Code', monospace"
+  "editor.fontFamily": "Fira Code, monospace"
 }
