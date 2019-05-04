@@ -9,3 +9,4 @@
     - QT
 - Prevent pulseaudio to go over 100% (PA_VOLUME_UI_MAX?)
 - Fix / add icons in Polybar
+- Take Polybar's pulseaudio sink from .profile
