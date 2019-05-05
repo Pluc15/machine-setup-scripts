@@ -320,5 +320,6 @@
     //"editor.snippetTabstopHighlightBorder": "#000",
     //"editor.snippetFinalTabstopHighlightBackground": "#000",
     //"editor.snippetFinalTabstopHighlightBorder": "#000"
-  }
+  },
+  "window.zoomLevel": 1
 }
