@@ -16,7 +16,6 @@
 - Driver
     - Fix screen tearing
     - Fix xbox controllers
-    - Fix monitor selection not working at boot due to HDMI-0 not being renamed to HDMI-0_p1 yet (`sh $DOTFILES/sh_scripts/toggle-split-monitor.sh`)
 - Styling
     - Map pywal colors to [JetBrains IDEs](https://github.com/0x6C38/intellijPywal)
     - Map pywal colors to Visual Sutido Code
