@@ -31,16 +31,17 @@ sudo pacman -S --needed \
     ttf-fira-code \
     ttf-font-awesome \
     x11vnc \
-    xcursor-breeze
+    xcursor-breeze \
+    scrot \
 
 echoStep "Creating all the folders we will need"
-mkdir "$HOME/.config/Code - OSS/User"
-mkdir "$HOME/.config/dunst"
-mkdir "$HOME/.config/gtk-3.0"
-mkdir "$HOME/.config/i3"
-mkdir "$HOME/.config/polybar"
-mkdir "$HOME/.config/wal/templates"
-mkdir "$HOME/.config/rofi"
+mkdir -p "$HOME/.config/Code - OSS/User"
+mkdir -p "$HOME/.config/dunst"
+mkdir -p "$HOME/.config/gtk-3.0"
+mkdir -p "$HOME/.config/i3"
+mkdir -p "$HOME/.config/polybar"
+mkdir -p "$HOME/.config/wal/templates"
+mkdir -p "$HOME/.config/rofi"
 
 echoStep "Linking configuraion files"
 ln -fs "$DOTFILES/configs/.gitconfig"                                    "$HOME/.gitconfig"

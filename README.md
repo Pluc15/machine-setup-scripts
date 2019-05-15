@@ -25,8 +25,9 @@
   - Fix / add icons in Polybar
   - Add GTK theme reload to bin/reload
 - Prevent pulseaudio to go over 100% with shortcuts (PA_VOLUME_UI_MAX?)
-- Fix anything else that is machine specific
+- Make it not machine specific
   - Polybar's PulseAudio sink
   - Monitor names
-- Make it worth on Arch
 - Fix the workspace issue with multi monitor
+- Make it work on Arch
+- Health check on i3 start

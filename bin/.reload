@@ -1,4 +1,5 @@
 #!/bin/sh
 xrdb ~/.Xresources
+killall polybar
 killall dunst
 i3-msg restart
