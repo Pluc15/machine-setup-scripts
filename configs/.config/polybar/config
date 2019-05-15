@@ -27,10 +27,11 @@ alert =          ${xrdb:color3}
 lines =          ${xrdb:color3}
 
 [bar/main]
-monitor = HDMI-0
+#monitor = ${env:DOTFILES_MONITOR_1}
+monitor = "HDMI-0_p1"
 width = 100%
 height = 27
-radius = 6.0
+radius = 0.0
 fixed-center = true
 
 background = ${colors.background}
@@ -55,7 +56,7 @@ modules-left = memory cpu temperature filesystem
 modules-center = i3
 modules-right = xkeyboard pulseaudio date
 
-tray-position = none
+tray-position = right
 
 [module/xkeyboard]
 type = internal/xkeyboard

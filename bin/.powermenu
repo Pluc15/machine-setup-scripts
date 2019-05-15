@@ -1,0 +1,2 @@
+#!/bin/sh
+rofi -modi "powermenu:sh $DOTFILES/scripts/rofi-modi-powermenu.sh" -show powermenu

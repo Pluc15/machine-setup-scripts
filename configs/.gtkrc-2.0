@@ -1,4 +1,4 @@
-gtk-theme-name="Matcha-dark-sea"
+gtk-theme-name="Arc-Dark"
 gtk-icon-theme-name="Papirus-Dark-Maia"
 gtk-font-name="Fira Code 10"
 gtk-cursor-theme-name="xcursor-breeze-snow"
@@ -13,45 +13,3 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintslight"
 gtk-xft-rgba="rgb"
-
-# fg[NORMAL]        = "#bcbcbc"        # Main Menu TEXT colour
-# fg[PRELIGHT]      = "#b1b1b1"        # slightly darker than main text   
-# fg[ACTIVE]        = "#d8d8d8"        # lighter again than above   
-# fg[SELECTED]      = "#000000"        # black was white - #ffffff
-# fg[INSENSITIVE]   = "#757f90"        # Inactive menu entries & inactive highlight)
-# 
-# bg[NORMAL]        = "#3E3E3E"        # Main Menu BACKGROUND colour - was #424242
-# bg[PRELIGHT]      = "#5058a0"        # active highlight
-# bg[ACTIVE]        = "#2b2b2b"        # darker secondary b'ground - rarely used - where (Firefox scroll bar)??
-# bg[SELECTED]      = "#5058a0"        # active highlight - was -> #5058a0
-# bg[INSENSITIVE]   = "#575757"        # lighter minor background     
-# 
-# text[NORMAL]      = "#ABABAB"        # Main Text, including fields
-# text[PRELIGHT]    = "#ABABAB"        #   "    "       "       "   
-# text[ACTIVE]      = "#ababab"        #   "    "       "       " 
-# text[SELECTED]    = "#ababab"        #   "    "       "       " 
-# text[INSENSITIVE] = "#757f90"        # inactive highlight - was #6F6F6F
-# 
-# base[NORMAL]      = "#2b2b2b"        # darker - secondary background colour
-# base[PRELIGHT]    = "#5058a0"        # active highlight & menu entries
-# base[ACTIVE]      = "#757f90"        # inactive highlight
-# base[SELECTED]    = "#5058a0"        # active highlight
-# base[INSENSITIVE] = "#575757"        # lighter minor background
-
-
-
-#gtk-color-scheme = "base_color: #222b2e"
-#gtk-color-scheme = "text_color: #eeeeee"
-#gtk-color-scheme = "bg_color: #1b2224"
-#gtk-color-scheme = "fg_color: #f0f0f0"
-#gtk-color-scheme = "tooltip_bg_color: #1b2224"
-#gtk-color-scheme = "tooltip_fg_color: #D4D7D7"
-#gtk-color-scheme = "selected_bg_color: #2eb398"
-#gtk-color-scheme = "selected_fg_color: #ffffff"
-#gtk-color-scheme = "insensitive_bg_color: #1E2629"
-#gtk-color-scheme = "insensitive_fg_color: #6B7173"
-#gtk-color-scheme = "notebook_bg: #1b2224"
-#gtk-color-scheme = "dark_sidebar_bg: #303b3e"
-#gtk-color-scheme = "link_color: #2eb398"
-#gtk-color-scheme = "menu_bg: #1b2224"
-#gtk-color-scheme = "menu_fg: #e3e4e7"
