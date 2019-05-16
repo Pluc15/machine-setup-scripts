@@ -1,1 +1,1 @@
-. ~/.config/dotfiles
+. ~/.config/dotfiles_profile
