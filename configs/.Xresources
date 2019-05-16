@@ -1,3 +1,5 @@
+#include ".config/dotfiles_xresources"
+
 *foreground:  #f8f8f2
 *background:  #272822
 *.foreground: #f8f8f2

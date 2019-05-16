@@ -62,7 +62,5 @@ ln -fs "$DOTFILES/configs/.config/redshift.conf"                         "$HOME/
 ln -fs "$DOTFILES/configs/.config/rofi/config"                           "$HOME/.config/rofi/config"
 ln -fs "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"          "$HOME/.config/rofi/rofi-my-dark-theme.rasi"
 
-echoStep "Creating machine specific profile"
-echo "## Everything in this file will be erased next time you run the dotfiles installer" > "$HOME/.config/dotfiles_profile"
-echo "export DOTFILES=$DOTFILES" >> "$HOME/.config/dotfiles_profile"
-echo "PATH=\$PATH:$DOTFILES/bin" >> "$HOME/.config/dotfiles_profile"
+echoStep "Creating machine specific files"
+sh $DOTFILES/scripts/generate-machine-specific-configs.sh

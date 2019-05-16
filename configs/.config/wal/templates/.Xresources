@@ -1,3 +1,5 @@
+#include ".config/dotfiles_xresources"
+
 *foreground:  {foreground}
 *background:  {background}
 *.foreground: {foreground}

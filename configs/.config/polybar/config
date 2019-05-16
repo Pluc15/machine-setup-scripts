@@ -27,8 +27,7 @@ alert =          ${xrdb:color3}
 lines =          ${xrdb:color3}
 
 [bar/main]
-#monitor = ${env:DOTFILES_MONITOR_1}
-monitor = "HDMI-0_p1"
+monitor = ${xrdb:monitor1}
 width = 100%
 height = 27
 radius = 0.0
@@ -96,23 +95,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+label-visible = %name%
+label-visible-background = ${colors.background}
+label-visible-underline = ${colors.primary}
 label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
