@@ -27,7 +27,5 @@
 - Prevent pulseaudio to go over 100% with shortcuts (PA_VOLUME_UI_MAX?)
 - Make it not machine specific
   - Polybar's PulseAudio sink
-  - Monitor names
-- Fix the workspace issue with multi monitor
 - Make it work on Arch
 - Health check on i3 start
