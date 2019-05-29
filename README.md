@@ -28,3 +28,6 @@
   - Polybar's PulseAudio sink
 - Make it work on Arch
 - Health check on i3 start
+- Better Super-Tab
+- Display unread mail in polybar
+- Display unread notification in polybar
