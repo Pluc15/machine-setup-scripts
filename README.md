@@ -31,3 +31,53 @@
 - Better Super-Tab
 - Display unread mail in polybar
 - Display unread notification in polybar
+
+# Stuff I usually install that isn't required for the .dotfiles to work
+
+## Official Repository (TODO Find which one in this list is actually from the AUR)
+
+cheese
+code
+deluge
+discord
+docker
+dotnet-sdk
+fish
+freerdp
+gimp
+git
+glances
+gufw
+htop
+libreoffice
+lm_sensors
+lutris
+neofetch
+networkmanager
+networkmanager-openvpn
+networkmanager-pptp
+nodejs
+npm
+nvidia-utils
+obs-studio
+openssh
+pamac-dev
+pcmanfm
+remmina
+rsync
+speedtest-cli
+steam
+viewnior
+vlc
+x11vnc
+yarn
+
+## AUR
+
+s-tui
+slack-desktop
+xboxdrv
+
+# Services to enable (systemctl enable <service>)
+
+xboxdrv.service
