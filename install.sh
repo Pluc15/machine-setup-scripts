@@ -43,6 +43,7 @@ mkdir -p "$HOME/.config/polybar"
 mkdir -p "$HOME/.config/profile.d"
 mkdir -p "$HOME/.config/wal/templates"
 mkdir -p "$HOME/.config/rofi"
+mkdir -p "$HOME/.config/Xresources.d"
 
 echoStep "Linking configuraion files"
 ln -fs "$DOTFILES/configs/.gitconfig"                                    "$HOME/.gitconfig"
