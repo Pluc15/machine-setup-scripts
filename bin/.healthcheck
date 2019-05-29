@@ -1,4 +1,21 @@
 #!/bin/sh
 
-#find ~/.config -type l -ls
-echo TODO
+echo "== These should all be links to $DOTFILES/configs/* =="
+ls -l "$HOME/.gitconfig"
+ls -l "$HOME/.gtkrc-2.0"
+ls -l "$HOME/.profile"
+ls -l "$HOME/.xinitrc"
+ls -l "$HOME/.config/Code - OSS/User/settings.json"
+ls -l "$HOME/.config/compton.conf"
+ls -l "$HOME/.config/dunst/dunstrc"
+ls -l "$HOME/.config/gtk-3.0/gtk.css"
+ls -l "$HOME/.config/gtk-3.0/settings.ini"
+ls -l "$HOME/.config/i3/config"
+ls -l "$HOME/.config/polybar/config"
+ls -l "$HOME/.config/redshift.conf"
+ls -l "$HOME/.config/rofi/config"
+ls -l "$HOME/.config/rofi/rofi-my-dark-theme.rasi"
+ls -l "$HOME/.config/wal/templates/dunstrc"
+ls -l "$HOME/.config/wal/templates/rofi-my-dark-theme.rasi"
+ls -l "$HOME/.config/wal/templates/xresources-00-base"
+ls -l "$HOME/.config/Xresources.d/00-base"
