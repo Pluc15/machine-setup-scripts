@@ -5,15 +5,15 @@ then
     exit 1
 fi
 
-echo '#!/bin/sh'                                                                           > "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-echo "## Everything in this file will be erased next time you run the dotfiles installer"  >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-echo "export DOTFILES=$DOTFILES"                                                           >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-echo "PATH=\$PATH:$DOTFILES/bin"                                                           >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
+echo '#!/bin/sh'                                                                           > "~/.config/profile.d/00-dotfiles-generated.sh"
+echo "## Everything in this file will be erased next time you run the dotfiles installer"  >> "~/.config/profile.d/00-dotfiles-generated.sh"
+echo "export DOTFILES=$DOTFILES"                                                           >> "~/.config/profile.d/00-dotfiles-generated.sh"
+echo "PATH=\$PATH:$DOTFILES/bin"                                                           >> "~/.config/profile.d/00-dotfiles-generated.sh"
 
-echo "## Everything in this file will be erased next time you run the dotfiles installer" > "$HOME/.config/Xresources.d/01-monitors-generated"
-echo "*.monitor1: $($DOTFILES/bin/.get-monitor 0)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
-echo "*.monitor2: $($DOTFILES/bin/.get-monitor 1)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
-echo "*.monitor3: $($DOTFILES/bin/.get-monitor 2)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
-echo "*.monitor4: $($DOTFILES/bin/.get-monitor 3)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
+echo "## Everything in this file will be erased next time you run the dotfiles installer" > "~/.config/Xresources.d/01-monitors-generated"
+echo "*.monitor1: $($DOTFILES/bin/.get-monitor 0)"                                        >> "~/.config/Xresources.d/01-monitors-generated"
+echo "*.monitor2: $($DOTFILES/bin/.get-monitor 1)"                                        >> "~/.config/Xresources.d/01-monitors-generated"
+echo "*.monitor3: $($DOTFILES/bin/.get-monitor 2)"                                        >> "~/.config/Xresources.d/01-monitors-generated"
+echo "*.monitor4: $($DOTFILES/bin/.get-monitor 3)"                                        >> "~/.config/Xresources.d/01-monitors-generated"
 
 echo "[$(date -Iseconds)] $0 - Done" >> ~/.dotfiles_logs
