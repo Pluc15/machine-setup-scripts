@@ -1,2 +1,8 @@
 #!/bin/sh
+if [[ -z $DOTFILES ]]
+then
+    echo "\$DOTFILES not set"
+    exit 1
+fi
+
 rofi -modi "powermenu:sh $DOTFILES/scripts/rofi-modi-powermenu.sh" -show powermenu

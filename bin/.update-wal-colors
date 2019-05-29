@@ -1,5 +1,12 @@
 #!/bin/sh
+if [[ -z $DOTFILES ]]
+then
+    echo "\$DOTFILES not set"
+    exit 1
+fi
+
 cp "$HOME/.cache/wal/xresources-00-base"      "$DOTFILES/configs/.config/Xresources.d/00-base"
 cp "$HOME/.cache/wal/dunstrc"                 "$DOTFILES/configs/.config/dunst/dunstrc"
 cp "$HOME/.cache/wal/rofi-my-dark-theme.rasi" "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"
 $DOTFILES/bin/.reload
+echo "[$(date -Iseconds)] $0 - Done" >> ~/.dotfiles_logs

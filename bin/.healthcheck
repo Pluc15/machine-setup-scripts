@@ -1,4 +1,9 @@
 #!/bin/sh
+if [[ -z $DOTFILES ]]
+then
+    echo "\$DOTFILES not set"
+    exit 1
+fi
 
 echo "== These should all be links to $DOTFILES/configs/* =="
 ls -l "$HOME/.gitconfig"

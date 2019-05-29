@@ -1,4 +1,9 @@
 #!/bin/sh
+if [[ -z $DOTFILES ]]
+then
+    echo "\$DOTFILES not set"
+    exit 1
+fi
 
 echo '#!/bin/sh'                                                                           > "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "## Everything in this file will be erased next time you run the dotfiles installer"  >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
@@ -10,3 +15,5 @@ echo "*.monitor1: $($DOTFILES/bin/.get-monitor 0)"                              
 echo "*.monitor2: $($DOTFILES/bin/.get-monitor 1)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
 echo "*.monitor3: $($DOTFILES/bin/.get-monitor 2)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
 echo "*.monitor4: $($DOTFILES/bin/.get-monitor 3)"                                        >> "$HOME/.config/Xresources.d/01-monitors-generated"
+
+echo "[$(date -Iseconds)] $0 - Done" >> ~/.dotfiles_logs

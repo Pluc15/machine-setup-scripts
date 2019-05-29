@@ -2,3 +2,4 @@
 $DOTFILES/bin/.load-xresources
 killall -q dunst
 i3-msg restart
+echo "[$(date -Iseconds)] $0 - Done" >> ~/.dotfiles_logs
