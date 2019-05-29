@@ -1,6 +1,6 @@
 #!/bin/sh
-if [ -d ~/.config/Xresources.d ] ; then
-    for f in ~/.config/Xresources.d/?* ; do
+if [ -d $HOME/.config/Xresources.d ] ; then
+    for f in $HOME/.config/Xresources.d/?* ; do
 		xrdb -merge "$f"
     done
     unset f
