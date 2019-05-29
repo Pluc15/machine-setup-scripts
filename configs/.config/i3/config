@@ -49,6 +49,11 @@ set_from_resource $color_bright_white   i3wm.color15        #ffffff
 set $color_transparent #00000000
 
 ##################
+## Mouse config ##
+##################
+floating_modifier $modSuper+$modCtrl
+
+##################
 ## Key bindings ##
 ##################
 # System
@@ -84,6 +89,7 @@ bindsym $modSuper+Up focus up
 bindsym $modSuper+Down focus down
 
 # Move window
+bindsym $modSuper+$modCtrl+c move position center
 bindsym $modSuper+$modCtrl+Left move left
 bindsym $modSuper+$modCtrl+Right move right
 bindsym $modSuper+$modCtrl+Up move up
