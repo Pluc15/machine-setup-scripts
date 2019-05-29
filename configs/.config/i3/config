@@ -12,6 +12,7 @@ set $keySuper 133
 set_from_resource $mon_1 i3wm.monitor1
 set_from_resource $mon_2 i3wm.monitor2
 set_from_resource $mon_3 i3wm.monitor3
+set_from_resource $mon_4 i3wm.monitor4
 
 # Workspaces
 set $ws_1 "1"
@@ -171,12 +172,12 @@ workspace $ws_1 output $mon_1
 workspace $ws_2 output $mon_1
 workspace $ws_3 output $mon_1
 workspace $ws_4 output $mon_1
-workspace $ws_5 output $mon_1
-workspace $ws_6 output $mon_1
-workspace $ws_7 output $mon_2
-workspace $ws_8 output $mon_2
-workspace $ws_9 output $mon_3
-workspace $ws_10 output $mon_3
+workspace $ws_5 output $mon_2
+workspace $ws_6 output $mon_2
+workspace $ws_7 output $mon_3
+workspace $ws_8 output $mon_3
+workspace $ws_9 output $mon_4
+workspace $ws_10 output $mon_4
 
 #############
 ## Startup ##

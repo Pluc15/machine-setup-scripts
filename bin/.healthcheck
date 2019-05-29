@@ -1,1 +1,4 @@
-find ~/.config -type l -ls
+#!/bin/sh
+
+#find ~/.config -type l -ls
+echo TODO

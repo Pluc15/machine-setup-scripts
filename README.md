@@ -6,8 +6,7 @@
 # Changing colors
 
 - Use `wal` to generate a new scheme
-- `sh $DOTFILES/sh_scripts/update-pywal-scheme.sh`
-- `reload`
+- `.update-wal-colors`
 
 # TODOs
 
@@ -23,7 +22,7 @@
   - Map pywal colors to QT
   - Improve color mapping in Polybar
   - Fix / add icons in Polybar
-  - Add GTK theme reload to bin/reload
+  - Add GTK theme reload to bin/.reload
 - Prevent pulseaudio to go over 100% with shortcuts (PA_VOLUME_UI_MAX?)
 - Make it not machine specific
   - Polybar's PulseAudio sink

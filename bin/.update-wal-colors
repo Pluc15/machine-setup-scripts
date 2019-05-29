@@ -1,5 +1,5 @@
 #!/bin/sh
-cp "$HOME/.cache/wal/.Xresources"             "$DOTFILES/configs/.Xresources"
+cp "$HOME/.cache/wal/xresources-00-base"      "$DOTFILES/configs/.config/Xresources.d/00-base"
 cp "$HOME/.cache/wal/dunstrc"                 "$DOTFILES/configs/.config/dunst/dunstrc"
 cp "$HOME/.cache/wal/rofi-my-dark-theme.rasi" "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"
-reload
+$DOTFILES/bin/.reload
