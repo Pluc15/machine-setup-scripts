@@ -8,12 +8,6 @@ set $modShift Shift
 set $modCtrl Ctrl
 set $keySuper 133
 
-# Monitors
-set_from_resource $mon_1 i3wm.monitor1
-set_from_resource $mon_2 i3wm.monitor2
-set_from_resource $mon_3 i3wm.monitor3
-set_from_resource $mon_4 i3wm.monitor4
-
 # Workspaces
 set $ws_1 "1"
 set $ws_2 "2"
@@ -24,7 +18,7 @@ set $ws_6 "6"
 set $ws_7 "7"
 set $ws_8 "8"
 set $ws_9 "9"
-set $ws_10 "10"
+set $ws_10 "Secondary"
 
 # Colors
 set_from_resource $color_foreground     i3wm.foreground     #ffffff
@@ -66,7 +60,7 @@ bindsym $modSuper+$modCtrl+$modAlt+c exec --no-startup-id "code $DOTFILES/"
 bindsym $modSuper+Escape exec --no-startup-id .powermenu
 
 # Start Apps
-bindcode $keySuper --release exec --no-startup-id ".launch"
+bindsym $modSuper+d exec --no-startup-id ".launch"
 bindsym $modSuper+Return exec --no-startup-id "i3-sensible-terminal"
 
 # Kill Apps
@@ -176,8 +170,8 @@ client.placeholder      $color_bright_black $color_normal_black $color_bright_bl
 client.background       $color_background
 
 # Gaps
-smart_gaps on
-smart_borders on
+# smart_gaps on
+# smart_borders on
 gaps inner 14
 gaps outer -2
 
@@ -187,16 +181,15 @@ gaps outer -2
 focus_follows_mouse no
 focus_on_window_activation focus
 
-workspace $ws_1 output $mon_1
-workspace $ws_2 output $mon_1
-workspace $ws_3 output $mon_1
-workspace $ws_4 output $mon_1
-workspace $ws_5 output $mon_2
-workspace $ws_6 output $mon_2
-workspace $ws_7 output $mon_3
-workspace $ws_8 output $mon_3
-workspace $ws_9 output $mon_4
-workspace $ws_10 output $mon_4
+workspace $ws_1 output primary
+workspace $ws_2 output primary
+workspace $ws_3 output primary
+workspace $ws_4 output primary
+workspace $ws_5 output primary
+workspace $ws_6 output primary
+workspace $ws_7 output primary
+workspace $ws_8 output primary
+workspace $ws_9 output primary
 
 #############
 ## Startup ##

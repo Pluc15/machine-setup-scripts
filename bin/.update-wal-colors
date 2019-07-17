@@ -9,4 +9,3 @@ cp "~/.cache/wal/xresources-00-base"      "$DOTFILES/configs/.config/Xresources.
 cp "~/.cache/wal/dunstrc"                 "$DOTFILES/configs/.config/dunst/dunstrc"
 cp "~/.cache/wal/rofi-my-dark-theme.rasi" "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"
 $DOTFILES/bin/.reload
-echo "[$(date -Iseconds)] $0 - Done" >> ~/.dotfiles_logs

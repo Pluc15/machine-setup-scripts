@@ -3,7 +3,6 @@
 if [ -d ~/.config/Xresources.d ] ; then
   for f in ~/.config/Xresources.d/?* ; do
     xrdb -merge "$f"
-    echo "[$(date -Iseconds)] $0 - Loaded $f" >> ~/.dotfiles_logs
   done
   unset f
 fi
