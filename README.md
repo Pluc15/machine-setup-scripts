@@ -20,17 +20,13 @@
   - Map pywal colors to Visual Sutido Code
   - Map pywal colors to GTK 2/3
   - Map pywal colors to QT
-  - Improve color mapping in Polybar
-  - Fix / add icons in Polybar
   - Add GTK theme reload to bin/.reload
 - Prevent pulseaudio to go over 100% with shortcuts (PA_VOLUME_UI_MAX?)
-- Make it not machine specific
-  - Polybar's PulseAudio sink
 - Make it work on Arch
 - Health check on i3 start
 - Better Super-Tab
-- Display unread mail in polybar
-- Display unread notification in polybar
+- Display unread mail in i3bar
+- Display unread notification in i3bar
 
 # Stuff I usually install that isn't required for the .dotfiles to work
 

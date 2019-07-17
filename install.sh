@@ -21,7 +21,6 @@ sudo pacman -S --needed \
     lastpass-cli \
     papirus-icon-theme \
     pavucontrol \
-    polybar \
     pulseaudio \
     python-pywal \
     redshift \
@@ -39,7 +38,6 @@ mkdir -p "~/.config/Code - OSS/User"
 mkdir -p "~/.config/dunst"
 mkdir -p "~/.config/gtk-3.0"
 mkdir -p "~/.config/i3"
-mkdir -p "~/.config/polybar"
 mkdir -p "~/.config/profile.d"
 mkdir -p "~/.config/wal/templates"
 mkdir -p "~/.config/rofi"
@@ -56,7 +54,6 @@ ln -fs "$DOTFILES/configs/.config/dunst/dunstrc"                         "~/.con
 ln -fs "$DOTFILES/configs/.config/gtk-3.0/gtk.css"                       "~/.config/gtk-3.0/gtk.css"
 ln -fs "$DOTFILES/configs/.config/gtk-3.0/settings.ini"                  "~/.config/gtk-3.0/settings.ini"
 ln -fs "$DOTFILES/configs/.config/i3/config"                             "~/.config/i3/config"
-ln -fs "$DOTFILES/configs/.config/polybar/config"                        "~/.config/polybar/config"
 ln -fs "$DOTFILES/configs/.config/redshift.conf"                         "~/.config/redshift.conf"
 ln -fs "$DOTFILES/configs/.config/rofi/config"                           "~/.config/rofi/config"
 ln -fs "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"          "~/.config/rofi/rofi-my-dark-theme.rasi"

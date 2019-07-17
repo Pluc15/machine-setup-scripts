@@ -144,6 +144,19 @@ bindsym XF86AudioPrev exec --no-startup-id ".media-prev"
 bindsym XF86MonBrightnessUp exec ".backlight-up"
 bindsym XF86MonBrightnessDown exec ".backlight-down"
 
+#########
+## Bar ##
+#########
+bar {
+    status_command i3status
+    # i3bar_command /home/user/bin/i3bar
+    # status_command i3status --config ~/.i3status.conf
+    # status_command exec ~/.bin/my_status_command
+    mode hide
+    hidden_state hide
+    modifier $modSuper
+}
+
 ###################
 ## Look and feel ##
 ###################
@@ -191,7 +204,6 @@ workspace $ws_10 output $mon_4
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "compton -b"
 exec --no-startup-id "redshift"
-exec_always --no-startup-id ".polybar"
 
 # polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
