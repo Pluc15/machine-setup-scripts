@@ -1,7 +1,9 @@
 #!/bin/sh
-if test -d ~/.config/profile.d/; then
-    for profile in ~/.config/profile.d/*.sh; do
-        test -r "$profile" && . "$profile"
+if test -d "~/.config/profile.d"
+then
+    for f in "~/.config/profile.d/*.sh"
+    do
+        test -x "$f" && . "$f"
     done
-    unset profile
+    unset f
 fi
