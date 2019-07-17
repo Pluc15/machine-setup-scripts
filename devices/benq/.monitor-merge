@@ -1,0 +1,3 @@
+#!/bin/sh
+xrandr --delmonitor HDMI-0_p1
+xrandr --delmonitor HDMI-0_p2
