@@ -63,7 +63,10 @@ ln -fs "$DOTFILES/configs/.config/wal/templates/xresources-00-base"      "~/.con
 ln -fs "$DOTFILES/configs/.config/Xresources.d/00-base"                  "~/.config/Xresources.d/00-base"
 
 echoStep "Configure"
-$DOTFILES/.configure
+echo '#!/bin/sh'                                                                          >  "~/.config/profile.d/00-dotfiles-generated.sh"
+echo "## Everything in this file will be erased next time you run the dotfiles installer" >> "~/.config/profile.d/00-dotfiles-generated.sh"
+echo "export DOTFILES=$DOTFILES"                                                          >> "~/.config/profile.d/00-dotfiles-generated.sh"
+echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "~/.config/profile.d/00-dotfiles-generated.sh"
 
 echoStep "Done!"
 echo "==> You should restart your X session"
