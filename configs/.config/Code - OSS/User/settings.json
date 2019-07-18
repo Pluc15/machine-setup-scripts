@@ -9,5 +9,9 @@
     "source.organizeImports": true
   },
   "window.zoomLevel": 0,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "[Monokai Dimmed]": {}
+  },
+  "workbench.colorTheme": "Monokai Dimmed"
 }
