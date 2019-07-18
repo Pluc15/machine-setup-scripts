@@ -1,3 +1,4 @@
 #!/bin/sh
-pactl set-sink-volume 0 +10%
-notify-send 'set-sink-volume 0 +10%'
+pamixer -i 5
+vol=`pamixer --get-volume-human`
+notify-send "Volume $vol" -u low

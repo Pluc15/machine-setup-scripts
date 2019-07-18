@@ -1,3 +1,4 @@
 #!/bin/sh
-pactl set-sink-mute 0 toggle
-notify-send 'set-sink-mute 0 toggle'
+pamixer -m
+vol=`pamixer --get-volume-human`
+notify-send "Volume $vol" -u low

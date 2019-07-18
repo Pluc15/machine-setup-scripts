@@ -1,2 +1,3 @@
 #!/bin/sh
-echo "TODO"
+playerctl stop
+notify-send 'Media: Stop' -u low

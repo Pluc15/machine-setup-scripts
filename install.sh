@@ -19,6 +19,7 @@ sudo pacman -S --needed \
     git \
     google-chrome \
     lastpass-cli \
+    pamixer \
     papirus-icon-theme \
     pavucontrol \
     pulseaudio \
