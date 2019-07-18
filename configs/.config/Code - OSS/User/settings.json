@@ -3,10 +3,11 @@
   "editor.renderWhitespace": "all",
   "editor.formatOnSave": true,
   "editor.multiCursorModifier": "alt",
-  "editor.fontFamily": "Fira Code, monospace",
+  "editor.fontFamily": "Fira Code, monospace, Font Awesome",
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2
 }
