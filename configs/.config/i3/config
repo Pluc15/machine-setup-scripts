@@ -143,18 +143,14 @@ bindsym XF86MonBrightnessDown exec ".backlight-down"
 #########
 bar {
     status_command i3status
-    # i3bar_command /home/user/bin/i3bar
-    # status_command i3status --config ~/.i3status.conf
-    # status_command exec ~/.bin/my_status_command
     mode hide
     hidden_state hide
     modifier $modSuper
-    font pango:FiraCode 10, FontAwesome 8
+    font pango:FiraCode, FontAwesome 10
     strip_workspace_numbers yes
     position top
-    # output primary
     tray_output HDMI-0
-    separator_symbol " :|: "
+    separator_symbol " - "
     colors {
         background $color_background
         statusline $color_foreground

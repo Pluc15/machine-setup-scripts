@@ -33,6 +33,10 @@ sudo pacman -S --needed \
     x11vnc \
     xcursor-breeze \
     scrot \
+    i3status \
+    i3 \
+    curl \
+    wget \
 
 echoStep "Creating all the folders we will need"
 mkdir -p "~/.config/Code - OSS/User"

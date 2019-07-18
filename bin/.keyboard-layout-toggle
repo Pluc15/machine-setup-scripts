@@ -2,6 +2,8 @@
 if setxkbmap -print -verbose 10 | grep -x "layout.*ca"
 then
     setxkbmap -layout us
+    echo "US" > ~/.config/kb-layout
 else
     setxkbmap -layout ca -variant fr
+    echo "CAF" > ~/.config/kb-layout
 fi
