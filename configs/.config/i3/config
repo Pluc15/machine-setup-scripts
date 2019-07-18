@@ -54,7 +54,7 @@ floating_modifier $modSuper+$modCtrl
 bindsym $modSuper+$modCtrl+$modAlt+r exec --no-startup-id ".reload"
 bindsym $modSuper+space exec --no-startup-id ".keyboard-layout-toggle"
 bindsym $modSuper+$modCtrl+$modAlt+l exec --no-startup-id "blurlock"
-bindsym $modSuper+$modCtrl+$modAlt+c exec --no-startup-id "code $DOTFILES/"
+bindsym $modSuper+$modCtrl+$modAlt+c exec --no-startup-id "code $DOTFILES"
 
 # System Power Menu
 bindsym $modSuper+Escape exec --no-startup-id .powermenu
@@ -149,6 +149,22 @@ bar {
     mode hide
     hidden_state hide
     modifier $modSuper
+    font pango:FiraCode 10, FontAwesome 8
+    strip_workspace_numbers yes
+    position top
+    # output primary
+    tray_output HDMI-0
+    separator_symbol " :|: "
+    colors {
+        background $color_background
+        statusline $color_foreground
+        separator  $color_bright_black
+
+        focused_workspace  $color_bright_green $color_background $color_foreground
+        active_workspace   $color_normal_green $color_background $color_foreground
+        inactive_workspace $color_normal_white $color_background $color_foreground
+        urgent_workspace   $color_bright_red   $color_background $color_foreground
+    }
 }
 
 ###################
