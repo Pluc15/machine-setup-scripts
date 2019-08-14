@@ -3,27 +3,32 @@
 - Clone
 - `sh install.sh`
 
-# How-Tos
-
-## Update pacman mirrors
-
-- `sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu`
+# Dotfiles How-tos
 
 ## Changing colors
 
 - Use `wal` to generate a new scheme
 - `.update-wal-colors`
 
-# Stuff I usually install that isn't required for the .dotfiles to work
+# Arch How-tos
 
-## Official Repository (TODO Find which one in this list is actually from the AUR)
+## Pacman
+
+- Fully uninstall `pacman -Rsn`
+- List explicitly installed packages `pacman -Qq`
+- Get list of dependencies of a package `pactree -u pacman`
+- Update all packages `pacman -Syu`
+- Get best mirrors `rankmirrors -f 5` (from `pacman-contrib`)
+
+# Additional softwares
+
+## Official Repository
 
 ```bash
 pacman -S \
   cheese \
   code \
   deluge \
-  discord \
   docker \
   dotnet-sdk \
   fish \
@@ -45,7 +50,6 @@ pacman -S \
   nvidia-utils \
   obs-studio \
   openssh \
-  pamac-dev \
   pcmanfm \
   remmina \
   rsync \
@@ -54,7 +58,8 @@ pacman -S \
   viewnior \
   vlc \
   x11vnc \
-  yarn
+  yarn \
+  pacman-contrib
 ```
 
 ## AUR
@@ -62,10 +67,13 @@ pacman -S \
 - s-tui
 - slack-desktop
 - xboxdrv
+- discord
 
 ## Services to enable (systemctl enable <service>)
 
-xboxdrv.service
+```bash
+systemctl enable xboxdrv.service
+```
 
 # TODOs
 
@@ -73,14 +81,12 @@ xboxdrv.service
   - Change prompt
 - Driver
   - Fix screen tearing
-  - Fix xbox controllers
 - Improve look
   - Map pywal colors to [JetBrains IDEs](https://github.com/0x6C38/intellijPywal)
   - Map pywal colors to Visual Sutido Code
   - Map pywal colors to GTK 2/3
   - Map pywal colors to QT
   - Add GTK theme reload to bin/.reload
-- Prevent pulseaudio to go over 100% with shortcuts (PA_VOLUME_UI_MAX?)
 - Make it work on Arch
 - Health check on i3 start
 - Better Super-Tab
@@ -88,3 +94,5 @@ xboxdrv.service
 - Display unread notification in i3bar
 - Fix hardcoded `/home/pluc/`
 - Fix hardcoded `tray_output HDMI-0`
+- Hotkey to change default and all audio stream to another device
+- Improve the look of notifications
