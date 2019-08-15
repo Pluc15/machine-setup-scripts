@@ -145,7 +145,7 @@ bar {
     mode hide
     hidden_state hide
     modifier $modSuper
-    font pango:FiraCode, FontAwesome 10
+    font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 10
     strip_workspace_numbers yes
     position top
     tray_output HDMI-0
@@ -166,7 +166,7 @@ bar {
 ## Look and feel ##
 ###################
 # Font
-font pango:FiraCode 10, FontAwesome 8
+font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 10
 
 # Borders
 default_border pixel 2
