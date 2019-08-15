@@ -2,16 +2,27 @@
   "explorer.confirmDelete": false,
   "editor.renderWhitespace": "all",
   "editor.formatOnSave": true,
-  "editor.multiCursorModifier": "alt",
   "editor.fontFamily": "Fira Code, monospace, Font Awesome",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": true
   },
   "window.zoomLevel": 0,
   "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true
+  },
   "workbench.colorCustomizations": {
     "[Monokai Dimmed]": {}
   },
-  "workbench.colorTheme": "Monokai Dimmed"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
