@@ -48,6 +48,7 @@ mkdir -p "~/.config/profile.d"
 mkdir -p "~/.config/wal/templates"
 mkdir -p "~/.config/rofi"
 mkdir -p "~/.config/Xresources.d"
+mkdir -p "~/Pictures/Screenshots"
 
 echoStep "Linking configuraion files"
 ln -fs "$DOTFILES/configs/.gitconfig"                                    "~/.gitconfig"
