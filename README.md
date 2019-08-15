@@ -68,6 +68,7 @@ pacman -S \
 - slack-desktop
 - xboxdrv
 - discord
+- google-chrome
 
 ## Services to enable (systemctl enable <service>)
 
