@@ -1,4 +1,4 @@
 #!/bin/sh
-pamixer -m
+pamixer -t
 vol=`pamixer --get-volume-human`
 notify-send "Volume $vol" -u low
