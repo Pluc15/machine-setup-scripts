@@ -97,3 +97,7 @@ systemctl enable xboxdrv.service
 - Fix hardcoded `tray_output HDMI-0`
 - Hotkey to change default and all audio stream to another device
 - Improve the look of notifications
+- Hotkey to change default and all audio stream to another device
+- Improve the look of notifications
+- Learn how auto mounting usb devices works `https://wiki.archlinux.org/index.php/Udev#Udisks`
+- Learn how `xdg` works and make a config for my dotfiles
