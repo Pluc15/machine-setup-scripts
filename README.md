@@ -8,8 +8,7 @@
 
 ## Changing colors
 
-- Use `wal` to generate a new scheme
-- `.update-wal-colors`
+- `.wal path/to/background`
 
 # Arch How-tos
 
