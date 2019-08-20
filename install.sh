@@ -7,9 +7,9 @@ echoStep() {
 }
 
 echoStep "Updating pacman packages"
-sudo pacman -Syu
+sudo pacman -Syyu
 
-echoStep "Installing pacman packages"
+echoStep "Installing pacman packages needed for dotfiles"
 sudo pacman -S --needed \
     arc-gtk-theme \
     code \
@@ -33,7 +33,58 @@ sudo pacman -S --needed \
     i3status \
     i3-gaps \
     curl \
-    wget
+    wget \
+    xorg \
+    xorg-xinit \
+    arandr \
+    nvidia \
+    nvidia-settings \
+    nvidia-utils \
+    nitrogen \
+    cheese \
+    deluge \
+    docker \
+    dotnet-sdk \
+    fish \
+    freerdp \
+    gimp \
+    glances \
+    gufw \
+    htop \
+    libreoffice \
+    lm_sensors \
+    lutris \
+    neofetch \
+    networkmanager \
+    networkmanager-openvpn \
+    networkmanager-pptp \
+    nodejs \
+    npm \
+    nvidia-utils \
+    nvidia-settings \
+    obs-studio \
+    openssh \
+    remmina \
+    rsync \
+    speedtest-cli \
+    steam \
+    viewnior \
+    vlc \
+    x11vnc \
+    yarn \
+    pacman-contrib \
+    discord \
+    vulkan-icd-loader \
+    lib32-vulkan-icd-loader \
+    lib32-nvidia-utils \
+    feh
+
+
+yay \
+    slack-desktop \
+    xboxdrv \
+    google-chrome \
+    s-tui
 
 echoStep "Creating all the folders we will need"
 mkdir -p "$HOME/.config/Code - OSS/User"
@@ -72,6 +123,9 @@ echo '#!/bin/sh'                                                                
 echo "## Everything in this file will be erased next time you run the dotfiles installer" >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "export DOTFILES=$DOTFILES"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
+
+echoStep "Enabling services"
+# sudo systemctl enable xboxdrv.service # TODO: Test if I need this
 
 echoStep "Done!"
 echo "==> You should restart your X session"
