@@ -77,7 +77,8 @@ sudo pacman -S --needed \
     vulkan-icd-loader \
     lib32-vulkan-icd-loader \
     lib32-nvidia-utils \
-    feh
+    feh \
+    i3lock
 
 
 yay \

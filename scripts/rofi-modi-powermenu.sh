@@ -4,22 +4,22 @@ if [ ! -z "$@" ]
 then
     case "$@" in
     Lock)
-        i3exit lock
+        i3lock
         ;;
     Logout)
-        i3exit logout
+        i3-msg exit
         ;;
     Reboot)
-        i3exit reboot
+        systemctl reboot
         ;;
     Shutdown)
-        i3exit shutdown
+        systemctl poweroff
         ;;
     Suspend)
-        i3exit suspend
+        systemctl suspend
         ;;
-    "Switch User")
-        i3exit switch_user
+    Hibernate)
+        systemctl hibernate
         ;;
     esac
     exit
@@ -30,4 +30,4 @@ echo "Logout"
 echo "Reboot"
 echo "Shutdown"
 echo "Suspend"
-echo "Switch User"
+echo "Hibernate"
