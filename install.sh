@@ -82,9 +82,10 @@ sudo pacman -S --needed \
 
 yay \
     slack-desktop \
-    xboxdrv \
     google-chrome \
     s-tui
+
+# xboxdrv # TODO: Check if i need this
 
 echoStep "Creating all the folders we will need"
 mkdir -p "$HOME/.config/Code - OSS/User"
