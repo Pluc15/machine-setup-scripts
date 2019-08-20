@@ -9,48 +9,33 @@ echoStep() {
 echoStep "Updating pacman packages"
 sudo pacman -Syyu
 
-echoStep "Installing pacman packages needed for dotfiles"
+echoStep "Installing pacman packages"
 sudo pacman -S --needed \
+    arandr \
     arc-gtk-theme \
+    cheese \
     code \
     compton \
-    dunst \
-    git \
-    lastpass-cli \
-    pamixer \
-    papirus-icon-theme \
-    pavucontrol \
-    pulseaudio \
-    python-pywal \
-    redshift \
-    rofi \
-    rxvt-unicode \
-    tk \
-    ttf-fira-code \
-    ttf-font-awesome \
-    x11vnc \
-    scrot \
-    i3status \
-    i3-gaps \
     curl \
-    wget \
-    xorg \
-    xorg-xinit \
-    arandr \
-    nvidia \
-    nvidia-settings \
-    nvidia-utils \
-    nitrogen \
-    cheese \
     deluge \
+    discord \
     docker \
     dotnet-sdk \
+    dunst \
+    feh \
     fish \
     freerdp \
     gimp \
+    git \
     glances \
     gufw \
     htop \
+    i3-gaps \
+    i3lock \
+    i3status \
+    lastpass-cli \
+    lib32-nvidia-utils \
+    lib32-vulkan-icd-loader \
     libreoffice \
     lm_sensors \
     lutris \
@@ -58,29 +43,44 @@ sudo pacman -S --needed \
     networkmanager \
     networkmanager-openvpn \
     networkmanager-pptp \
+    nitrogen \
     nodejs \
     npm \
-    nvidia-utils \
+    nvidia \
     nvidia-settings \
+    nvidia-settings \
+    nvidia-utils \
+    nvidia-utils \
     obs-studio \
     openssh \
+    pacman-contrib \
+    pamixer \
+    papirus-icon-theme \
+    pavucontrol \
+    pulseaudio \
+    python-pywal \
+    redshift \
     remmina \
+    rofi \
     rsync \
+    rxvt-unicode \
+    scrot \
     speedtest-cli \
     steam \
+    tk \
+    ttf-fira-code \
+    ttf-font-awesome \
     viewnior \
     vlc \
-    x11vnc \
-    yarn \
-    pacman-contrib \
-    discord \
     vulkan-icd-loader \
-    lib32-vulkan-icd-loader \
-    lib32-nvidia-utils \
-    feh \
-    i3lock
+    wget \
+    x11vnc \
+    x11vnc \
+    xorg \
+    xorg-xinit \
+    yarn
 
-
+echoStep "Installing AUR packages"
 yay \
     slack-desktop \
     google-chrome \
