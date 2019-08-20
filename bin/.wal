@@ -11,8 +11,11 @@ then
     exit 1
 fi
 
+dest_walpaper="$DOTFILES/walpaper.${1##*.}"
+echo $dest_walpaper
+cp "$1" "$dest_walpaper"
 wal --saturate 0.9 -n -i $1
-nitrogen --set-auto --save $1
+nitrogen --set-auto --save $dest_walpaper
 
 cp "$HOME/.cache/wal/xresources-00-base"      "$DOTFILES/configs/.config/Xresources.d/00-base"
 cp "$HOME/.cache/wal/dunstrc"                 "$DOTFILES/configs/.config/dunst/dunstrc"
