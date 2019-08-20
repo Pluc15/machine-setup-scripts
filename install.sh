@@ -129,6 +129,7 @@ echo "export DOTFILES=$DOTFILES"                                                
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 
 echoStep "Enabling services"
+systemctl --user enable redshift
 # sudo systemctl enable xboxdrv.service # TODO: Test if I need this
 
 echoStep "Done!"
