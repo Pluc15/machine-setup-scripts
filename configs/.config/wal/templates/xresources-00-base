@@ -49,7 +49,7 @@ URxvt*foreground:                  {foreground}
 URxvt*background:                  {background.alpha}
 URxvt*cursorColor:                 {cursor}
 URxvt*borderColor:                 {background.alpha}
-URxvt*font:                        xft:Fira Code:pixelsize=14:antialias=true:hinting=true
+URxvt*font:                        xft:monospace:size=10
 URxvt*depth:                       32
 URxvt.depth:                       32
 URxvt*scrollBar:                   false
