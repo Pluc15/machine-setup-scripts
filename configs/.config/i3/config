@@ -73,6 +73,11 @@ bindsym Print --release exec --no-startup-id "scrot -s ~/Pictures/Screenshots/$(
 bindsym $modSuper+f fullscreen toggle
 bindsym $modSuper+$modAlt+space split toggle
 bindsym $modSuper+$modAlt+f floating toggle
+bindsym $modSuper+$modAlt+$modCtrl+o \
+    floating enable, \
+    resize set width 2560 px, \
+    resize set height 1440 px, \
+    move absolute position 440 px 0 px
 
 # Focus window
 bindsym $modSuper+Tab exec --no-startup-id ".focus"
