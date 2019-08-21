@@ -126,13 +126,14 @@ ln -fs "$DOTFILES/configs/.config/wal/templates/rofi-my-dark-theme.rasi"     "$H
 ln -fs "$DOTFILES/configs/.config/wal/templates/vscode-color-overrides.json" "$HOME/.config/wal/templates/vscode-color-overrides.json"
 ln -fs "$DOTFILES/configs/.config/wal/templates/xresources-00-base"          "$HOME/.config/wal/templates/xresources-00-base"
 ln -fs "$DOTFILES/configs/.config/Xresources.d/00-base"                      "$HOME/.config/Xresources.d/00-base"
-ln -fs "$DOTFILES/configs/.config/nitrogen/bg-saved.cfg"                     "$HOME/.config/nitrogen/bg-saved.cfg"
 
 echoStep "Configure"
 echo '#!/bin/sh'                                                                          >  "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "## Everything in this file will be erased next time you run the dotfiles installer" >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "export DOTFILES=$DOTFILES"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
+
+nitrogen --set-auto --save "$DOTFILES/wallpaper.*"
 
 echoStep "Enabling services"
 systemctl --user enable redshift

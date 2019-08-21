@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 if [[ -z $DOTFILES ]]
 then
     echo "\$DOTFILES not set"
@@ -7,15 +8,32 @@ fi
 
 if [[ -z $1 ]]
 then
-    echo "Usage: $0 path/to/image.jpg"
+    echo "Usage: $0 path/to/image.jpg [options]"
     exit 1
 fi
 
-dest_walpaper="$DOTFILES/walpaper.${1##*.}"
-echo $dest_walpaper
+dest_walpaper="$DOTFILES/wallpaper.${1##*.}"
 cp "$1" "$dest_walpaper"
-wal --saturate 0.9 -n -i $1
-nitrogen --set-auto --save $dest_walpaper
+
+pushd $DOTFILES
+
+while test -n "$1"
+do
+  shift
+  if test "$1" == "--"
+  then
+    shift
+    break
+  fi
+done
+
+if [[ -z $1 ]]
+then
+    wal --saturate 0.9 -n -i "$dest_walpaper"
+else
+    wal -n -i "$dest_walpaper" "$@"
+fi
+nitrogen --set-auto --save "$dest_walpaper"
 
 cp "$HOME/.cache/wal/xresources-00-base"      "$DOTFILES/configs/.config/Xresources.d/00-base"
 cp "$HOME/.cache/wal/dunstrc"                 "$DOTFILES/configs/.config/dunst/dunstrc"
@@ -23,3 +41,4 @@ cp "$HOME/.cache/wal/rofi-my-dark-theme.rasi" "$DOTFILES/configs/.config/rofi/ro
 $DOTFILES/node_modules/.bin/ts-node $DOTFILES/scripts/wal-merge-vscode-color-overrides.ts
 
 $DOTFILES/bin/.reload
+popd
