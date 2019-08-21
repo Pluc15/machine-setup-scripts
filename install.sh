@@ -2,9 +2,14 @@
 export DOTFILES=`dirname $0`
 export DOTFILES=`realpath $DOTFILES`
 
+cd $DOTFILES
+
 echoStep() {
 	echo -e "== $1 =="
 }
+
+echoStep "Installing npm packages"
+npm i
 
 echoStep "Updating pacman packages"
 sudo pacman -Syyu
@@ -102,25 +107,26 @@ mkdir -p "$HOME/.config/Xresources.d"
 mkdir -p "$HOME/Pictures/Screenshots"
 
 echoStep "Linking configuraion files"
-ln -fs "$DOTFILES/configs/.gitconfig"                                    "$HOME/.gitconfig"
-ln -fs "$DOTFILES/configs/.gtkrc-2.0"                                    "$HOME/.gtkrc-2.0"
-ln -fs "$DOTFILES/configs/.profile"                                      "$HOME/.profile"
-ln -fs "$DOTFILES/configs/.xinitrc"                                      "$HOME/.xinitrc"
-ln -fs "$DOTFILES/configs/.config/Code - OSS/User/settings.json"         "$HOME/.config/Code - OSS/User/settings.json"
-ln -fs "$DOTFILES/configs/.config/compton.conf"                          "$HOME/.config/compton.conf"
-ln -fs "$DOTFILES/configs/.config/dunst/dunstrc"                         "$HOME/.config/dunst/dunstrc"
-ln -fs "$DOTFILES/configs/.config/gtk-3.0/gtk.css"                       "$HOME/.config/gtk-3.0/gtk.css"
-ln -fs "$DOTFILES/configs/.config/gtk-3.0/settings.ini"                  "$HOME/.config/gtk-3.0/settings.ini"
-ln -fs "$DOTFILES/configs/.config/i3/config"                             "$HOME/.config/i3/config"
-ln -fs "$DOTFILES/configs/.config/i3status/config"                       "$HOME/.config/i3status/config"
-ln -fs "$DOTFILES/configs/.config/redshift.conf"                         "$HOME/.config/redshift.conf"
-ln -fs "$DOTFILES/configs/.config/rofi/config"                           "$HOME/.config/rofi/config"
-ln -fs "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"          "$HOME/.config/rofi/rofi-my-dark-theme.rasi"
-ln -fs "$DOTFILES/configs/.config/wal/templates/dunstrc"                 "$HOME/.config/wal/templates/dunstrc"
-ln -fs "$DOTFILES/configs/.config/wal/templates/rofi-my-dark-theme.rasi" "$HOME/.config/wal/templates/rofi-my-dark-theme.rasi"
-ln -fs "$DOTFILES/configs/.config/wal/templates/xresources-00-base"      "$HOME/.config/wal/templates/xresources-00-base"
-ln -fs "$DOTFILES/configs/.config/Xresources.d/00-base"                  "$HOME/.config/Xresources.d/00-base"
-ln -fs "$DOTFILES/configs/.config/nitrogen/bg-saved.cfg"                 "$HOME/.config/nitrogen/bg-saved.cfg"
+ln -fs "$DOTFILES/configs/.gitconfig"                                        "$HOME/.gitconfig"
+ln -fs "$DOTFILES/configs/.gtkrc-2.0"                                        "$HOME/.gtkrc-2.0"
+ln -fs "$DOTFILES/configs/.profile"                                          "$HOME/.profile"
+ln -fs "$DOTFILES/configs/.xinitrc"                                          "$HOME/.xinitrc"
+ln -fs "$DOTFILES/configs/.config/Code - OSS/User/settings.json"             "$HOME/.config/Code - OSS/User/settings.json"
+ln -fs "$DOTFILES/configs/.config/compton.conf"                              "$HOME/.config/compton.conf"
+ln -fs "$DOTFILES/configs/.config/dunst/dunstrc"                             "$HOME/.config/dunst/dunstrc"
+ln -fs "$DOTFILES/configs/.config/gtk-3.0/gtk.css"                           "$HOME/.config/gtk-3.0/gtk.css"
+ln -fs "$DOTFILES/configs/.config/gtk-3.0/settings.ini"                      "$HOME/.config/gtk-3.0/settings.ini"
+ln -fs "$DOTFILES/configs/.config/i3/config"                                 "$HOME/.config/i3/config"
+ln -fs "$DOTFILES/configs/.config/i3status/config"                           "$HOME/.config/i3status/config"
+ln -fs "$DOTFILES/configs/.config/redshift.conf"                             "$HOME/.config/redshift.conf"
+ln -fs "$DOTFILES/configs/.config/rofi/config"                               "$HOME/.config/rofi/config"
+ln -fs "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"              "$HOME/.config/rofi/rofi-my-dark-theme.rasi"
+ln -fs "$DOTFILES/configs/.config/wal/templates/dunstrc"                     "$HOME/.config/wal/templates/dunstrc"
+ln -fs "$DOTFILES/configs/.config/wal/templates/rofi-my-dark-theme.rasi"     "$HOME/.config/wal/templates/rofi-my-dark-theme.rasi"
+ln -fs "$DOTFILES/configs/.config/wal/templates/vscode-color-overrides.json" "$HOME/.config/wal/templates/vscode-color-overrides.json"
+ln -fs "$DOTFILES/configs/.config/wal/templates/xresources-00-base"          "$HOME/.config/wal/templates/xresources-00-base"
+ln -fs "$DOTFILES/configs/.config/Xresources.d/00-base"                      "$HOME/.config/Xresources.d/00-base"
+ln -fs "$DOTFILES/configs/.config/nitrogen/bg-saved.cfg"                     "$HOME/.config/nitrogen/bg-saved.cfg"
 
 echoStep "Configure"
 echo '#!/bin/sh'                                                                          >  "$HOME/.config/profile.d/00-dotfiles-generated.sh"
