@@ -109,3 +109,4 @@ systemctl enable xboxdrv.service
 - Learn how auto mounting usb devices works `https://wiki.archlinux.org/index.php/Udev#Udisks`
 - Learn how `xdg` works and make a config for my dotfiles
 - Check `i3-save-tree` if it could be useful
+- Fit `sudo sensors-detect` somewhere so the sensors cli outputs the gpu temps
