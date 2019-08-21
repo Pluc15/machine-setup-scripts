@@ -5,3 +5,4 @@ discord &
 slack &
 lutris &
 steam &
+nm-applet &

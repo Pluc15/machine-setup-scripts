@@ -30,6 +30,7 @@ sudo pacman -S --needed \
     feh \
     fish \
     freerdp \
+    fzf \
     gimp \
     git \
     glances \
@@ -44,10 +45,14 @@ sudo pacman -S --needed \
     libreoffice \
     lm_sensors \
     lutris \
+    nemo \
+    nemo-share \
     neofetch \
+    network-manager-applet \
     networkmanager \
     networkmanager-openvpn \
     networkmanager-pptp \
+    nm-connection-editor \
     nitrogen \
     nodejs \
     npm \
@@ -93,7 +98,8 @@ yay \
     google-chrome \
     s-tui
 
-# xboxdrv # TODO: Check if i need this
+# TODO: Test if I need this for xbox controllers to work (last time I installed it cause they didn't work but something else after installing this fixed it, so I don't know if this driver is required - wiki says to only install if you have issues)
+# yay xboxdrv
 
 echoStep "Creating all the folders we will need"
 mkdir -p "$HOME/.config/Code - OSS/User"
@@ -135,11 +141,12 @@ echo "## Everything in this file will be erased next time you run the dotfiles i
 echo "export DOTFILES=$DOTFILES"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 
-nitrogen --set-auto --save "$DOTFILES/wallpaper.*"
 
 echoStep "Enabling services"
 systemctl --user enable redshift
-# sudo systemctl enable xboxdrv.service # TODO: Test if I need this
+
+# TODO: See other TODO about xboxdrv
+# sudo systemctl enable xboxdrv.service
 
 echoStep "Done!"
 echo "==> You should restart your X session"
