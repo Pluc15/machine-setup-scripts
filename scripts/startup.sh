@@ -3,3 +3,5 @@ nitrogen --restore
 redshift &
 discord &
 slack &
+lutris &
+steam &

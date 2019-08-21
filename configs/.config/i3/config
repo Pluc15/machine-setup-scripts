@@ -207,6 +207,14 @@ workspace $ws_7 output primary
 workspace $ws_8 output primary
 workspace $ws_9 output primary
 
+##############################
+## Default window placement ##
+##############################
+for_window [class="discord"] move scratchpad
+for_window [class="Steam"] move scratchpad
+for_window [class="Lutris"] move scratchpad
+for_window [class="Slack"] move scratchpad
+
 #############
 ## Startup ##
 #############
