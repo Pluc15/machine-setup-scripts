@@ -72,6 +72,7 @@ sudo pacman -S --needed \
     scrot \
     speedtest-cli \
     steam \
+    steam-native-runtime \
     tk \
     ttf-fira-code \
     ttf-font-awesome \
