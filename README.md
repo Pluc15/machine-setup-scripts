@@ -84,6 +84,10 @@ systemctl enable xboxdrv.service
 127.0.1.1	myhostname.localdomain	myhostname
 ```
 
+# Sources
+
+- VSCode template (where to put which color code) extracted from https://github.com/cmschuetz/vscode-wal (I didn't want the extension)
+
 # TODOs
 
 - Shell
