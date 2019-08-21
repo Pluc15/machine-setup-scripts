@@ -33,6 +33,7 @@ sudo pacman -S --needed \
     fzf \
     gimp \
     git \
+    glade \
     glances \
     gufw \
     htop \
