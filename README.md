@@ -4,13 +4,15 @@
 - Clone this git
 - `sh install.sh`
 
-# Dotfiles How-tos
+# Documentation
 
 ## Changing colors
 
 - `.wal path/to/background`
 
-# Arch How-tos
+## Git shortcuts
+
+# Arch reminders
 
 ## Pacman
 
@@ -20,10 +22,10 @@
 - Update all packages `pacman -Syu`
 - Get best mirrors `rankmirrors -f 5` (from `pacman-contrib`)
 
-## Services to enable (systemctl enable <service>)
+## Unable services
 
 ```bash
-systemctl enable xboxdrv.service
+systemctl enable <service-name>.service
 ```
 
 # My Arch installation steps
@@ -96,7 +98,6 @@ systemctl enable xboxdrv.service
   - Fix screen tearing
 - Improve look
   - Map pywal colors to [JetBrains IDEs](https://github.com/0x6C38/intellijPywal)
-  - Map pywal colors to Visual Sutido Code
   - Map pywal colors to GTK 2/3
   - Map pywal colors to QT
   - Add GTK theme reload to bin/.reload
@@ -114,3 +115,4 @@ systemctl enable xboxdrv.service
 - Learn how `xdg` works and make a config for my dotfiles
 - Check `i3-save-tree` if it could be useful
 - Fit `sudo sensors-detect` somewhere so the sensors cli outputs the gpu temps
+- Generate initial locale (Super+Space) so i3status isnt broken until the first time you use the feature
