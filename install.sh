@@ -148,7 +148,10 @@ systemctl --user enable redshift
 # TODO: See other TODO about xboxdrv
 # sudo systemctl enable xboxdrv.service
 
-nitrogen --set-auto --save "$DOTFILES/wallpaper.*"
+nitrogen --head=0 --set-zoom-fill --save "$DOTFILES/wallpaper.*"
+nitrogen --head=1 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
+nitrogen --head=2 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
+nitrogen --head=3 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
 
 echoStep "Done!"
 echo "==> You should restart your X session"
