@@ -82,6 +82,7 @@ sudo pacman -S --needed \
     wget \
     x11vnc \
     x11vnc \
+    xdotool \
     xorg \
     xorg-xinit \
     yarn
