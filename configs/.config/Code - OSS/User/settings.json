@@ -1,21 +1,55 @@
 {
+  // Editor behavior
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.suggestSelection": "first",
+
+  // Workbench behavior
+  "workbench.startupEditor": "none",
+
+  // File explorer
   "explorer.confirmDelete": false,
-  "editor.renderWhitespace": "all",
-  "editor.formatOnSave": true,
-  "editor.fontFamily": "Fira Code, monospace, Font Awesome",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "window.zoomLevel": 0,
-  "editor.tabSize": 2,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "node_modules": true
+    "**/node_modules": true
   },
+
+  // Formating and linting
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "sort-imports.on-save": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.trimAutoWhitespace": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": null
+  },
+
+  // Look & feel
+  "window.zoomLevel": 0,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "workbench.colorTheme": "Monokai",
+  "editor.fontFamily": "Fira Code, monospace, Font Awesome",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.tabSize": 2,
   "workbench.colorCustomizations": {
     "focusBorder": "#c57e77",
     "foreground": "#f0e1df",
@@ -86,14 +120,8 @@
     "gitDecoration.deletedResourceForeground": "#873f39",
     "gitDecoration.untrackedResourceForeground": "#8e3d7a"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.colorTheme": "Monokai",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+
+  // Extensions
+  "liveshare.featureSet": "insiders",
+  "docker.containers.label": "ContainerName"
 }

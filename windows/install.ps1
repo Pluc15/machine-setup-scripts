@@ -1,10 +1,10 @@
 #Requires -RunAsAdministrator
 [CmdletBinding()]
 Param(
-    [string]
-    $PowershellHomeLocation,
-    [string]
-    $MachineScriptsLocation
+  [string]
+  $PowershellHomeLocation,
+  [string]
+  $MachineScriptsLocation
 )
 
 $ErrorActionPreference = "Stop"
@@ -21,14 +21,15 @@ $env:Dotfiles_MachineScripts = $MachineScriptsLocation
 
 # Link configs
 Function SymlinkConfig($DotfilesRelativePath, $DestinationPath) {
-    $DotfilesAbsolutePath = Join-Path $env:Dotfiles $DotfilesRelativePath
-    If (Test-Path $DestinationPath) {
-        Remove-Item -Path $DestinationPath
-    }
-    New-Item -Path $DestinationPath -ItemType SymbolicLink -Value $DotfilesAbsolutePath
+  $DotfilesAbsolutePath = Join-Path $env:Dotfiles $DotfilesRelativePath
+  If (Test-Path $DestinationPath) {
+    Remove-Item -Path $DestinationPath
+  }
+  New-Item -Path $DestinationPath -ItemType SymbolicLink -Value $DotfilesAbsolutePath
 }
 
 SymlinkConfig "configs\.gitconfig" "$env:USERPROFILE\.gitconfig"
+SymlinkConfig "configs\.config\Code - OSS\User\settings.json" "$env:USERPROFILE\AppData\Roaming\Code\User\settings.json"
 SymlinkConfig "windows\terminal\profiles.json" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\profiles.json"
 
 # Install Powershell profile
