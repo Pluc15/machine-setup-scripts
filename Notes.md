@@ -13,8 +13,7 @@ systemdctl
 > .bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells.
 > When a Bourne compatible login shell starts, it first sources (parse & execute) the systemwide files like /etc/profile. Then it sources the user specific initialization file. Every user specific file resides in the particular user’s home directory which in most cases is /home/<user>/. So the file that login shell will source for user specific initialization is ~/.profile (~ is a shorthand for home directory).
 > The original bourne shell was just called sh.Now, there are many Bourne compatible shells like the most famous is bash, another awesome shell is zsh. So this applies to all sh compatible shells, they first source /etc/profile, then their own systemwide config (like /etc/bashrc or /etc/zshrc) then for user specific init they source ~/.profile then they source their own login configs (~/.bash_profile or ~/.zprofile).
-> https://wiki.archlinux.org/index.php/Xprofile
-> https://wiki.archlinux.org/index.php/Xinit#xinitrc
+> https://wiki.archlinux.org/index.php/Xprofile > https://wiki.archlinux.org/index.php/Xinit#xinitrc
 
 # Info about .bashrc .profile .xinitrc and environment variables
 
@@ -67,3 +66,7 @@ File watcher - could be used to improve i3status reaction time
 
 Removed it because idk if i want to keep it
 `exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"` in i3 config
+
+# VSCode
+
+https://code.visualstudio.com/docs/getstarted/settings
