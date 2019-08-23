@@ -1,3 +1,14 @@
+# Install
+
+- Install [Arch Linux WSL](https://github.com/yuk7/ArchWSL)
+- As admin, run `install.ps1`
+- Open WSL terminal
+- Set root password
+- Create pluc and set password
+- Add pluc to sudoers
+- Remove auto logged in user
+- Run `wsl/install.sh`
+
 # Adding hotkeys in powershell
 
 ```powershell

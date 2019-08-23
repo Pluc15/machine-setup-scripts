@@ -28,8 +28,8 @@ Function SymlinkConfig($DotfilesRelativePath, $DestinationPath) {
     New-Item -Path $DestinationPath -ItemType SymbolicLink -Value $DotfilesAbsolutePath
 }
 
-SymlinkConfig "configs\.gitconfig" "$env:HOMEDRIVE$env:HOMEPATH\.gitconfig"
-SymlinkConfig "windows\terminal\profiles.json" "$env:HOMEDRIVE$env:HOMEPATH\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\profiles.json"
+SymlinkConfig "configs\.gitconfig" "$env:USERPROFILE\.gitconfig"
+SymlinkConfig "windows\terminal\profiles.json" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\profiles.json"
 
 # Install Powershell profile
 Write-Output "Invoke-Expression `". `$env:Dotfiles\windows\powershell\profile.ps1`"" > $PROFILE
