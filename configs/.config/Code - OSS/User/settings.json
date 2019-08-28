@@ -45,14 +45,14 @@
   "window.zoomLevel": 0,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Default Dark+",
   "editor.fontFamily": "Fira Code, monospace, Font Awesome",
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
   "editor.tabSize": 2,
   "workbench.colorCustomizations": {
-    "[Monokai]": {
+    "[Default Dark+]": {
       "focusBorder": "#c57e77",
       "foreground": "#f0e1df",
       "widget.shadow": "#a89d9c",
