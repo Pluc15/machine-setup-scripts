@@ -148,7 +148,7 @@ bar {
     font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 10
     strip_workspace_numbers yes
     position top
-    tray_output HDMI-0
+    tray_output primary
     separator_symbol " - "
     colors {
         background $color_background
