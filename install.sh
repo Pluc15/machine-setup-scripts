@@ -18,6 +18,7 @@ echoStep "Installing pacman packages"
 sudo pacman -S --needed \
     arandr \
     arc-gtk-theme \
+    cadence \
     cheese \
     code \
     compton \
@@ -27,6 +28,7 @@ sudo pacman -S --needed \
     docker \
     dotnet-sdk \
     dunst \
+    efibootmgr \
     feh \
     fish \
     freerdp \
@@ -35,11 +37,14 @@ sudo pacman -S --needed \
     git \
     glade \
     glances \
+    gparted \
     gufw \
     htop \
     i3-gaps \
     i3lock \
     i3status \
+    jack2 \
+    jack2-dbus \
     lastpass-cli \
     lib32-nvidia-utils \
     lib32-vulkan-icd-loader \
@@ -53,10 +58,11 @@ sudo pacman -S --needed \
     networkmanager \
     networkmanager-openvpn \
     networkmanager-pptp \
-    nm-connection-editor \
     nitrogen \
+    nm-connection-editor \
     nodejs \
     npm \
+    ntfs-3g \
     nvidia \
     nvidia-settings \
     nvidia-settings \
@@ -69,6 +75,8 @@ sudo pacman -S --needed \
     papirus-icon-theme \
     pavucontrol \
     pulseaudio \
+    pulseaudio-alsa \
+    pulseaudio-jack \
     python-pywal \
     redshift \
     remmina \
@@ -80,6 +88,8 @@ sudo pacman -S --needed \
     steam \
     steam-native-runtime \
     tk \
+    transmission-cli \
+    transmission-gtk \
     ttf-fira-code \
     ttf-font-awesome \
     viewnior \
@@ -91,13 +101,13 @@ sudo pacman -S --needed \
     xdotool \
     xorg \
     xorg-xinit \
-    yarn
+    yarn \
 
 echoStep "Installing AUR packages"
 yay \
     slack-desktop \
     google-chrome \
-    s-tui
+    s-tui \
 
 # TODO: Test if I need this for xbox controllers to work (last time I installed it cause they didn't work but something else after installing this fixed it, so I don't know if this driver is required - wiki says to only install if you have issues)
 # yay xboxdrv
@@ -144,8 +154,6 @@ echo "PATH=\$PATH:$DOTFILES/bin"                                                
 
 
 echoStep "Enabling services"
-systemctl --user enable redshift
-
 # TODO: See other TODO about xboxdrv
 # sudo systemctl enable xboxdrv.service
 
