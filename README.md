@@ -118,3 +118,4 @@ systemctl enable <service-name>.service
 - Generate initial locale (Super+Space) so i3status isnt broken until the first time you use the feature
 - Make the installation work with any username
 - Auto configure primary monitor
+- Send all apps in startup.sh to the scratchpad
