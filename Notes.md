@@ -94,14 +94,3 @@ function RunElevated {
 Lot of nice info about vscode settings that I may want to customize and bring into my dotfiles
 
 https://code.visualstudio.com/docs/getstarted/settings
-
-# WIP IDE keyboard schemas
-
-History back/forward
-Add carret up/down
-Add next occurence to selection
-Find
-Find global
-Increase selection to parent block
-Move lines up/down
-Move lines by block up/down
