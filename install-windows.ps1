@@ -10,7 +10,7 @@ Param(
 $ErrorActionPreference = "Stop"
 
 # Set environement variables
-$env:Dotfiles = Resolve-Path "$PSScriptRoot\.."
+$env:Dotfiles = Resolve-Path "$PSScriptRoot"
 [Environment]::SetEnvironmentVariable("Dotfiles", $env:Dotfiles, "User")
 
 $env:Dotfiles_PowershellHome = $PowershellHomeLocation

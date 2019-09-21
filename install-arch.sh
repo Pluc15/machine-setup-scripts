@@ -152,7 +152,6 @@ echo "## Everything in this file will be erased next time you run the dotfiles i
 echo "export DOTFILES=$DOTFILES"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 
-
 echoStep "Enabling services"
 # TODO: See other TODO about xboxdrv
 # sudo systemctl enable xboxdrv.service
