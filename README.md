@@ -116,3 +116,4 @@ systemctl enable <service-name>.service
 - Check `i3-save-tree` if it could be useful
 - Fit `sudo sensors-detect` somewhere so the sensors cli outputs the gpu temps
 - Generate initial locale (Super+Space) so i3status isnt broken until the first time you use the feature
+- Make the installation work with any username
