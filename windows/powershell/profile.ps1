@@ -1,9 +1,10 @@
-Import-Module "$env:Dotfiles\windows\powershell\scripts\git-functions.psm1"
+Import-Module "$env:Dotfiles\windows\powershell\scripts\git.psm1"
 Import-Module "$env:Dotfiles\windows\powershell\scripts\utils.psm1"
 Import-Module "$env:Dotfiles\windows\powershell\scripts\lpass.psm1"
 Set-Alias -Name "lpass" -Value "Get-LastPass"
 Set-Alias -Name "grep" -Value "findstr"
 Set-Alias -Name "tail" -Value "Get-Tail"
+Set-Alias -Name "dotfiles" -Value "Open-Dotfiles"
 
 If ($env:Dotfiles_MachineScripts) {
     $env:Path = "$env:Path;$env:Dotfiles_MachineScripts"
