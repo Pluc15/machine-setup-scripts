@@ -14,7 +14,7 @@ then
 fi
 
 dest_walpaper="$DOTFILES/wallpaper.${1##*.}"
-rm "$DOTFILES/wallpaper.*"
+rm "$DOTFILES/wallpaper.*" -f
 cp "$1" "$dest_walpaper"
 
 pushd $DOTFILES
