@@ -44,7 +44,6 @@ nitrogen --head=3 --set-zoom-fill --save "$dest_walpaper" 2> /dev/null
 cp "$HOME/.cache/wal/xresources-00-base"      "$DOTFILES/configs/.config/Xresources.d/00-base"
 cp "$HOME/.cache/wal/dunstrc"                 "$DOTFILES/configs/.config/dunst/dunstrc"
 cp "$HOME/.cache/wal/rofi-my-dark-theme.rasi" "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"
-$DOTFILES/node_modules/.bin/ts-node $DOTFILES/scripts/wal-merge-vscode-color-overrides.ts
 
 $DOTFILES/bin/.reload
 popd
