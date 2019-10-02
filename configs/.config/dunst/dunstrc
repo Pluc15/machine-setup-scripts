@@ -24,7 +24,7 @@ line_height =           0
 separator_height =      1
 padding =               8
 horizontal_padding =    10
-separator_color =       #f0e1df
+separator_color =       #d0c0ae
 
 [shortcuts]
 close =                 mod1+space
@@ -33,16 +33,16 @@ history =               ctrl+mod4+h
 context =               ctrl+mod1+c
 
 [urgency_low]
-background =            "#0d0d0d"
-foreground =            "#f0e1df"
+background =            "#0f0607"
+foreground =            "#d0c0ae"
 timeout =               10
 
 [urgency_normal]
-background =            "#0d0d0d"
-foreground =            "#b65458"
+background =            "#0f0607"
+foreground =            "#930726"
 timeout =               10
 
 [urgency_critical]
-background =            "#0d0d0d"
-foreground =            "#873f39"
+background =            "#0f0607"
+foreground =            "#88071a"
 timeout =               0
