@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if test -z "$1" -o -n "$2"
+then
+  echo "Usage: $0 <command>"
+  exit
+fi
+
+FILES=`find .`
+while true
+do
+  SELECTION=`echo "$FILES" | fzf -m`
+
+  if [ -z "$SELECTION" ]
+  then
+    exit
+  fi
+
+  echo "$SELECTION" | xargs -d "\n" "$1"
+done
