@@ -7,3 +7,5 @@ pavucontrol &
 redshift &
 slack &
 steam &
+arandr &
+remmina &
