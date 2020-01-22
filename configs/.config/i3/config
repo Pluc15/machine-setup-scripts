@@ -142,8 +142,6 @@ bindsym XF86MonBrightnessDown exec ".backlight-down"
 #########
 bar {
     status_command i3status
-    mode hide
-    hidden_state hide
     modifier $modSuper
     font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 10
     strip_workspace_numbers yes
