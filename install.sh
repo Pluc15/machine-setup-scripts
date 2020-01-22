@@ -12,13 +12,13 @@ echoStep "Installing npm packages"
 npm i
 
 echoStep "Updating pacman packages"
-sudo pacman -Syyu
+sudo pacman -Syu
 
 echoStep "Installing pacman packages"
 sudo pacman -S --needed \
     arandr \
     arc-gtk-theme \
-    cadence \
+    cifs-utils \
     cheese \
     code \
     compton \
@@ -35,7 +35,6 @@ sudo pacman -S --needed \
     fzf \
     gimp \
     git \
-    glade \
     glances \
     gparted \
     gufw \
@@ -43,17 +42,12 @@ sudo pacman -S --needed \
     i3-gaps \
     i3lock \
     i3status \
-    jack2 \
-    jack2-dbus \
     lastpass-cli \
     lib32-nvidia-utils \
     lib32-vulkan-icd-loader \
     libreoffice \
     lm_sensors \
     lutris \
-    nemo \
-    nemo-share \
-    neofetch \
     network-manager-applet \
     networkmanager \
     networkmanager-openvpn \
@@ -65,8 +59,6 @@ sudo pacman -S --needed \
     ntfs-3g \
     nvidia \
     nvidia-settings \
-    nvidia-settings \
-    nvidia-utils \
     nvidia-utils \
     obs-studio \
     openssh \
@@ -92,14 +84,15 @@ sudo pacman -S --needed \
     transmission-gtk \
     ttf-fira-code \
     ttf-font-awesome \
+    thunar \
     viewnior \
     vlc \
     vulkan-icd-loader \
     wget \
     x11vnc \
-    x11vnc \
     xdotool \
     xorg \
+    xorg-apps \
     xorg-xinit \
     yarn \
 
@@ -109,8 +102,7 @@ yay \
     google-chrome \
     s-tui \
 
-# TODO: Test if I need this for xbox controllers to work (last time I installed it cause they didn't work but something else after installing this fixed it, so I don't know if this driver is required - wiki says to only install if you have issues)
-# yay xboxdrv
+dotnet tool install -g dotnet-script
 
 echoStep "Creating all the folders we will need"
 mkdir -p "$HOME/.config/Code - OSS/User"
@@ -151,10 +143,9 @@ echo '#!/bin/sh'                                                                
 echo "## Everything in this file will be erased next time you run the dotfiles installer" >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "export DOTFILES=$DOTFILES"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
+echo "PATH=\$PATH:$HOME/.scripts"                                                         >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 
 echoStep "Enabling services"
-# TODO: See other TODO about xboxdrv
-# sudo systemctl enable xboxdrv.service
 
 nitrogen --head=0 --set-zoom-fill --save "$DOTFILES/wallpaper.*"
 nitrogen --head=1 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
