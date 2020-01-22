@@ -73,6 +73,7 @@ bindsym Print --release exec --no-startup-id "scrot -s ~/Pictures/Screenshots/$(
 bindsym $modSuper+f fullscreen toggle
 bindsym $modSuper+$modAlt+space split toggle
 bindsym $modSuper+$modAlt+f floating toggle
+bindsym $modSuper+$modAlt+s sticky toggle
 
 # Focus window
 bindsym $modSuper+Tab exec --no-startup-id ".focus"
