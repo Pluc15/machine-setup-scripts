@@ -45,7 +45,7 @@ set $color_transparent #00000000
 ##################
 ## Mouse config ##
 ##################
-floating_modifier $modSuper+$modCtrl
+floating_modifier $modSuper
 
 ##################
 ## Key bindings ##
@@ -100,6 +100,10 @@ bindsym $modSuper+$modAlt+Up resize grow height 10 px or 10 ppt
 bindsym $modSuper+$modAlt+Down resize shrink height 10 px or 10 ppt
 
 # Workspace selection
+bindsym --whole-window $modSuper+button4 workspace prev_on_output
+bindsym --whole-window $modSuper+button5 workspace next_on_output
+bindsym $modSuper+Prior workspace prev_on_output
+bindsym $modSuper+Next workspace next_on_output
 bindsym $modSuper+1 workspace $ws_1
 bindsym $modSuper+2 workspace $ws_2
 bindsym $modSuper+3 workspace $ws_3

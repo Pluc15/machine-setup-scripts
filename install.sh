@@ -18,8 +18,8 @@ echoStep "Installing pacman packages"
 sudo pacman -S --needed \
     arandr \
     arc-gtk-theme \
-    cifs-utils \
     cheese \
+    cifs-utils \
     code \
     compton \
     curl \
@@ -27,6 +27,9 @@ sudo pacman -S --needed \
     discord \
     docker \
     dotnet-sdk \
+    dotnet-runtime \
+    dotnet-host \
+    aspnet-runtime \
     dunst \
     efibootmgr \
     feh \
@@ -48,6 +51,7 @@ sudo pacman -S --needed \
     libreoffice \
     lm_sensors \
     lutris \
+    lxappearance \
     network-manager-applet \
     networkmanager \
     networkmanager-openvpn \
@@ -65,10 +69,13 @@ sudo pacman -S --needed \
     pacman-contrib \
     pamixer \
     papirus-icon-theme \
+    paprefs \
+    pasystray \
     pavucontrol \
     pulseaudio \
     pulseaudio-alsa \
     pulseaudio-jack \
+    pulseeffects \
     python-pywal \
     redshift \
     remmina \
@@ -79,12 +86,12 @@ sudo pacman -S --needed \
     speedtest-cli \
     steam \
     steam-native-runtime \
+    thunar \
     tk \
     transmission-cli \
     transmission-gtk \
     ttf-fira-code \
     ttf-font-awesome \
-    thunar \
     viewnior \
     vlc \
     vulkan-icd-loader \
@@ -95,12 +102,21 @@ sudo pacman -S --needed \
     xorg-apps \
     xorg-xinit \
     yarn \
+    deepin-system-monitor \
+
 
 echoStep "Installing AUR packages"
 yay \
     slack-desktop \
     google-chrome \
     s-tui \
+    snapd \
+
+systemctl enable snapd
+systemctl start snapd
+
+sudo snap install \
+
 
 dotnet tool install -g dotnet-script
 
