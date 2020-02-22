@@ -8,8 +8,10 @@ echoStep() {
 	echo -e "== $1 =="
 }
 
-echoStep "Installing npm packages"
-npm i
+
+echoStep "Updating pacman keys"
+pacman-key --refresh-keys
+pacman -Sy archlinux-keyring && pacman -Su
 
 echoStep "Updating pacman packages"
 sudo pacman -Syu
@@ -18,18 +20,21 @@ echoStep "Installing pacman packages"
 sudo pacman -S --needed \
     arandr \
     arc-gtk-theme \
+    aspnet-runtime \
+    cbatticon \
     cheese \
+    chromium \
     cifs-utils \
     code \
     compton \
     curl \
+    deepin-system-monitor \
     deluge \
     discord \
     docker \
-    dotnet-sdk \
-    dotnet-runtime \
     dotnet-host \
-    aspnet-runtime \
+    dotnet-runtime \
+    dotnet-sdk \
     dunst \
     efibootmgr \
     feh \
@@ -100,28 +105,30 @@ sudo pacman -S --needed \
     xdotool \
     xorg \
     xorg-apps \
+    xorg-xbacklight \
     xorg-xinit \
     yarn \
-    deepin-system-monitor \
 
 
 echoStep "Installing AUR packages"
 yay \
     slack-desktop \
-    google-chrome \
     s-tui \
     snapd \
 
+echoStep "Installing Snapd snaps"
 systemctl enable snapd
 systemctl start snapd
-
 sudo snap install \
+    spotify \
 
-
+echoStep "Installing dotnet tools"
 dotnet tool install -g dotnet-script
 
+echoStep "Installing npm packages"
+npm i
+
 echoStep "Creating all the folders we will need"
-mkdir -p "$HOME/.config/Code - OSS/User"
 mkdir -p "$HOME/.config/dunst"
 mkdir -p "$HOME/.config/gtk-3.0"
 mkdir -p "$HOME/.config/i3"
@@ -138,7 +145,6 @@ ln -fs "$DOTFILES/configs/.gitconfig"                                        "$H
 ln -fs "$DOTFILES/configs/.gtkrc-2.0"                                        "$HOME/.gtkrc-2.0"
 ln -fs "$DOTFILES/configs/.profile"                                          "$HOME/.profile"
 ln -fs "$DOTFILES/configs/.xinitrc"                                          "$HOME/.xinitrc"
-ln -fs "$DOTFILES/configs/.config/Code - OSS/User/settings.json"             "$HOME/.config/Code - OSS/User/settings.json"
 ln -fs "$DOTFILES/configs/.config/compton.conf"                              "$HOME/.config/compton.conf"
 ln -fs "$DOTFILES/configs/.config/dunst/dunstrc"                             "$HOME/.config/dunst/dunstrc"
 ln -fs "$DOTFILES/configs/.config/gtk-3.0/gtk.css"                           "$HOME/.config/gtk-3.0/gtk.css"
@@ -150,7 +156,6 @@ ln -fs "$DOTFILES/configs/.config/rofi/config"                               "$H
 ln -fs "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"              "$HOME/.config/rofi/rofi-my-dark-theme.rasi"
 ln -fs "$DOTFILES/configs/.config/wal/templates/dunstrc"                     "$HOME/.config/wal/templates/dunstrc"
 ln -fs "$DOTFILES/configs/.config/wal/templates/rofi-my-dark-theme.rasi"     "$HOME/.config/wal/templates/rofi-my-dark-theme.rasi"
-ln -fs "$DOTFILES/configs/.config/wal/templates/vscode-color-overrides.json" "$HOME/.config/wal/templates/vscode-color-overrides.json"
 ln -fs "$DOTFILES/configs/.config/wal/templates/xresources-00-base"          "$HOME/.config/wal/templates/xresources-00-base"
 ln -fs "$DOTFILES/configs/.config/Xresources.d/00-base"                      "$HOME/.config/Xresources.d/00-base"
 
@@ -161,8 +166,7 @@ echo "export DOTFILES=$DOTFILES"                                                
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$HOME/.scripts"                                                         >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 
-echoStep "Enabling services"
-
+echoStep "Install wallpaper"
 nitrogen --head=0 --set-zoom-fill --save "$DOTFILES/wallpaper.*"
 nitrogen --head=1 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
 nitrogen --head=2 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null

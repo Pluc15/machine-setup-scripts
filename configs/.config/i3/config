@@ -212,4 +212,7 @@ workspace $ws_9 output primary
 #############
 ## Startup ##
 #############
+for_window [class="Slack"] move scratchpad
+for_window [class="Arandr"] move scratchpad
+for_window [class="discord"] move scratchpad
 exec --no-startup-id "sh $DOTFILES/scripts/startup.sh"

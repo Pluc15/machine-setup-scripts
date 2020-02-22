@@ -1,11 +1,11 @@
 compton -b
 nitrogen --restore
-discord &
-lutris &
+remmina -i &
 nm-applet &
-pavucontrol &
-redshift &
+redshift-gtk &
+pasystray &
+cbatticon &
+
+discord &
 slack &
-steam &
 arandr &
-remmina &
