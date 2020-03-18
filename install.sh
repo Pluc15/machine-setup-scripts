@@ -173,5 +173,10 @@ nitrogen --head=1 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
 nitrogen --head=2 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
 nitrogen --head=3 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
 
+echo 'Configure x11vnc password'
+if [ ! -f "~/.vnc/passwd" ]; then
+    x11vnc -storepasswd
+fi
+
 echoStep "Done!"
 echo "==> You should restart your X session"
