@@ -1,13 +1,16 @@
 #!/bin/sh
+set -e
+
 export DOTFILES=`dirname $0`
 export DOTFILES=`realpath $DOTFILES`
 
 cd $DOTFILES
 
+# TODO git fetch and check if HEAD == origin/master
+
 echoStep() {
 	echo -e "== $1 =="
 }
-
 
 echoStep "Updating pacman keys"
 pacman-key --refresh-keys
@@ -16,7 +19,7 @@ pacman -Sy archlinux-keyring && pacman -Su
 echoStep "Updating pacman packages"
 sudo pacman -Syu
 
-echoStep "Installing pacman packages"
+echoStep "Installing new pacman packages"
 sudo pacman -S --needed \
     arandr \
     arc-gtk-theme \
@@ -124,12 +127,19 @@ sudo snap install \
     spotify \
 
 echoStep "Installing dotnet tools"
-dotnet tool install -g dotnet-script
+if dotnet tool list -g | grep -q "dotnet-script"
+then 
+   dotnet tool install -g dotnet-script
+else
+   dotnet tool update -g dotnet-script
+fi
+
 
 echoStep "Installing npm packages"
 npm i
 
 echoStep "Creating all the folders we will need"
+mkdir -p "$HOME/.scripts"
 mkdir -p "$HOME/.config/dunst"
 mkdir -p "$HOME/.config/gtk-3.0"
 mkdir -p "$HOME/.config/i3"
@@ -170,8 +180,9 @@ echo "export DOTFILES=$DOTFILES"                                                
 echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 echo "PATH=\$PATH:$HOME/.scripts"                                                         >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
 
-echo 'Configure x11vnc password'
-if [ ! -f "~/.vnc/passwd" ]; then
+echoStep "Configure x11vnc password"
+if [ ! -f "~/.vnc/passwd" ]
+then
     x11vnc -storepasswd
 fi
 
