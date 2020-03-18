@@ -1,0 +1,68 @@
+#!/bin/sh
+# Generate and apply a new theme from a wallpaper
+
+set -e
+
+if [[ -z $DOTFILES ]]
+then
+    echo "\$DOTFILES not set"
+    exit 1
+fi
+
+if [[ -z $1 ]] || [[ -z $2 ]]
+then
+    echo "Usage: $0 theme-name path/to/image.jpg -- [wal options]"
+    exit 1
+fi
+
+if [[ $1 =~ "[A-z0-9\-_]+" ]]
+then
+  echo "Invalid theme name. Must match regex patern '[A-z0-9\-_]+'"
+  exit 1
+fi
+
+if [[ $1 == "current" ]]
+then
+  echo "Invalid theme name. The theme name 'current' is reserved"
+  exit 1
+fi
+
+THEME_NAME="$1"
+DEST_WALLPAPER="$DOTFILES/themes/$THEME_NAME/wallpaper.${2##*.}"
+
+# Delete existing theme
+rm "$DOTFILES/themes/$THEME_NAME" -r
+mkdir -p "$DOTFILES/themes/$THEME_NAME"
+
+# Copy wallpaper
+cp "$2" "$DEST_WALLPAPER"
+
+# Cleanup last theme cache
+rm "$HOME/.cache/wal/*"
+
+# Remove everything up to a -- argument so we can pass the rest to wal
+while test -n "$1"
+do
+  shift
+  if test "$1" == "--"
+  then
+    shift
+    break
+  fi
+done
+
+# If we have arguments for wal, use them, otherwise, use the defaults
+if [[ -z $1 ]]
+then
+    wal -n -i "$DEST_WALLPAPER" --saturate 0.9
+else
+    wal -n -i "$DEST_WALLPAPER" "$@"
+fi
+
+# Save the theme all the styled configuration build by wal
+cp "$HOME/.cache/wal/xresources-theme"      "$DOTFILES/themes/$THEME_NAME/.config/Xresources.d/10-theme"
+cp "$HOME/.cache/wal/dunstrc"                 "$DOTFILES/themes/$THEME_NAME/.config/dunst/dunstrc"
+cp "$HOME/.cache/wal/rofi-my-dark-theme.rasi" "$DOTFILES/themes/$THEME_NAME/.config/rofi/rofi-my-dark-theme.rasi"
+cp "$HOME/.cache/wal"                         "$DOTFILES/themes/$THEME_NAME/wal_backup"
+
+$DOTFILES/bin/.theme-selector

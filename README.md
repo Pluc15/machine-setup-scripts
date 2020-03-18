@@ -4,21 +4,21 @@
 - Clone this git
 - `sh install.sh`
 
-# Updating
-
-- `cd $DOTFILES`
-- `ggpl`
-- `.update`
-
 # Documentation
 
-## Updating your machine (packages)
+## Updating your machine and dotfiles
 
-- `.update`
+`.update`
 
-## Changing colors
+## Themes
 
-- `.wal path/to/background`
+### Generating a new theme
+
+`.theme-generator theme-name path/to/background`
+
+### Changing the active theme
+
+`.theme-selector theme-name`
 
 # TODOs
 
@@ -27,7 +27,7 @@
 - Improve look
   - Map pywal colors to GTK 2/3
   - Map pywal colors to QT
-- Better Super-Tab
+- Better Super-Tab with window preview
 - Display unread mail in i3bar
 - Display unread notification in i3bar
 - Fix hardcoded `/home/pluc/`
@@ -41,4 +41,4 @@
 - Send all apps in startup.sh to the scratchpad
 - Remove my email from everywhere
 - Fix second monitor stealing workspace 2
-- Fix x11vnc startup: It easily dies when connection dies
+- Fix x11vnc startup: It easily dies when connection dies + add the systray gui
