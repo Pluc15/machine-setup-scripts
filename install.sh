@@ -97,6 +97,7 @@ sudo pacman -S --needed \
     transmission-gtk \
     ttf-fira-code \
     ttf-font-awesome \
+    tumbler \
     viewnior \
     vlc \
     vulkan-icd-loader \
