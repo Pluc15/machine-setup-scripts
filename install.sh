@@ -148,6 +148,18 @@ sudo pacman -Syu --needed \
     xorg-xinit \
     yarn \
 
+echoStep "Installing / updating yay"
+pushd ~/.aur
+if [ ! -d "yay" ]
+then
+    git clone https://aur.archlinux.org/yay.git
+fi
+cd yay
+git reset --hard
+git pull
+makepkg -si --needed
+popd
+
 echoStep "Installing / updating AUR packages"
 # --needed doesn't prevent redownloading sources. See https://github.com/Jguer/yay/issues/885
 yay -Syu \
