@@ -1,4 +1,3 @@
 *.orig
 __*
 node_modules/
-themes/current

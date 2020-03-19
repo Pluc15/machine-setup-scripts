@@ -24,9 +24,6 @@
 
 - Shell
   - Change prompt
-- Improve look
-  - Map pywal colors to GTK 2/3
-  - Map pywal colors to QT
 - Better Super-Tab with window preview
 - Display unread mail in i3bar
 - Display unread notification in i3bar
