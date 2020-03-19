@@ -82,6 +82,8 @@ sudo pacman -S --needed \
     paprefs \
     pasystray \
     pavucontrol \
+    polkit \
+    polkit-gnome \
     pulseaudio \
     pulseaudio-alsa \
     pulseaudio-jack \
