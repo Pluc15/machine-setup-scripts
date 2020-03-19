@@ -122,6 +122,7 @@ installPacmanPackages() {
         arc-gtk-theme \
         arch-audit \
         aspnet-runtime \
+        brightnessctl \
         cbatticon \
         cheese \
         chromium \

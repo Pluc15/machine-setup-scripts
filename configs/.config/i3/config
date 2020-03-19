@@ -141,6 +141,8 @@ bindsym XF86AudioPrev exec --no-startup-id ".media-prev"
 # Backlight keys
 bindsym XF86MonBrightnessUp exec ".backlight-up"
 bindsym XF86MonBrightnessDown exec ".backlight-down"
+bindsym $modSuper+$modAlt+$modCtrl+Up exec --no-startup-id ".backlight-up"
+bindsym $modSuper+$modAlt+$modCtrl+Down exec --no-startup-id ".backlight-down"
 
 #########
 ## Bar ##
