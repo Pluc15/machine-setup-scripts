@@ -46,8 +46,8 @@ then
     pacman -Sy archlinux-keyring && pacman -Su
 fi
 
-echoStep "Installing new pacman packages"
-sudo pacman -S --needed \
+echoStep "Installing / updating pacman packages"
+sudo pacman -Syu --needed \
     arandr \
     arc-gtk-theme \
     aspnet-runtime \
@@ -146,19 +146,15 @@ sudo pacman -S --needed \
     xorg-xinit \
     yarn \
 
-echoStep "Updating AUR packages"
+echoStep "Installing / updating AUR packages"
+# --needed doesn't prevent redownloading sources. See https://github.com/Jguer/yay/issues/885
 yay -Syu \
     --aur \
-    --removemake \
-    --answerclean a \
+    --needed \
+    --noremovemake \
+    --answerclean n \
     --answerdiff n \
-
-echoStep "Installing new AUR packages"
-yay -S \
-    --aur \
-    --removemake \
-    --answerclean a \
-    --answerdiff n \
+    --noconfirm \
     slack-desktop \
     snapd \
     adwaita-qt \
