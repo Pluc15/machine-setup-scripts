@@ -39,3 +39,4 @@
 - Remove my email from everywhere
 - Fix second monitor stealing workspace 2
 - Fix x11vnc startup: It easily dies when connection dies + add the systray gui
+- If yay is not instead, install manually

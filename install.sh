@@ -95,6 +95,7 @@ sudo pacman -S --needed \
     rofi \
     rsync \
     rxvt-unicode \
+    s-tui \
     scrot \
     speedtest-cli \
     steam \
@@ -118,12 +119,25 @@ sudo pacman -S --needed \
     xorg-xinit \
     yarn \
 
-echoStep "Installing AUR packages"
-yay \
+echoStep "Updating AUR packages"
+yay -Syu \
+    --aur \
+    --removemake \
+    --answerclean a \
+    --answerdiff n \
+
+echoStep "Installing new AUR packages"
+yay -S \
+    --aur \
+    --removemake \
+    --answerclean a \
+    --answerdiff n \
     slack-desktop \
-    s-tui \
     snapd \
     adwaita-qt \
+    jetbrains-toolbox \
+    mongodb-compass \
+    webtorrent-desktop-bin \
 
 echoStep "Installing Snapd snaps"
 systemctl enable snapd
