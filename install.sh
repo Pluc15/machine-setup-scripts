@@ -177,8 +177,8 @@ yay -Syu \
     webtorrent-desktop-bin \
 
 echoStep "Installing Snapd snaps"
-systemctl enable snapd
-systemctl start snapd
+sudo systemctl enable snapd
+sudo systemctl start snapd
 sudo snap install \
     spotify \
 
