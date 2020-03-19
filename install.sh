@@ -36,7 +36,8 @@ cd $DOTFILES
 # TODO git fetch and check if HEAD == origin/master
 
 echoStep() {
-	echo -e "== $1 =="
+    echo ""
+    echo -e "== $1 =="
 }
 
 if [ $REFRESH_PACMAN_KEYS -eq 1 ]
@@ -50,6 +51,7 @@ echoStep "Installing / updating pacman packages"
 sudo pacman -Syu --needed \
     arandr \
     arc-gtk-theme \
+    arch-audit \
     aspnet-runtime \
     cbatticon \
     cheese \
@@ -232,6 +234,9 @@ if [ ! -f "~/.vnc/passwd" ]
 then
     x11vnc -storepasswd
 fi
+
+echoStep "Running pacman packages audit -- PLEASE READ THE OUTPUT"
+arch-audit
 
 echoStep "Done!"
 echo "==> You should restart your X session"
