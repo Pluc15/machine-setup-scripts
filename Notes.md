@@ -24,16 +24,6 @@ This is usefull to copy some of the nice bootstrapping manjaro does
 - https://wiki.archlinux.org/index.php/GTK+
 - https://fishshell.com/docs/current/faq.html#faq-exported-uvar
 
-## Manjaro default .profile
-
-```
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export EDITOR=/usr/bin/nano
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-## fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/usr/bin/palemoon
-```
-
 ## Example script that sets xprops on a windows (usefull for hotkeys that change how a window looks with compositor rules)
 
 ```bash
@@ -51,55 +41,6 @@ fi
 ## inotify
 
 File watcher - could be used to improve i3status reaction time
-
-## polkit
-
-Removed it because idk if i want to keep it
-`exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"` in i3 config
-
-# Windows
-
-## Adding hotkeys in powershell
-
-```powershell
-Set-PSReadlineKeyHandler -Key Ctrl+R `
-    -BriefDescription "FuzzyHistory" `
-    -LongDescription "FuzzyHistory" `
-    -ScriptBlock {
-    param($key, $arg)
-    Get-FuzzyHistory
-}
-```
-
-## sudo in powershell (WIP)
-
-```powershell
-function RunElevated {
-    param([string]$Arguments = $args)
-    $psi = New-Object System.Diagnostics.ProcessStartInfo powershell;
-    $psi.Arguments = $Arguments;
-    $psi.CreateNoWindow = $true;
-    $psi.Verb = "runas";
-    $psi.WorkingDirectory = Get-Location;
-    $psi.UseShellExecute = $false;
-    $psi.RedirectStandardError = $true;
-    $psi.RedirectStandardInput = $true;
-    $psi.RedirectStandardOutput = $true;
-    [System.Diagnostics.Process]::Start($psi);
-}
-```
-
-# VSCode
-
-Lot of nice info about vscode settings that I may want to customize and bring into my dotfiles
-
-https://code.visualstudio.com/docs/getstarted/settings
-
-# Unify theme
-
-Theres a whole wiki page on theme unification that I need to check.
-
-https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle
 
 # My Arch installation steps
 
@@ -174,3 +115,7 @@ https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications#QG
 ```bash
 systemctl enable <service-name>.service
 ```
+
+## .desktop files location
+
+Desktop entries for applications, or .desktop files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in /usr/share/applications/ or /usr/local/share/applications/ for applications installed system-wide, or ~/.local/share/applications/ for user-specific applications. User entries take precedence over system entries.
