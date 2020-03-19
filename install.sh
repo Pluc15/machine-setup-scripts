@@ -1,8 +1,35 @@
 #!/bin/sh
 set -e
 
+function usage()
+{
+    echo "./install.sh"
+    echo "\t-h --help"
+    echo "\t--refresh-pacman-keys"
+    echo ""
+}
+
+REFRESH_PACMAN_KEYS=0
 export DOTFILES=`dirname $0`
 export DOTFILES=`realpath $DOTFILES`
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -h | --help)
+            usage
+            exit
+            ;;
+        --refresh-pacman-keys)
+            REFRESH_PACMAN_KEYS=1
+            ;;
+        *)
+            echo "ERROR: unknown parameter \"$PARAM\""
+            usage
+            exit 1
+            ;;
+    esac
+    shift
+done
 
 cd $DOTFILES
 
@@ -12,12 +39,12 @@ echoStep() {
 	echo -e "== $1 =="
 }
 
-echoStep "Updating pacman keys"
-sudo pacman-key --refresh-keys
-pacman -Sy archlinux-keyring && pacman -Su
-
-echoStep "Updating pacman packages"
-sudo pacman -Syu
+if [ $REFRESH_PACMAN_KEYS -eq 1 ]
+then
+    echoStep "Updating pacman keys"
+    sudo pacman-key --refresh-keys
+    pacman -Sy archlinux-keyring && pacman -Su
+fi
 
 echoStep "Installing new pacman packages"
 sudo pacman -S --needed \
