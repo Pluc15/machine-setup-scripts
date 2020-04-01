@@ -7,11 +7,10 @@ function usage()
     echo "\t-h --help"
     echo "\t--skip-all (use first then re-enable individually)"
     echo "\t--refresh-pacman-keys (disabled by default)"
-    echo "\t--install-all-packages (includes pacman, yay, aur and snaps)"
+    echo "\t--install-all-packages (includes pacman, yay and aur)"
     echo "\t--install-pacman-packages"
     echo "\t--install-yay"
     echo "\t--install-aur-packages"
-    echo "\t--install-snaps"
     echo "\t--install-dotnet-tools-dependencies"
     echo "\t--install-npm-dependencies"
     echo "\t--create-configuration-symlinks"
@@ -29,7 +28,6 @@ REFRESH_PACMAN_KEYS=0
 INSTALL_PACMAN_PACKAGES=1
 INSTALL_YAY=1
 INSTALL_AUR_PACKAGES=1
-INSTALL_SNAP_PACKAGES=1
 INSTALL_DOTNET_TOOLS_DEPENDENCIES=1
 INSTALL_NPM_DEPENDENCIES=1
 CREATE_CONFIGURATION_SYMLINKS=1
@@ -52,7 +50,6 @@ while [ "$1" != "" ]; do
             INSTALL_PACMAN_PACKAGES=0
             INSTALL_YAY=0
             INSTALL_AUR_PACKAGES=0
-            INSTALL_SNAP_PACKAGES=0
             INSTALL_DOTNET_TOOLS_DEPENDENCIES=0
             INSTALL_NPM_DEPENDENCIES=0
             CREATE_CONFIGURATION_SYMLINKS=0
@@ -65,7 +62,6 @@ while [ "$1" != "" ]; do
             INSTALL_PACMAN_PACKAGES=1
             INSTALL_YAY=1
             INSTALL_AUR_PACKAGES=1
-            INSTALL_SNAP_PACKAGES=1
             ;;
         --install-pacman-packages)
             INSTALL_PACMAN_PACKAGES=1
@@ -75,9 +71,6 @@ while [ "$1" != "" ]; do
             ;;
         --install-aur-packages)
             INSTALL_AUR_PACKAGES=1
-            ;;
-        --install-snaps)
-            INSTALL_SNAP_PACKAGES=1
             ;;
         --install-dotnet-tools-dependencies)
             INSTALL_DOTNET_TOOLS_DEPENDENCIES=1
@@ -251,22 +244,12 @@ installAurPackages() {
         --answerdiff n \
         --noconfirm \
         slack-desktop \
-        snapd \
         adwaita-qt \
         jetbrains-toolbox \
         mongodb-compass \
         webtorrent-desktop-bin
-}
+        spotify \
 
-installSnaps() {
-    echoStep "Installing Snapd snaps"
-
-    sudo systemctl enable snapd
-    sudo systemctl start snapd
-    sudo snap install \
-        spotify
-    sudo snap refresh \
-        spotify
 }
 
 installDotnetToolsDependencies() {
@@ -362,7 +345,6 @@ if [ $REFRESH_PACMAN_KEYS -eq 1 ]; then refreshPacmanKeys; fi
 if [ $INSTALL_PACMAN_PACKAGES -eq 1 ]; then installPacmanPackages; fi
 if [ $INSTALL_YAY -eq 1 ]; then installYay; fi
 if [ $INSTALL_AUR_PACKAGES -eq 1 ]; then installAurPackages; fi
-if [ $INSTALL_SNAP_PACKAGES -eq 1 ]; then installSnaps; fi
 if [ $INSTALL_DOTNET_TOOLS_DEPENDENCIES -eq 1 ]; then installDotnetToolsDependencies; fi
 if [ $INSTALL_NPM_DEPENDENCIES -eq 1 ]; then installNpmDependencies; fi
 if [ $CREATE_CONFIGURATION_SYMLINKS -eq 1 ]; then createConfigurationSymlinks; fi
