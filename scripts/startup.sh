@@ -22,4 +22,3 @@ cbatticon &
 # Scratch pad apps
 discord &
 slack &
-arandr &
