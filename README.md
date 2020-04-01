@@ -28,7 +28,6 @@
 - Display unread mail in i3bar
 - Display unread notification in i3bar
 - Fix hardcoded `/home/pluc/`
-- Improve the look of notifications
 - Learn how auto mounting usb devices works `https://wiki.archlinux.org/index.php/Udev#Udisks` and set it up in my dotfiles
 - Learn how `xdg` works and make a config for my dotfiles
 - Fit `sudo sensors-detect` somewhere so the sensors cli outputs the gpu temps
