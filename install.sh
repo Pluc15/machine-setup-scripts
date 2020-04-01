@@ -330,11 +330,19 @@ installWallpaper() {
 }
 
 configure() {
-    if [ ! -f "$HOME/.vnc/passwd" ]
-    then
-        echoStep "Configure x11vnc password"
+    while [ ! -f "$HOME/.vnc/passwd" ]
+    do
+        echoStep "Configure x11vnc password and save it to the default location"
         x11vnc -storepasswd
-    fi
+    done
+
+    while [ ! -f "$HOME/.screenlayout/default.sh" ]
+    do
+        echoStep "Configure your default screen layout then save it to '$HOME/.screenlayout/default.sh'"
+        read -p "Press [Enter] key to start backup..."
+        arandr
+        read -p "Press [Enter] when you have exported your layout to '$HOME/.screenlayout/default.sh'"
+    done
 }
 
 runAudit() {

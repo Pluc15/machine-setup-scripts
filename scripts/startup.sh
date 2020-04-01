@@ -1,11 +1,16 @@
 # Services
 dunst &
 compton -b &
-x11vnc -display :0 -usepw -forever -bg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+if [ -f "$HOME/.screenlayout/default.sh" ]; then
+  x11vnc -display :0 -usepw -forever -bg &
+fi
 
-# Single run commands
+# Restores
 nitrogen --restore &
+if [ -f "$HOME/.screenlayout/default.sh" ]; then
+  sh $HOME/.screenlayout/default.sh
+fi
 
 # Systrays
 remmina -i &
