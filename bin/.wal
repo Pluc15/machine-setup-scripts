@@ -1,6 +1,7 @@
 #!/bin/sh
 
-nitrogen --head=0 --set-zoom-fill --save "$1"
-nitrogen --head=1 --set-zoom-fill --save "$1" 2> /dev/null
-nitrogen --head=2 --set-zoom-fill --save "$1" 2> /dev/null
-nitrogen --head=3 --set-zoom-fill --save "$1" 2> /dev/null
+convert "$1" "$DOTFILES/wallpaper.png"
+nitrogen --head=0 --set-zoom-fill --save "$DOTFILES/wallpaper.png"
+nitrogen --head=1 --set-zoom-fill --save "$DOTFILES/wallpaper.png" 2> /dev/null
+nitrogen --head=2 --set-zoom-fill --save "$DOTFILES/wallpaper.png" 2> /dev/null
+nitrogen --head=3 --set-zoom-fill --save "$DOTFILES/wallpaper.png" 2> /dev/null
