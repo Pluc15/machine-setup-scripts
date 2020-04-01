@@ -227,7 +227,8 @@ installPacmanPackages() {
 installYay() {
     echoStep "Installing / updating yay"
 
-    pushd ~/.aur
+    mkdir -p "$HOME/.aur"
+    pushd "$HOME/.aur"
     if [ ! -d "yay" ]
     then
         git clone https://aur.archlinux.org/yay.git
