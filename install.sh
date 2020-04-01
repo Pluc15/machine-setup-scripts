@@ -152,6 +152,7 @@ installPacmanPackages() {
         i3-gaps \
         i3lock \
         i3status \
+        kde-applications-meta \
         kde-gtk-config \
         lastpass-cli \
         lib32-nvidia-utils \
@@ -183,6 +184,7 @@ installPacmanPackages() {
         paprefs \
         pasystray \
         pavucontrol \
+        plasma-meta \
         polkit \
         polkit-gnome \
         pulseaudio \
@@ -295,6 +297,7 @@ createConfigurationSymlinks() {
     ln -fs "$DOTFILES/configs/.xinitrc"                                          "$HOME/.xinitrc"
     ln -fs "$DOTFILES/configs/.config/compton.conf"                              "$HOME/.config/compton.conf"
     ln -fs "$DOTFILES/configs/.config/dunst/dunstrc"                             "$HOME/.config/dunst/dunstrc"
+    ln -fs "$DOTFILES/configs/.config/gtk-3.0/colors.css"                        "$HOME/.config/gtk-3.0/colors.css"
     ln -fs "$DOTFILES/configs/.config/gtk-3.0/gtk.css"                           "$HOME/.config/gtk-3.0/gtk.css"
     ln -fs "$DOTFILES/configs/.config/gtk-3.0/settings.ini"                      "$HOME/.config/gtk-3.0/settings.ini"
     ln -fs "$DOTFILES/configs/.config/i3/config"                                 "$HOME/.config/i3/config"
