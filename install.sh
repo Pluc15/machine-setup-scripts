@@ -279,7 +279,6 @@ createConfigurationSymlinks() {
     mkdir -p "$HOME/.config/i3status"
     mkdir -p "$HOME/.config/nitrogen"
     mkdir -p "$HOME/.config/profile.d"
-    mkdir -p "$HOME/.config/wal/templates"
     mkdir -p "$HOME/.config/rofi"
     mkdir -p "$HOME/.config/Xresources.d"
     mkdir -p "$HOME/Pictures/Screenshots"
@@ -299,9 +298,6 @@ createConfigurationSymlinks() {
     ln -fs "$DOTFILES/configs/.config/redshift.conf"                             "$HOME/.config/redshift.conf"
     ln -fs "$DOTFILES/configs/.config/rofi/config"                               "$HOME/.config/rofi/config"
     ln -fs "$DOTFILES/configs/.config/rofi/rofi-my-dark-theme.rasi"              "$HOME/.config/rofi/rofi-my-dark-theme.rasi"
-    ln -fs "$DOTFILES/configs/.config/wal/templates/dunstrc"                     "$HOME/.config/wal/templates/dunstrc"
-    ln -fs "$DOTFILES/configs/.config/wal/templates/rofi-my-dark-theme.rasi"     "$HOME/.config/wal/templates/rofi-my-dark-theme.rasi"
-    ln -fs "$DOTFILES/configs/.config/wal/templates/xresources-theme"            "$HOME/.config/wal/templates/xresources-theme"
     ln -fs "$DOTFILES/configs/.config/Xresources.d/00-base"                      "$HOME/.config/Xresources.d/00-base"
     ln -fs "$DOTFILES/configs/.config/Xresources.d/10-theme"                     "$HOME/.config/Xresources.d/10-theme"
 }
