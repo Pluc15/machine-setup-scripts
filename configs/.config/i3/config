@@ -53,7 +53,7 @@ floating_modifier $modSuper
 # System
 bindsym $modSuper+$modCtrl+$modAlt+r exec --no-startup-id ".reload"
 bindsym $modSuper+space exec --no-startup-id ".keyboard-layout-toggle"
-bindsym $modSuper+$modCtrl+$modAlt+l exec --no-startup-id "blurlock"
+bindsym $modSuper+$modCtrl+$modAlt+l exec --no-startup-id ".lock"
 bindsym $modSuper+$modCtrl+$modAlt+c exec --no-startup-id "code $DOTFILES"
 
 # System Power Menu

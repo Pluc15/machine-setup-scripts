@@ -4,7 +4,7 @@ if [ ! -z "$@" ]
 then
     case "$@" in
     Lock)
-        i3lock
+        sh "$DOTFILES/bin/.lock"
         ;;
     Logout)
         i3-msg exit
