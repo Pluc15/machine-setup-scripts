@@ -193,7 +193,6 @@ installPacmanPackages() {
         pulseaudio-alsa \
         pulseaudio-jack \
         pulseeffects \
-        python-pywal \
         qt5ct \
         redshift \
         remmina \
