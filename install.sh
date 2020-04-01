@@ -160,6 +160,7 @@ installPacmanPackages() {
         lm_sensors \
         lutris \
         lxappearance \
+        neofetch \
         network-manager-applet \
         networkmanager \
         networkmanager-openvpn \
@@ -173,8 +174,10 @@ installPacmanPackages() {
         nvidia-settings \
         nvidia-utils \
         obs-studio \
+        opencl-nvidia \
         openssh \
         pacman-contrib \
+        pacman-mirrorlist \
         pamixer \
         papirus-icon-theme \
         paprefs \
@@ -214,7 +217,8 @@ installPacmanPackages() {
         xorg-apps \
         xorg-xbacklight \
         xorg-xinit \
-        yarn
+        yarn \
+
 }
 
 installYay() {
@@ -243,11 +247,12 @@ installAurPackages() {
         --answerclean n \
         --answerdiff n \
         --noconfirm \
-        slack-desktop \
         adwaita-qt \
+        foldingathome \
         jetbrains-toolbox \
         mongodb-compass \
-        webtorrent-desktop-bin
+        slack-desktop \
+        webtorrent-desktop-bin \
         spotify \
 
 }
