@@ -152,6 +152,7 @@ installPacmanPackages() {
         i3-gaps \
         i3lock \
         i3status \
+        imagemagick \
         kde-applications-meta \
         kde-gtk-config \
         lastpass-cli \
@@ -322,11 +323,7 @@ createShellEnvVariables() {
 
 installWallpaper() {
     echoStep "Install wallpaper"
-
-    nitrogen --head=0 --set-zoom-fill --save "$DOTFILES/wallpaper.*"
-    nitrogen --head=1 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
-    nitrogen --head=2 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
-    nitrogen --head=3 --set-zoom-fill --save "$DOTFILES/wallpaper.*" 2> /dev/null
+    sh "$DOTFILES/bin/.wal $DOTFILES/wallpaper.png"
 }
 
 configure() {
