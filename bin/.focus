@@ -1,2 +1,2 @@
 #!/bin/sh
-rofi -modi window -show window
+rofi -modi window -show window -theme "$DOTFILES/configs/.config/rofi/window.rasi"

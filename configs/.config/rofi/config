@@ -1,4 +1,3 @@
-rofi.theme: ~/.config/rofi/rofi-my-dark-theme.rasi
 rofi.kb-cancel: Escape,Super_L
 rofi.show-icons: true
 rofi.font: Fira Code 10

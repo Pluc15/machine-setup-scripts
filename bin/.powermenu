@@ -5,4 +5,4 @@ then
     exit 1
 fi
 
-rofi -modi "powermenu:sh $DOTFILES/scripts/rofi-modi-powermenu.sh" -show powermenu
+rofi -modi "powermenu:sh $DOTFILES/scripts/rofi-modi-powermenu.sh" -show powermenu -theme "$DOTFILES/configs/.config/rofi/powermenu.rasi"
