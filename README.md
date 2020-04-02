@@ -4,22 +4,6 @@
 - Clone this git
 - `sh install.sh`
 
-# Documentation
-
-## Updating your machine and dotfiles
-
-`.update`
-
-## Themes
-
-### Generating a new theme
-
-`.theme-generator theme-name path/to/background`
-
-### Changing the active theme
-
-`.theme-selector theme-name`
-
 # TODOs
 
 - Change shell prompt
