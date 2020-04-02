@@ -1,6 +1,9 @@
 {
   "name": "pluc-dotfiles",
   "version": "1.0.0",
+  "scripts": {
+    "link": "ts-node scripts/link.ts"
+  },
   "devDependencies": {
     "@types/node": "^12.7.2",
     "ts-node": "^8.3.0",
