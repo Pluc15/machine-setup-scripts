@@ -18,6 +18,7 @@ case "$1" in
     exec startplasma-x11
     ;;
   *)
-    exec dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0
+    #exec dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0
+    exec i3
     ;;
 esac
