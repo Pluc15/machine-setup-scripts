@@ -4,6 +4,7 @@
 [core]
 	editor = code --wait
 	pager = "less -SN -# 5"
+	autocrlf = input
 [fetch]
 	prune = true
 [diff]
@@ -22,3 +23,5 @@
 	auto = 0
 [push]
 	default = simple
+[credential]
+	helper = store --file ~/.git-credentials

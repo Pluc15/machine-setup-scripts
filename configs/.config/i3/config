@@ -67,7 +67,9 @@ bindsym $modSuper+Return exec --no-startup-id "i3-sensible-terminal"
 bindsym $modSuper+q kill
 
 # Print screen
-bindsym Print --release exec --no-startup-id "scrot -s ~/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym Print --release exec --no-startup-id ".ss-area"
+bindsym $modAlt+Print --release exec --no-startup-id ".ss-window"
+bindsym $modSuper+Print --release exec --no-startup-id ".ss-screen"
 
 # Change window layouts
 bindsym $modSuper+f fullscreen toggle

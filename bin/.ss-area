@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[[ -d "$HOME/Pictures/Screenshots" ]] || mkdir "$HOME/Pictures/Screenshots"
+scrot "$HOME/Pictures/Screenshots/$(date +%F_%T).png" -u -e 'xclip -selection clipboard -target image/png -i $f'

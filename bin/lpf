@@ -1,3 +1,23 @@
-#!/bin/sh
+#!/usr/bin/env node
 
-lpass ls | fzf | xargs lpass show
+// WIP
+
+// const child_process = require("child_process");
+// const readline = require("readline");
+// const { TLSSocket } = require("tls");
+// // import FuzzySearch from 'fuzzy-search';
+
+// var status = child_process.execSync("lpass status").toString("utf8");
+// if (!status.indexOf("Logged in") >= 0) {
+//   const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+//   });
+//   let username;
+//   rl.question("Username? ", (answer) => {
+//     username = answer.trim();
+//     rl.close();
+//   });
+//   child_process.execSync(`lpass login ${username}`);
+// }
+// child_process.execSync("lpass ls");

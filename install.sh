@@ -1,342 +1,46 @@
 #!/bin/sh
 set -e
 
-function usage()
-{
-    echo "$0"
-    echo "\t-h --help"
-    echo "\t--skip-all (use first then re-enable individually)"
-    echo "\t--refresh-pacman-keys (disabled by default)"
-    echo "\t--install-all-packages (includes pacman, yay and aur)"
-    echo "\t--install-pacman-packages"
-    echo "\t--install-yay"
-    echo "\t--install-aur-packages"
-    echo "\t--install-dotnet-tools-dependencies"
-    echo "\t--install-npm-dependencies"
-    echo "\t--create-configuration-symlinks"
-    echo "\t--create-shell-env-variables"
-    echo "\t--install-wallpaper"
-    echo "\t--configure"
-    echo "\t--audit"
-    echo ""
-}
+######### TODO
+# git fetch and check if HEAD == origin/master
+# systemctl enable snapd.service
+# sudo snap install storage-explorer
 
 export DOTFILES=`dirname $0`
 export DOTFILES=`realpath $DOTFILES`
-
-REFRESH_PACMAN_KEYS=0
-INSTALL_PACMAN_PACKAGES=1
-INSTALL_YAY=1
-INSTALL_AUR_PACKAGES=1
-INSTALL_DOTNET_TOOLS_DEPENDENCIES=1
-INSTALL_NPM_DEPENDENCIES=1
-CREATE_CONFIGURATION_SYMLINKS=1
-CREATE_SHELL_ENV_VARIABLES=1
-INSTALL_WALLPAPER=1
-CONFIGURE=1
-RUN_AUDIT=1
-
-while [ "$1" != "" ]; do
-    case $1 in
-        -h | --help)
-            usage
-            exit
-            ;;
-        --refresh-pacman-keys)
-            REFRESH_PACMAN_KEYS=1
-            ;;
-        --skip-all)
-            REFRESH_PACMAN_KEYS=0
-            INSTALL_PACMAN_PACKAGES=0
-            INSTALL_YAY=0
-            INSTALL_AUR_PACKAGES=0
-            INSTALL_DOTNET_TOOLS_DEPENDENCIES=0
-            INSTALL_NPM_DEPENDENCIES=0
-            CREATE_CONFIGURATION_SYMLINKS=0
-            CREATE_SHELL_ENV_VARIABLES=0
-            INSTALL_WALLPAPER=0
-            CONFIGURE=0
-            RUN_AUDIT=0
-            ;;
-        --install-all-packages)
-            INSTALL_PACMAN_PACKAGES=1
-            INSTALL_YAY=1
-            INSTALL_AUR_PACKAGES=1
-            ;;
-        --install-pacman-packages)
-            INSTALL_PACMAN_PACKAGES=1
-            ;;
-        --install-yay)
-            INSTALL_YAY=1
-            ;;
-        --install-aur-packages)
-            INSTALL_AUR_PACKAGES=1
-            ;;
-        --install-dotnet-tools-dependencies)
-            INSTALL_DOTNET_TOOLS_DEPENDENCIES=1
-            ;;
-        --install-npm-dependencies)
-            INSTALL_NPM_DEPENDENCIES=1
-            ;;
-        --create-configuration-symlinks)
-            CREATE_CONFIGURATION_SYMLINKS=1
-            ;;
-        --create-shell-env-variables)
-            CREATE_SHELL_ENV_VARIABLES=1
-            ;;
-        --install-wallpaper)
-            INSTALL_WALLPAPER=1
-            ;;
-        --configure)
-            CONFIGURE=1
-            ;;
-        --audit)
-            RUN_AUDIT=1
-            ;;
-        *)
-            echo "ERROR: unknown parameter \"$PARAM\""
-            usage
-            exit 1
-            ;;
-    esac
-    shift
-done
 
 echoStep() {
     echo ""
     echo -e "== $1 =="
 }
 
-refreshPacmanKeys() {
-    echoStep "Updating pacman keys"
+echoStep "Installing / updating yay"
+sh $DOTFILES/install-yay.sh
 
-    sudo pacman-key --refresh-keys
-    pacman -Sy archlinux-keyring && pacman -Su
-}
+echoStep "Installing / updating pacman packages"
+sh $DOTFILES/install-packages.sh
 
-installPacmanPackages() {
-    echoStep "Installing / updating pacman packages"
 
-    sudo pacman -Syu --needed \
-        arandr \
-        arc-gtk-theme \
-        arch-audit \
-        aspnet-runtime \
-        brightnessctl \
-        cbatticon \
-        cheese \
-        chromium \
-        cifs-utils \
-        code \
-        compton \
-        curl \
-        deepin-system-monitor \
-        deluge \
-        discord \
-        docker \
-        dotnet-host \
-        dotnet-runtime \
-        dotnet-sdk \
-        dunst \
-        efibootmgr \
-        feh \
-        fish \
-        freerdp \
-        fzf \
-        gimp \
-        git \
-        glances \
-        gnome-themes-extra \
-        gparted \
-        gufw \
-        htop \
-        i3-gaps \
-        i3lock \
-        i3status \
-        imagemagick \
-        kde-applications-meta \
-        kde-gtk-config \
-        lastpass-cli \
-        lib32-nvidia-utils \
-        lib32-vulkan-icd-loader \
-        libreoffice \
-        lm_sensors \
-        lutris \
-        lxappearance \
-        neofetch \
-        network-manager-applet \
-        networkmanager \
-        networkmanager-openvpn \
-        networkmanager-pptp \
-        nitrogen \
-        nm-connection-editor \
-        nodejs \
-        npm \
-        ntfs-3g \
-        nvidia \
-        nvidia-settings \
-        nvidia-utils \
-        obs-studio \
-        opencl-nvidia \
-        openssh \
-        pacman-contrib \
-        pacman-mirrorlist \
-        pamixer \
-        papirus-icon-theme \
-        paprefs \
-        pasystray \
-        pavucontrol \
-        plasma-meta \
-        polkit \
-        polkit-gnome \
-        pulseaudio \
-        pulseaudio-alsa \
-        pulseaudio-jack \
-        pulseeffects \
-        qt5ct \
-        redshift \
-        remmina \
-        rofi \
-        rsync \
-        rxvt-unicode \
-        s-tui \
-        scrot \
-        speedtest-cli \
-        steam \
-        steam-native-runtime \
-        thunar \
-        tk \
-        transmission-cli \
-        transmission-gtk \
-        ttf-fira-code \
-        ttf-font-awesome \
-        tumbler \
-        viewnior \
-        vlc \
-        vulkan-icd-loader \
-        wget \
-        x11vnc \
-        xdotool \
-        xorg \
-        xorg-apps \
-        xorg-xbacklight \
-        xorg-xinit \
-        yarn \
+echoStep "Installing dotnet tools"
+sh $DOTFILES/install-dotnet-tools.sh
 
-}
+echoStep "Installing npm dependencies"
+npm i
 
-installYay() {
-    echoStep "Installing / updating yay"
+echoStep "Linking configuraion files"
+npm run link
 
-    mkdir -p "$HOME/.aur"
-    pushd "$HOME/.aur"
-    if [ ! -d "yay" ]
-    then
-        git clone https://aur.archlinux.org/yay.git
-    fi
-    cd yay
-    git reset --hard
-    git pull
-    makepkg -si --needed
-    popd
-}
+echoStep "Create profile script for dotfiles environment variables"
+sh $DOTFILES/install-global-env-vars.sh
 
-installAurPackages() {
-    echoStep "Installing / updating AUR packages"
+echoStep "Checking for wallpaper"
+sh $DOTFILES/install-wallpaper.sh
 
-    # --needed doesn't prevent redownloading sources. See https://github.com/Jguer/yay/issues/885
-    yay -Syu \
-        --aur \
-        --needed \
-        --noremovemake \
-        --answerclean n \
-        --answerdiff n \
-        --noconfirm \
-        adwaita-qt \
-        foldingathome \
-        jetbrains-toolbox \
-        mongodb-compass \
-        slack-desktop \
-        webtorrent-desktop-bin \
-        spotify \
+echoStep "Checking for default screen layout"
+sh $DOTFILES/install-default-screen-layout.sh
 
-}
+echoStep "Running pacman packages audit -- PLEASE READ THE OUTPUT"
+arch-audit
 
-installDotnetToolsDependencies() {
-    echoStep "Installing dotnet tools"
-
-    if dotnet tool list -g | grep -q "dotnet-script"
-    then 
-    dotnet tool update -g dotnet-script
-    else
-    dotnet tool install -g dotnet-script
-    fi
-}
-
-installNpmDependencies() {
-    echoStep "Installing npm dependencies"
-
-    npm i
-}
-
-createConfigurationSymlinks() {
-    echoStep "Linking configuraion files"
-
-    mkdir -p "$HOME/.scripts"
-    mkdir -p "$HOME/Pictures/Screenshots"
-
-    npm run link
-}
-
-createShellEnvVariables() {
-    echoStep "Create profile script for dotfiles environment variables"
-
-    echo '#!/bin/sh'                                                                          >  "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-    echo "## Everything in this file will be erased next time you run the dotfiles installer" >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-    echo "export DOTFILES=$DOTFILES"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-    echo "PATH=\$PATH:$DOTFILES/bin"                                                          >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-    echo "PATH=\$PATH:$HOME/.scripts"                                                         >> "$HOME/.config/profile.d/00-dotfiles-generated.sh"
-}
-
-installWallpaper() {
-    echoStep "Install wallpaper"
-    sh "$DOTFILES/bin/.wal $DOTFILES/wallpaper.png"
-}
-
-configure() {
-    while [ ! -f "$HOME/.vnc/passwd" ]
-    do
-        echoStep "Configure x11vnc password and save it to the default location"
-        x11vnc -storepasswd
-    done
-
-    while [ ! -f "$HOME/.screenlayout/default.sh" ]
-    do
-        echoStep "Configure your default screen layout then save it to '$HOME/.screenlayout/default.sh'"
-        read -p "Press [Enter] key to start backup..."
-        arandr
-        read -p "Press [Enter] when you have exported your layout to '$HOME/.screenlayout/default.sh'"
-    done
-}
-
-runAudit() {
-    echoStep "Running pacman packages audit -- PLEASE READ THE OUTPUT"
-
-    arch-audit
-}
-
-cd $DOTFILES
-# TODO git fetch and check if HEAD == origin/master
-if [ $REFRESH_PACMAN_KEYS -eq 1 ]; then refreshPacmanKeys; fi
-if [ $INSTALL_PACMAN_PACKAGES -eq 1 ]; then installPacmanPackages; fi
-if [ $INSTALL_YAY -eq 1 ]; then installYay; fi
-if [ $INSTALL_AUR_PACKAGES -eq 1 ]; then installAurPackages; fi
-if [ $INSTALL_DOTNET_TOOLS_DEPENDENCIES -eq 1 ]; then installDotnetToolsDependencies; fi
-if [ $INSTALL_NPM_DEPENDENCIES -eq 1 ]; then installNpmDependencies; fi
-if [ $CREATE_CONFIGURATION_SYMLINKS -eq 1 ]; then createConfigurationSymlinks; fi
-if [ $CREATE_SHELL_ENV_VARIABLES -eq 1 ]; then createShellEnvVariables; fi
-if [ $INSTALL_WALLPAPER -eq 1 ]; then installWallpaper; fi
-if [ $CONFIGURE -eq 1 ]; then configure; fi
-if [ $RUN_AUDIT -eq 1 ]; then runAudit; fi
 echoStep "Done!"
 echo "==> You should restart your X session"

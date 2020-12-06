@@ -1,10 +1,10 @@
+#!/bin/bash
+set -e
+
 # Services
 dunst &
 compton -b &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-if [ -f "$HOME/.screenlayout/default.sh" ]; then
-  x11vnc -display :0 -usepw -forever -bg &
-fi
 
 # Restores
 nitrogen --restore &
@@ -21,4 +21,3 @@ cbatticon &
 
 # Scratch pad apps
 discord &
-slack &

@@ -1,8 +1,6 @@
 import * as fs from "fs";
 
-import { pathToFileURL } from "url";
-
-link("/home/pluc/.dotfiles/configs", "/home/pluc");
+link(`${process.env.HOME}/.dotfiles/configs`, process.env.HOME);
 
 function link(from: string, to: string) {
   const links = getLinks(from, to);

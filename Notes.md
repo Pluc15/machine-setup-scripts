@@ -119,3 +119,9 @@ systemctl enable <service-name>.service
 ## .desktop files location
 
 Desktop entries for applications, or .desktop files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in /usr/share/applications/ or /usr/local/share/applications/ for applications installed system-wide, or ~/.local/share/applications/ for user-specific applications. User entries take precedence over system entries.
+
+# Dunst as volume and brightness indicator
+
+Theres a wiki section for that here:
+
+https://wiki.archlinux.org/index.php/Dunst
