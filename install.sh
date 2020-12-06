@@ -15,14 +15,14 @@ echoStep() {
 }
 
 echoStep "Installing / updating yay"
-sh $DOTFILES/install-yay.sh
+sh "$DOTFILES/scripts/install-yay.sh"
 
 echoStep "Installing / updating pacman packages"
-sh $DOTFILES/install-packages.sh
+sh "$DOTFILES/scripts/install-packages.sh"
 
 
 echoStep "Installing dotnet tools"
-sh $DOTFILES/install-dotnet-tools.sh
+sh "$DOTFILES/scripts/install-dotnet-tools.sh"
 
 echoStep "Installing npm dependencies"
 npm i
@@ -31,13 +31,13 @@ echoStep "Linking configuraion files"
 npm run link
 
 echoStep "Create profile script for dotfiles environment variables"
-sh $DOTFILES/install-global-env-vars.sh
+sh "$DOTFILES/scripts/install-global-env-vars.sh"
 
 echoStep "Checking for wallpaper"
-sh $DOTFILES/install-wallpaper.sh
+sh "$DOTFILES/scripts/install-wallpaper.sh"
 
 echoStep "Checking for default screen layout"
-sh $DOTFILES/install-default-screen-layout.sh
+sh "$DOTFILES/scripts/install-default-screen-layout.sh"
 
 echoStep "Running pacman packages audit -- PLEASE READ THE OUTPUT"
 arch-audit

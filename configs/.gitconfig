@@ -25,3 +25,5 @@
 	default = simple
 [credential]
 	helper = store --file ~/.git-credentials
+[pull]
+	rebase = true
