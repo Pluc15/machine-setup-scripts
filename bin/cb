@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 xclip -sel clip
 echo "Added to clipboard"

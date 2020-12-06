@@ -4,9 +4,12 @@
 - Clone this git
 - `sh install.sh`
 
+# Details
+
+- Everything in the folder `configs` will be symlinked to `$HOME` recursively, creating folders as needed.
+
 # TODOs
 
-- Change shell prompt
 - Better Super-Tab with window preview
 - Display unread mail in i3bar
 - Display unread notification in i3bar

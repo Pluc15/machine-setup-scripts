@@ -27,7 +27,7 @@ This is usefull to copy some of the nice bootstrapping manjaro does
 ## Example script that sets xprops on a windows (usefull for hotkeys that change how a window looks with compositor rules)
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 
 local active=$(xprop -notype -root _NET_ACTIVE_WINDOW)
 local status=$(xprop -notype -id ${active##*\ } _PLUC_OPAQUE)

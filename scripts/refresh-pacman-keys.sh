@@ -1,3 +1,3 @@
 #!/bin/sh
 sudo pacman-key --refresh-keys
-pacman -Sy archlinux-keyring && pacman -Su
+sudo pacman -Sy archlinux-keyring && sudo pacman -Su

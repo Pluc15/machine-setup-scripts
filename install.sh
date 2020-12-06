@@ -1,10 +1,7 @@
 #!/bin/sh
 set -e
 
-######### TODO
-# git fetch and check if HEAD == origin/master
-# systemctl enable snapd.service
-# sudo snap install storage-explorer
+# TODO: git fetch and check if HEAD == origin/master
 
 export DOTFILES=`dirname $0`
 export DOTFILES=`realpath $DOTFILES`
@@ -20,6 +17,8 @@ sh "$DOTFILES/scripts/install-yay.sh"
 echoStep "Installing / updating pacman packages"
 sh "$DOTFILES/scripts/install-packages.sh"
 
+echoStep "Installing / updating snaps packages"
+sh "$DOTFILES/scripts/install-snaps.sh"
 
 echoStep "Installing dotnet tools"
 sh "$DOTFILES/scripts/install-dotnet-tools.sh"

@@ -13,7 +13,6 @@ yay -Syu \
     aur/jetbrains-toolbox \
     aur/nvm \
     aur/snapd \
-    aur/spotify \
     aur/yay \
     aur/mongodb-compass \
     aur/webtorrent-desktop-bin \
